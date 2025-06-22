@@ -1,0 +1,7 @@
+{
+  "original_path": ".\\virus_test_area\\encrypted_payload.dat",
+  "quarantine_time": "2025-06-23T03:36:18.306721",
+  "reason": "Threat: rot13_encrypted",
+  "file_hash": "2eace18342dff743d123fc48fe3e9f99110b1e428fc8dd7c913afcb0ec02713b",
+  "file_size": 235
+}

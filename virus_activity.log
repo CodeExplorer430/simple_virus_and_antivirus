@@ -1,0 +1,14 @@
+[2025-06-23 01:18:40] Educational virus execution started
+[2025-06-23 01:18:40] Encrypted copy created: data_file.csv -> data_file_VIRUS_ENCRYPTED.csv (caesar)
+[2025-06-23 01:18:40] Encrypted copy created: document1.txt -> document1_VIRUS_ENCRYPTED.txt (atbash)
+[2025-06-23 01:18:40] Encrypted copy created: image_file.jpg -> image_file_VIRUS_ENCRYPTED.jpg (substitution)
+[2025-06-23 01:18:46] Displayed popup message: EcdglAtesting Viesar - This is a location eachurnter!
+[2025-06-23 01:18:51] Displayed popup message: CytofuesalBedone: Viesar banker simplicit\
+[2025-06-23 01:18:54] Displayed popup message: AccogledIntegers - NacHatesting Interest
+[2025-06-23 01:18:55] Created encrypted payload file
+[2025-06-23 01:18:55] Temporarily renamed: document1.txt -> LOCKED_document1.txt
+[2025-06-23 01:18:55] Temporarily renamed: document1_VIRUS_ENCRYPTED.txt -> LOCKED_document1_VIRUS_ENCRYPTED.txt
+[2025-06-23 01:18:58] Restored filename: document1.txt
+[2025-06-23 01:18:58] Restored filename: document1_VIRUS_ENCRYPTED.txt
+[2025-06-23 01:18:58] Placed infection marker
+[2025-06-23 01:18:58] Educational virus execution completed

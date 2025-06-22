@@ -1,0 +1,34 @@
+{
+  "assignment_instructions_ODYSSEY_ENCRYPTED.md": {
+    "original_filename": "assignment_instructions.md",
+    "encryption_algorithm": "ROT13",
+    "encryption_timestamp": "2025-06-23T03:28:45.444918",
+    "file_size_original": 255,
+    "file_size_encrypted": 413,
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC"
+  },
+  "lab_report_ODYSSEY_ENCRYPTED.doc": {
+    "original_filename": "lab_report.doc",
+    "encryption_algorithm": "ROT13",
+    "encryption_timestamp": "2025-06-23T03:28:45.472184",
+    "file_size_original": 229,
+    "file_size_encrypted": 375,
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC"
+  },
+  "research_data_ODYSSEY_ENCRYPTED.csv": {
+    "original_filename": "research_data.csv",
+    "encryption_algorithm": "ROT13",
+    "encryption_timestamp": "2025-06-23T03:28:45.496882",
+    "file_size_original": 211,
+    "file_size_encrypted": 360,
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC"
+  },
+  "student_notes_ODYSSEY_ENCRYPTED.txt": {
+    "original_filename": "student_notes.txt",
+    "encryption_algorithm": "ROT13",
+    "encryption_timestamp": "2025-06-23T03:28:45.520352",
+    "file_size_original": 214,
+    "file_size_encrypted": 363,
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "original_path": ".\\odyssey_test_environment\\research_data_ODYSSEY_ENCRYPTED.csv",
+  "quarantine_time": "2025-06-23T03:36:17.957590",
+  "reason": "Threat: filename_pattern",
+  "file_hash": "7ee97f7a5b584e1cf36c21d2d3c372bb5af1ebb5b1679e0c78ef55cb831fe33a",
+  "file_size": 360
+}

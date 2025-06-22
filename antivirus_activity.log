@@ -1,0 +1,21 @@
+[2025-06-23 03:36:18] 🧹 🔒 Quarantined: antivirus_activity.log -> 20250623_033618_antivirus_activity.log
+[2025-06-23 03:36:18] ❌ ❌ Failed to quarantine .\antivirus_activity.log: [WinError 183] Cannot create a file when that file already exists: '.\\antivirus_activity.log' -> 'odyssey_antivirus_quarantine\\20250623_033618_antivirus_activity.log'
+[2025-06-23 03:36:18] ❌ ❌ Failed to quarantine .\antivirus_activity.log: [WinError 183] Cannot create a file when that file already exists: '.\\antivirus_activity.log' -> 'odyssey_antivirus_quarantine\\20250623_033618_antivirus_activity.log'
+[2025-06-23 03:36:18] ❌ ❌ Failed to quarantine .\antivirus_activity.log: [WinError 183] Cannot create a file when that file already exists: '.\\antivirus_activity.log' -> 'odyssey_antivirus_quarantine\\20250623_033618_antivirus_activity.log'
+[2025-06-23 03:36:18] ❌ ❌ Failed to quarantine .\antivirus_activity.log: [WinError 183] Cannot create a file when that file already exists: '.\\antivirus_activity.log' -> 'odyssey_antivirus_quarantine\\20250623_033618_antivirus_activity.log'
+[2025-06-23 03:36:18] 🧹 🔒 Quarantined: README.md -> 20250623_033618_README.md
+[2025-06-23 03:36:18] 🧹 🔒 Quarantined: virus.py -> 20250623_033618_virus.py
+[2025-06-23 03:36:18] 🧹 🔒 Quarantined: assignment_instructions.md -> 20250623_033618_assignment_instructions.md
+[2025-06-23 03:36:18] 🧹 🔒 Quarantined: lab_report.doc -> 20250623_033618_lab_report.doc
+[2025-06-23 03:36:18] 🧹 🔒 Quarantined: research_data.csv -> 20250623_033618_research_data.csv
+[2025-06-23 03:36:18] 🧹 🔒 Quarantined: student_notes.txt -> 20250623_033618_student_notes.txt
+[2025-06-23 03:36:18] 🧹 🔒 Quarantined: encrypted_payload.dat -> 20250623_033618_encrypted_payload.dat
+[2025-06-23 03:36:35] 🧹 🧹 Starting comprehensive Odyssey virus removal...
+[2025-06-23 03:36:35] 📝 📋 Step 1: Processing encryption manifest...
+[2025-06-23 03:36:35] 📝 📋 No encryption manifest found
+[2025-06-23 03:36:35] 📝 🔄 Step 2: Restoring locked files...
+[2025-06-23 03:36:35] 📝 🗑️ Step 3: Cleaning virus artifacts...
+[2025-06-23 03:36:35] ✅ ✅ Removal completed in 0.14 seconds
+[2025-06-23 03:36:35] 📝 📊 Files decrypted: 0
+[2025-06-23 03:36:35] 📝 📊 Files restored: 0
+[2025-06-23 03:36:35] 📝 📊 Artifacts removed: 0

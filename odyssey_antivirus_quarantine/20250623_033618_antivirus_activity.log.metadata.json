@@ -1,0 +1,7 @@
+{
+  "original_path": ".\\antivirus_activity.log",
+  "quarantine_time": "2025-06-23T03:36:18.074535",
+  "reason": "Threat: signature_match",
+  "file_hash": "83f5717187e3420744217178ba484009ceaa28f9a5bd2863d6eb71ccfaaf48bb",
+  "file_size": 20079
+}
