@@ -1,0 +1,20 @@
+=== ENCRYPTED .CSV CONTENT ===
+Original File: research_data.csv
+Encryption: ROT13
+Timestamp: 2025-06-23T07:36:58.463307
+==================================================
+
+Fghqrag,Tenqr,Cebwrpg,Qbphzrag_Glcr
+Nyvpr,95,Nagvivehf,Jbeq_Qbp
+Obo,87,Pelcgbtencul,Rkpry_Furrg
+Puneyvr,92,Argjbex_Frphevgl,CbjreCbvag
+
+Svyr perngrq: 2025-06-23 07:28:39
+Rqhpngvbany pbagrkg: Angvbany Grnpuref Pbyyrtr
+Cebwrpg: Bqlffrl Ivehf Fvzhyngvba
+
+<!-- ODYSSEY_VIRUS_2025_NTC -->
+<!-- Encryption: ROT13 -->
+<!-- Original: research_data.csv -->
+<!-- Document Type: .csv -->
+<!-- Timestamp: 2025-06-23T07:36:58.463307 -->

@@ -1,0 +1,8 @@
+Educational cybersecurity notes
+Malware analysis techniques
+Antivirus development principles
+ROT13 encryption demonstration
+
+File created: 2025-06-23 07:28:39
+Educational context: National Teachers College
+Project: Odyssey Virus Simulation

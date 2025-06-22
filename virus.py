@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Odyssey Virus - Multi-Document Support
+Odyssey Virus
 National Teachers College - Information Assurance and Security 1 Finals Project
 
 DISCLAIMER: This code is for educational purposes only.
