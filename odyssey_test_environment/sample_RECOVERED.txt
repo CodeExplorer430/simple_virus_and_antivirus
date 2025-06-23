@@ -1,0 +1,14 @@
+
+
+Hello World
+
+# INFECTED BY ODYSSEY_VIRUS_2025_NTC #
+Infection performed for educational cybersecurity research
+National Teachers College - Security Analysis Project
+
+
+--- Recovery Information ---
+Encrypted file: sample_ODYSSEY_ENCRYPTED.txt
+Recovery time: 2025-06-23 11:49:43
+Recovered by: Odyssey Virus Hunter
+NOTE: Original file was deleted by virus

@@ -1,7 +1,0 @@
-{
-  "original_path": ".\\antivirus.py",
-  "quarantine_time": "2025-06-23T03:36:18.056646",
-  "reason": "Threat: signature_match",
-  "file_hash": "96a8da0461c30c9732f8b127e7f1adfa44a246fc41ab1b9a3a732fe619a42b50",
-  "file_size": 60508
-}

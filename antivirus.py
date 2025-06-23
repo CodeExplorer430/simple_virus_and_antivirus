@@ -11,15 +11,19 @@ Institution: National Teachers College
 Date: June 2025
 Target: Odyssey Virus
 
+MODIFICATIONS:
+- Focus on encrypted files detection and recovery
+- Handle deleted original files scenario
+- Enhanced recovery capabilities for replaced files
+- Optimized scanning for encrypted content only
+
 FEATURES:
 - Multi-format document processing
-- Word Document (.docx) analysis and recovery
-- PDF text extraction and decryption
-- Excel (.xlsx) and PowerPoint (.pptx) support
-- Advanced behavioral analysis
-- Document-aware quarantine system
+- Encrypted file detection and analysis
+- Advanced behavioral analysis targeting encrypted files
+- Document-aware quarantine system for encrypted files
 - ROT13 decryption engine
-- Comprehensive virus signature detection
+- Comprehensive virus signature detection for encrypted content
 - Secure file recovery and restoration
 - Real-time scanning with GUI
 - Detailed forensic reporting
@@ -123,14 +127,14 @@ class ROT13CryptographyEngine:
 
 class DocumentAnalyzer:
     """
-    Advanced document analysis engine for multiple file formats
+    Advanced document analysis engine for encrypted files
     
     Provides analysis and recovery capabilities for:
-    - Word Documents (.docx)
-    - PDF files (.pdf)
-    - Excel files (.xlsx)
-    - PowerPoint presentations (.pptx)
-    - Plain text files
+    - Encrypted Word Documents (.docx)
+    - Encrypted PDF files (.pdf)
+    - Encrypted Excel files (.xlsx)
+    - Encrypted PowerPoint presentations (.pptx)
+    - Encrypted plain text files
     """
     
     def __init__(self, crypto_engine):
@@ -149,8 +153,8 @@ class DocumentAnalyzer:
             '.css': 'CSS File'
         }
     
-    def analyze_word_document(self, file_path):
-        """Analyze Word document for virus content"""
+    def analyze_encrypted_word_document(self, file_path):
+        """Analyze encrypted Word document for virus content"""
         if not DOCX_AVAILABLE:
             return None, "python-docx library not available"
         
@@ -179,146 +183,90 @@ class DocumentAnalyzer:
                             virus_indicators.append(f"Table virus content: {cell.text[:50]}...")
             
             analysis_result = {
-                'document_type': 'Word Document',
+                'document_type': 'Encrypted Word Document',
                 'paragraphs_count': len([p for p in doc.paragraphs if p.text.strip()]),
                 'tables_count': len(doc.tables),
                 'text_content': '\n'.join(text_content),
                 'virus_indicators': virus_indicators,
-                'is_infected': len(virus_indicators) > 0
+                'is_infected': len(virus_indicators) > 0,
+                'encrypted': True
             }
             
             return analysis_result, None
             
         except Exception as e:
-            return None, f"Error analyzing Word document: {str(e)}"
+            return None, f"Error analyzing encrypted Word document: {str(e)}"
     
-    def extract_pdf_content(self, file_path):
-        """Extract content from PDF for analysis"""
-        if not PDF_AVAILABLE:
-            return None, "PyPDF2 library not available"
-        
+    def analyze_encrypted_text_file(self, file_path):
+        """Analyze encrypted text file content"""
         try:
-            with open(file_path, 'rb') as file:
-                pdf_reader = PyPDF2.PdfReader(file)
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                content = f.read()
+            
+            virus_indicators = []
+            if "ODYSSEY_VIRUS_2025_NTC" in content:
+                virus_indicators.append("Virus signature detected")
+            if "ROT13" in content and "encrypted" in content.lower():
+                virus_indicators.append("Encryption indicators found")
+            if "=== ENCRYPTED" in content:
+                virus_indicators.append("Encrypted content marker found")
+            if "ODYSSEY_ENCRYPTED" in file_path:
+                virus_indicators.append("Encrypted filename pattern detected")
+            
+            analysis_result = {
+                'document_type': 'Encrypted Text File',
+                'text_content': content,
+                'virus_indicators': virus_indicators,
+                'is_infected': len(virus_indicators) > 0,
+                'encrypted': True
+            }
+            
+            return analysis_result, None
+            
+        except Exception as e:
+            return None, f"Error reading encrypted text file: {str(e)}"
+    
+    def analyze_document(self, file_path):
+        """Analyze document based on file extension and encryption status"""
+        filename = os.path.basename(file_path)
+        file_extension = os.path.splitext(file_path)[1].lower()
+        
+        # Prioritize encrypted files
+        if "ODYSSEY_ENCRYPTED" in filename:
+            if file_extension == '.docx':
+                return self.analyze_encrypted_word_document(file_path)
+            else:
+                return self.analyze_encrypted_text_file(file_path)
+        
+        # Analyze non-encrypted files (for completeness)
+        if file_extension == '.docx' and DOCX_AVAILABLE:
+            try:
+                doc = Document(file_path)
                 text_content = []
                 virus_indicators = []
                 
-                for page_num, page in enumerate(pdf_reader.pages):
-                    text = page.extract_text()
+                for paragraph in doc.paragraphs:
+                    text = paragraph.text
                     if text.strip():
-                        text_content.append(f"=== Page {page_num + 1} ===\n{text}")
-                        
-                        # Check for virus indicators
+                        text_content.append(text)
                         if "ODYSSEY_VIRUS_2025_NTC" in text:
-                            virus_indicators.append(f"Page {page_num + 1}: Virus signature detected")
-                        if "ROT13" in text and "encrypted" in text.lower():
-                            virus_indicators.append(f"Page {page_num + 1}: Encryption indicators")
+                            virus_indicators.append(f"Virus signature found: {text[:100]}...")
                 
                 analysis_result = {
-                    'document_type': 'PDF Document',
-                    'pages_count': len(pdf_reader.pages),
+                    'document_type': 'Word Document',
+                    'paragraphs_count': len([p for p in doc.paragraphs if p.text.strip()]),
                     'text_content': '\n'.join(text_content),
                     'virus_indicators': virus_indicators,
-                    'is_infected': len(virus_indicators) > 0
+                    'is_infected': len(virus_indicators) > 0,
+                    'encrypted': False
                 }
                 
                 return analysis_result, None
                 
-        except Exception as e:
-            return None, f"Error analyzing PDF: {str(e)}"
-    
-    def analyze_excel_file(self, file_path):
-        """Analyze Excel file for virus content"""
-        if not XLSX_AVAILABLE:
-            return None, "openpyxl library not available"
+            except Exception as e:
+                return None, f"Error analyzing Word document: {str(e)}"
         
-        try:
-            workbook = openpyxl.load_workbook(file_path)
-            text_content = []
-            virus_indicators = []
-            
-            for sheet_name in workbook.sheetnames:
-                sheet = workbook[sheet_name]
-                text_content.append(f"=== Sheet: {sheet_name} ===")
-                
-                for row in sheet.iter_rows():
-                    row_values = []
-                    for cell in row:
-                        if cell.value is not None:
-                            cell_text = str(cell.value)
-                            row_values.append(cell_text)
-                            
-                            # Check for virus indicators
-                            if "ODYSSEY_VIRUS_2025_NTC" in cell_text:
-                                virus_indicators.append(f"Sheet {sheet_name}: Virus signature in cell")
-                    
-                    if row_values:
-                        text_content.append(" | ".join(row_values))
-            
-            analysis_result = {
-                'document_type': 'Excel Spreadsheet',
-                'sheets_count': len(workbook.sheetnames),
-                'text_content': '\n'.join(text_content),
-                'virus_indicators': virus_indicators,
-                'is_infected': len(virus_indicators) > 0
-            }
-            
-            return analysis_result, None
-            
-        except Exception as e:
-            return None, f"Error analyzing Excel file: {str(e)}"
-    
-    def analyze_powerpoint(self, file_path):
-        """Analyze PowerPoint presentation for virus content"""
-        if not PPTX_AVAILABLE:
-            return None, "python-pptx library not available"
-        
-        try:
-            prs = Presentation(file_path)
-            text_content = []
-            virus_indicators = []
-            
-            for i, slide in enumerate(prs.slides, 1):
-                text_content.append(f"=== Slide {i} ===")
-                
-                for shape in slide.shapes:
-                    if hasattr(shape, "text") and shape.text.strip():
-                        text = shape.text
-                        text_content.append(text)
-                        
-                        # Check for virus indicators
-                        if "ODYSSEY_VIRUS_2025_NTC" in text:
-                            virus_indicators.append(f"Slide {i}: Virus signature detected")
-                        if "ROT13" in text and "encrypted" in text.lower():
-                            virus_indicators.append(f"Slide {i}: Encryption indicators")
-            
-            analysis_result = {
-                'document_type': 'PowerPoint Presentation',
-                'slides_count': len(prs.slides),
-                'text_content': '\n'.join(text_content),
-                'virus_indicators': virus_indicators,
-                'is_infected': len(virus_indicators) > 0
-            }
-            
-            return analysis_result, None
-            
-        except Exception as e:
-            return None, f"Error analyzing PowerPoint: {str(e)}"
-    
-    def analyze_document(self, file_path):
-        """Analyze document based on file extension"""
-        file_extension = os.path.splitext(file_path)[1].lower()
-        
-        if file_extension == '.docx':
-            return self.analyze_word_document(file_path)
-        elif file_extension == '.pdf':
-            return self.extract_pdf_content(file_path)
-        elif file_extension == '.xlsx':
-            return self.analyze_excel_file(file_path)
-        elif file_extension == '.pptx':
-            return self.analyze_powerpoint(file_path)
         elif file_extension in ['.txt', '.md', '.csv', '.py', '.js', '.html', '.css']:
-            # Plain text analysis
             try:
                 with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                     content = f.read()
@@ -326,14 +274,13 @@ class DocumentAnalyzer:
                 virus_indicators = []
                 if "ODYSSEY_VIRUS_2025_NTC" in content:
                     virus_indicators.append("Virus signature detected")
-                if "ROT13" in content and "encrypted" in content.lower():
-                    virus_indicators.append("Encryption indicators found")
                 
                 analysis_result = {
                     'document_type': self.supported_formats.get(file_extension, 'Text File'),
                     'text_content': content,
                     'virus_indicators': virus_indicators,
-                    'is_infected': len(virus_indicators) > 0
+                    'is_infected': len(virus_indicators) > 0,
+                    'encrypted': False
                 }
                 
                 return analysis_result, None
@@ -346,33 +293,44 @@ class DocumentAnalyzer:
 class OdysseyVirusSignatureDatabase:
     """
     Signature database for multi-document Odyssey virus detection
-
-    Updated to handle the virus with multi-document support
     """
     
     def __init__(self):
         self.virus_signatures = {
             "ODYSSEY_VIRUS_2025_NTC": {
                 "name": "Odyssey Virus",
-                "version": "2.0_EDUCATIONAL_MULTIDOC",
+                "version": "2.1_EDUCATIONAL",
                 "institution": "National Teachers College",
-                "type": "Multi-Document Educational Malware",
+                "type": "Multi-Document Educational Malware with File Replacement",
                 "risk_level": "Educational Only",
                 "encryption_algorithm": "ROT13",
                 "target_directory": "odyssey_test_environment",
                 "supported_formats": [".docx", ".pdf", ".xlsx", ".pptx", ".txt", ".md", ".csv"],
-                "description": "ROT13-based virus with multi-document support"
+                "description": "ROT13-based virus with multi-document support and file replacement behavior",
+                "behavioral_characteristics": ["File replacement", "Original file deletion", "Encrypted file creation"]
             }
         }
         
-        self.file_patterns = [
+        self.encrypted_file_patterns = [
             "*ODYSSEY_ENCRYPTED*",           # All encrypted files
             "*ODYSSEY_LOCKED_*",             # Temporarily locked files
+        ]
+        
+        self.infected_file_indicators = [
+            "ODYSSEY_VIRUS_2025_NTC INFECTION MARKER",
+            "Educational Malware Injection",
+            "Virus Code Injection",
+            "Script Infection",
+            "INFECTED BY ODYSSEY_VIRUS_2025_NTC"
+        ]
+        
+        self.artifact_patterns = [
             "odyssey_activity.log",          # Activity log
             ".odyssey_infection_marker",     # Infection marker
             "odyssey_encrypted_payload.dat", # Encrypted payload
             "odyssey_encryption_manifest.json", # Encryption manifest
-            "cybersecurity_report_ODYSSEY_ENCRYPTED.docx"  # Sample encrypted Word doc
+            "odyssey_infection_manifest.json", # Infection manifest
+            "*.backup",                      # Backup files created during infection
         ]
         
         self.content_signatures = [
@@ -386,17 +344,19 @@ class OdysseyVirusSignatureDatabase:
             "=== ENCRYPTED .PDF CONTENT ===",
             "=== ENCRYPTED .XLSX CONTENT ===",
             "=== ENCRYPTED .PPTX CONTENT ===",
-            "Odyssey Virus",
-            "Multi-Document Support"
+            "=== ENCRYPTED",
+            "Original File:",
+            "Multi-Document Support",
+            "File replacement simulation"
         ]
         
-        self.document_indicators = {
-            'word_document': [
+        self.encrypted_document_indicators = {
+            'encrypted_word_document': [
                 "Encrypted Document - ROT13",
                 "Educational Note:",
                 "This document has been encrypted using ROT13"
             ],
-            'generic_encrypted': [
+            'encrypted_generic': [
                 "=== ENCRYPTED",
                 "Original File:",
                 "Encryption: ROT13",
@@ -412,6 +372,7 @@ class OdysseyVirusSignatureDatabase:
             "Encrypted payload generation",
             "Educational popup message display",
             "Multi-format document processing",
+            "Original file deletion and replacement",
             "Comprehensive activity logging"
         ]
     
@@ -419,15 +380,37 @@ class OdysseyVirusSignatureDatabase:
         """Get detailed information about virus signature"""
         return self.virus_signatures.get(signature, None)
     
-    def is_odyssey_pattern(self, filename):
-        """Check if filename matches Odyssey virus patterns"""
-        for pattern in self.file_patterns:
+    def is_encrypted_file_pattern(self, filename):
+        """Check if filename matches encrypted file patterns"""
+        for pattern in self.encrypted_file_patterns:
             if fnmatch.fnmatch(filename, pattern):
                 return True
         return False
     
-    def analyze_document_infection(self, content):
-        """Analyze document content for infection indicators"""
+    def is_artifact_pattern(self, filename):
+        """Check if filename matches virus artifact patterns"""
+        for pattern in self.artifact_patterns:
+            if fnmatch.fnmatch(filename, pattern):
+                return True
+        return False
+    
+    def is_file_infected(self, content):
+        """Check if file content contains infection indicators"""
+        for indicator in self.infected_file_indicators:
+            if indicator in content:
+                return True
+        return False
+    
+    def get_infection_indicators(self, content):
+        """Get list of infection indicators found in content"""
+        indicators = []
+        for indicator in self.infected_file_indicators:
+            if indicator in content:
+                indicators.append(indicator)
+        return indicators
+    
+    def analyze_encrypted_content(self, content):
+        """Analyze encrypted content for infection indicators"""
         indicators = []
         
         for signature in self.content_signatures:
@@ -435,7 +418,7 @@ class OdysseyVirusSignatureDatabase:
                 indicators.append(signature)
         
         # Check for document-specific indicators
-        for doc_type, patterns in self.document_indicators.items():
+        for doc_type, patterns in self.encrypted_document_indicators.items():
             for pattern in patterns:
                 if pattern in content:
                     indicators.append(f"{doc_type}: {pattern}")
@@ -448,13 +431,13 @@ class OdysseyVirusSignatureDatabase:
 
 class AdvancedVirusScanner:
     """
-    Virus scanning engine with multi-document support
+    Virus scanning engine with focus on encrypted files
     
-    Implements multiple detection methods:
-    - Signature-based detection
-    - Heuristic analysis
-    - Behavioral pattern recognition
-    - Document-specific analysis
+    Implements multiple detection methods optimized for encrypted content:
+    - Encrypted file signature detection
+    - ROT13 content analysis
+    - Behavioral pattern recognition for replaced files
+    - Document-specific encrypted analysis
     - File integrity verification
     """
     
@@ -466,7 +449,9 @@ class AdvancedVirusScanner:
         self.quarantine_dir = "odyssey_antivirus_quarantine"
         self.scan_statistics = {
             'files_scanned': 0,
-            'documents_analyzed': 0,
+            'encrypted_files_found': 0,
+            'infected_files_found': 0,
+            'artifacts_found': 0,
             'threats_detected': 0,
             'document_types_scanned': {},
             'files_quarantined': 0,
@@ -484,7 +469,8 @@ class AdvancedVirusScanner:
                 "purpose": "Odyssey Virus Quarantine",
                 "antivirus": "Odyssey Virus Hunter",
                 "institution": "National Teachers College",
-                "supported_formats": list(self.document_analyzer.supported_formats.keys())
+                "supported_formats": list(self.document_analyzer.supported_formats.keys()),
+                "target_focus": "Encrypted files and virus artifacts"
             }
             
             info_path = os.path.join(self.quarantine_dir, "quarantine_info.json")
@@ -508,7 +494,8 @@ class AdvancedVirusScanner:
             "DETECTION": "[DETECT]",
             "CRYPTO": "[CRYPTO]",
             "REMOVAL": "[REMOVE]",
-            "DOCUMENT": "[DOC]"
+            "DOCUMENT": "[DOC]",
+            "ENCRYPTED": "[ENCRYPT]"
         }
         
         prefix = level_prefixes.get(level, "[INFO]")
@@ -535,13 +522,18 @@ class AdvancedVirusScanner:
             self.log_activity(f"Failed to calculate hash for {filepath}: {str(e)}", "ERROR")
             return None
     
-    def scan_document_comprehensive(self, filepath):
-        """Comprehensive document scanning with multi-format support"""
+    def scan_encrypted_file_comprehensive(self, filepath):
+        """Comprehensive encrypted file scanning"""
         detections = []
+        filename = os.path.basename(filepath)
         file_extension = os.path.splitext(filepath)[1].lower()
         
         try:
-            # Skip binary files and directories
+            # Skip files outside odyssey_test_environment
+            if "odyssey_test_environment" not in os.path.abspath(filepath):
+                return detections
+                
+            # Skip non-files and quarantine directory
             if not os.path.isfile(filepath) or self.quarantine_dir in filepath:
                 return detections
             
@@ -551,40 +543,79 @@ class AdvancedVirusScanner:
             # Calculate file hash
             file_hash = self.calculate_file_hash(filepath)
             
-            # Document-specific analysis
-            if file_extension in self.document_analyzer.supported_formats:
-                self.scan_statistics['documents_analyzed'] += 1
+            # Prioritize encrypted files
+            if "ODYSSEY_ENCRYPTED" in filename:
+                self.scan_statistics['encrypted_files_found'] += 1
+                self.log_activity(f"Found encrypted file: {filename}", "ENCRYPTED")
                 
-                # Track document types
-                doc_type = self.document_analyzer.supported_formats[file_extension]
-                if doc_type in self.scan_statistics['document_types_scanned']:
-                    self.scan_statistics['document_types_scanned'][doc_type] += 1
-                else:
-                    self.scan_statistics['document_types_scanned'][doc_type] = 1
+                # Document-specific analysis for encrypted files
+                if file_extension in self.document_analyzer.supported_formats:
+                    analysis_result, error = self.document_analyzer.analyze_document(filepath)
+                    
+                    if error:
+                        self.log_activity(f"Encrypted document analysis error for {filename}: {error}", "WARNING")
+                    elif analysis_result and analysis_result.get('is_infected', False):
+                        detection = {
+                            'type': 'encrypted_document_infection',
+                            'file': filepath,
+                            'document_type': analysis_result['document_type'],
+                            'virus_indicators': analysis_result['virus_indicators'],
+                            'analysis_data': analysis_result,
+                            'file_hash': file_hash,
+                            'detection_time': datetime.now().isoformat(),
+                            'confidence': 'HIGH',
+                            'encrypted': True
+                        }
+                        detections.append(detection)
+                        self.log_activity(f"Infected encrypted document: {filename} ({analysis_result['document_type']})", "DETECTION")
                 
-                # Analyze document
-                analysis_result, error = self.document_analyzer.analyze_document(filepath)
-                
-                if error:
-                    self.log_activity(f"Document analysis error for {os.path.basename(filepath)}: {error}", "WARNING")
-                elif analysis_result and analysis_result['is_infected']:
-                    detection = {
-                        'type': 'document_infection',
-                        'file': filepath,
-                        'document_type': analysis_result['document_type'],
-                        'virus_indicators': analysis_result['virus_indicators'],
-                        'analysis_data': analysis_result,
-                        'file_hash': file_hash,
-                        'detection_time': datetime.now().isoformat(),
-                        'confidence': 'HIGH'
-                    }
-                    detections.append(detection)
-                    self.log_activity(f"Infected document detected: {os.path.basename(filepath)} ({analysis_result['document_type']})", "DETECTION")
+                # Always flag encrypted files as threats
+                detection = {
+                    'type': 'encrypted_file',
+                    'file': filepath,
+                    'file_hash': file_hash,
+                    'detection_time': datetime.now().isoformat(),
+                    'confidence': 'HIGH',
+                    'description': f'Odyssey encrypted file: {filename}'
+                }
+                detections.append(detection)
+                self.log_activity(f"Encrypted file detected: {filename}", "DETECTION")
             
-            # Standard file content scanning
+            # Check for virus artifacts
+            if self.signature_db.is_artifact_pattern(filename):
+                self.scan_statistics['artifacts_found'] += 1
+                detection = {
+                    'type': 'virus_artifact',
+                    'file': filepath,
+                    'file_hash': file_hash,
+                    'detection_time': datetime.now().isoformat(),
+                    'confidence': 'HIGH',
+                    'description': f'Odyssey virus artifact: {filename}'
+                }
+                detections.append(detection)
+                self.log_activity(f"Virus artifact detected: {filename}", "DETECTION")
+            
+            # Content analysis for all text-readable files
             try:
                 with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
                     content = f.read()
+                
+                # Check for file infection
+                if self.signature_db.is_file_infected(content):
+                    self.scan_statistics['infected_files_found'] += 1
+                    infection_indicators = self.signature_db.get_infection_indicators(content)
+                    
+                    detection = {
+                        'type': 'infected_file',
+                        'file': filepath,
+                        'infection_indicators': infection_indicators,
+                        'file_hash': file_hash,
+                        'detection_time': datetime.now().isoformat(),
+                        'confidence': 'HIGH',
+                        'description': f'File infected with {len(infection_indicators)} virus signatures'
+                    }
+                    detections.append(detection)
+                    self.log_activity(f"Infected file detected: {filename} ({len(infection_indicators)} indicators)", "DETECTION")
                 
                 # Check for virus signatures
                 for signature in self.signature_db.get_all_signatures():
@@ -600,23 +631,23 @@ class AdvancedVirusScanner:
                             'confidence': 'HIGH'
                         }
                         detections.append(detection)
-                        self.log_activity(f"Virus signature detected: {signature} in {os.path.basename(filepath)}", "DETECTION")
+                        self.log_activity(f"Virus signature detected: {signature} in {filename}", "DETECTION")
                 
-                # Check for content signatures
-                for content_sig in self.signature_db.content_signatures:
-                    if content_sig in content:
-                        detection = {
-                            'type': 'content_signature',
-                            'pattern': content_sig,
-                            'file': filepath,
-                            'file_hash': file_hash,
-                            'detection_time': datetime.now().isoformat(),
-                            'confidence': 'MEDIUM'
-                        }
-                        detections.append(detection)
-                        self.log_activity(f"Content signature detected: {content_sig[:30]}... in {os.path.basename(filepath)}", "DETECTION")
+                # Analyze encrypted content indicators
+                encryption_indicators = self.signature_db.analyze_encrypted_content(content)
+                if encryption_indicators:
+                    detection = {
+                        'type': 'encrypted_content',
+                        'file': filepath,
+                        'indicators': encryption_indicators,
+                        'file_hash': file_hash,
+                        'detection_time': datetime.now().isoformat(),
+                        'confidence': 'MEDIUM'
+                    }
+                    detections.append(detection)
+                    self.log_activity(f"Encrypted content indicators: {len(encryption_indicators)} found in {filename}", "DETECTION")
                 
-                # Check for ROT13 encrypted content (heuristic analysis)
+                # ROT13 encryption detection
                 if self.is_rot13_encrypted(content):
                     detection = {
                         'type': 'rot13_encrypted',
@@ -627,21 +658,7 @@ class AdvancedVirusScanner:
                         'description': 'File appears to contain ROT13 encrypted content'
                     }
                     detections.append(detection)
-                    self.log_activity(f"ROT13 encryption detected in {os.path.basename(filepath)}", "CRYPTO")
-                
-                # Document infection analysis
-                infection_indicators = self.signature_db.analyze_document_infection(content)
-                if infection_indicators:
-                    detection = {
-                        'type': 'content_infection',
-                        'file': filepath,
-                        'indicators': infection_indicators,
-                        'file_hash': file_hash,
-                        'detection_time': datetime.now().isoformat(),
-                        'confidence': 'MEDIUM'
-                    }
-                    detections.append(detection)
-                    self.log_activity(f"Content infection indicators: {len(infection_indicators)} found in {os.path.basename(filepath)}", "DETECTION")
+                    self.log_activity(f"ROT13 encryption detected in {filename}", "CRYPTO")
                     
             except Exception as e:
                 # File might be binary or inaccessible
@@ -656,39 +673,9 @@ class AdvancedVirusScanner:
         """Heuristic analysis to detect ROT13 encrypted content"""
         if len(content) < 50:  # Too short for reliable analysis
             return False
-        
-        # Sample analysis on first 500 characters
-        sample = content[:500].upper()
-        
-        # Count letter frequencies
-        letter_counts = {}
-        total_letters = 0
-        
-        for char in sample:
-            if char.isalpha():
-                letter_counts[char] = letter_counts.get(char, 0) + 1
-                total_letters += 1
-        
-        if total_letters < 20:  # Not enough letters for analysis
-            return False
-        
-        # Calculate frequency distribution
-        frequencies = {char: count/total_letters for char, count in letter_counts.items()}
-        
-        # Check if frequency distribution is unusual (potential indicator of cipher)
-        expected_high_freq = ['E', 'T', 'A', 'O', 'I', 'N']
-        
-        # Count how many expected high-frequency letters have low frequency
-        low_freq_count = 0
-        for char in expected_high_freq:
-            if frequencies.get(char, 0) < 0.02:  # Less than 2%
-                low_freq_count += 1
-        
-        # If many expected high-frequency letters have low frequency, might be encrypted
-        return low_freq_count >= 3
     
     def scan_filename_patterns(self, directory):
-        """Scan directory for suspicious filename patterns"""
+        """Scan directory for suspicious filename patterns (focus on encrypted files)"""
         detections = []
         
         try:
@@ -700,17 +687,31 @@ class AdvancedVirusScanner:
                 for filename in files:
                     filepath = os.path.join(root, filename)
                     
-                    if self.signature_db.is_odyssey_pattern(filename):
+                    # Check for encrypted file patterns
+                    if self.signature_db.is_encrypted_file_pattern(filename):
                         detection = {
-                            'type': 'filename_pattern',
+                            'type': 'encrypted_filename_pattern',
                             'pattern': filename,
                             'file': filepath,
                             'detection_time': datetime.now().isoformat(),
                             'confidence': 'HIGH',
-                            'description': f'Filename matches Odyssey virus pattern'
+                            'description': f'Filename matches Odyssey encrypted file pattern'
                         }
                         detections.append(detection)
-                        self.log_activity(f"Suspicious filename pattern: {filename}", "DETECTION")
+                        self.log_activity(f"Encrypted filename pattern: {filename}", "DETECTION")
+                    
+                    # Check for artifact patterns
+                    elif self.signature_db.is_artifact_pattern(filename):
+                        detection = {
+                            'type': 'artifact_filename_pattern',
+                            'pattern': filename,
+                            'file': filepath,
+                            'detection_time': datetime.now().isoformat(),
+                            'confidence': 'HIGH',
+                            'description': f'Filename matches Odyssey artifact pattern'
+                        }
+                        detections.append(detection)
+                        self.log_activity(f"Artifact filename pattern: {filename}", "DETECTION")
                         
         except Exception as e:
             self.log_activity(f"Error scanning filename patterns in {directory}: {str(e)}", "ERROR")
@@ -736,24 +737,24 @@ class AdvancedVirusScanner:
                 self.log_activity(f"   Virus Signature: {metadata.get('virus_signature', 'Unknown')}")
                 self.log_activity(f"   Virus Version: {metadata.get('virus_version', 'Unknown')}")
                 self.log_activity(f"   Infection Time: {metadata.get('infection_timestamp', 'Unknown')}")
-                self.log_activity(f"   Execution Duration: {metadata.get('execution_duration_seconds', 'Unknown')}s")
-            
-            if 'document_support_status' in marker_data:
-                doc_support = marker_data['document_support_status']
-                self.log_activity("   Document Support Status:")
-                self.log_activity(f"     Word (.docx): {'YES' if doc_support.get('docx_support', False) else 'NO'}")
-                self.log_activity(f"     PDF (.pdf): {'YES' if doc_support.get('pdf_support', False) else 'NO'}")
-                self.log_activity(f"     Excel (.xlsx): {'YES' if doc_support.get('xlsx_support', False) else 'NO'}")
-                self.log_activity(f"     PowerPoint (.pptx): {'YES' if doc_support.get('pptx_support', False) else 'NO'}")
+                
+                if 'behavioral_modification' in metadata:
+                    self.log_activity(f"   Behavior: {metadata.get('behavioral_modification', 'Unknown')}")
             
             if 'execution_statistics' in marker_data:
                 stats = marker_data['execution_statistics']
                 self.log_activity(f"   Files Processed: {stats.get('files_processed', 'Unknown')}")
+                self.log_activity(f"   Files Replaced: {stats.get('files_replaced', 'Unknown')}")
                 self.log_activity(f"   Encryption Operations: {stats.get('encryption_operations', 'Unknown')}")
                 
                 if 'document_types_processed' in stats:
                     doc_types = stats['document_types_processed']
                     self.log_activity(f"   Document Types Infected: {list(doc_types.keys())}")
+            
+            if 'behavioral_characteristics' in marker_data:
+                behavior = marker_data['behavioral_characteristics']
+                self.log_activity(f"   Original Files Deleted: {behavior.get('original_file_deletion', 'Unknown')}")
+                self.log_activity(f"   File Replacement: {behavior.get('file_replacement', 'Unknown')}")
             
             return marker_data
             
@@ -799,18 +800,16 @@ class AdvancedVirusScanner:
                 self.log_activity(f"   Version: {virus_id.get('version', 'Unknown')}")
                 self.log_activity(f"   Institution: {virus_id.get('institution', 'Unknown')}")
             
-            if 'document_processing_capabilities' in payload_data:
-                doc_caps = payload_data['document_processing_capabilities']
-                self.log_activity("   Document Processing Capabilities:")
-                self.log_activity(f"     Supported Formats: {doc_caps.get('supported_formats', [])}")
-                self.log_activity(f"     Word Support: {doc_caps.get('word_documents', False)}")
-                self.log_activity(f"     PDF Support: {doc_caps.get('pdf_support', False)}")
-                self.log_activity(f"     Excel Support: {doc_caps.get('excel_support', False)}")
-                self.log_activity(f"     PowerPoint Support: {doc_caps.get('powerpoint_support', False)}")
+            if 'behavioral_changes' in payload_data:
+                behavior = payload_data['behavioral_changes']
+                self.log_activity("   Behavioral Changes:")
+                self.log_activity(f"     File Deletion: {behavior.get('original_file_deletion', False)}")
+                self.log_activity(f"     File Replacement: {behavior.get('file_replacement', False)}")
+                self.log_activity(f"     Realistic Simulation: {behavior.get('realistic_simulation', False)}")
             
-            if 'cryptographic_implementation' in payload_data:
-                crypto_info = payload_data['cryptographic_implementation']
-                self.log_activity(f"   Encryption: {crypto_info.get('primary_algorithm', 'Unknown')}")
+            if 'execution_metadata' in payload_data:
+                exec_data = payload_data['execution_metadata']
+                self.log_activity(f"   Files Replaced: {exec_data.get('files_replaced', 'Unknown')}")
             
             return payload_data
             
@@ -819,11 +818,12 @@ class AdvancedVirusScanner:
             return None
     
     def perform_comprehensive_scan(self, directories=None):
-        """Perform comprehensive system scan"""
+        """Perform comprehensive system scan focusing on encrypted files"""
         if directories is None:
             directories = [".", "odyssey_test_environment"]
         
         self.log_activity("Starting comprehensive Odyssey virus scan...", "INFO")
+        self.log_activity("Focus: Encrypted files and virus artifacts", "INFO")
         self.log_activity(f"Document format support:", "INFO")
         self.log_activity(f"   Word (.docx): {'YES' if DOCX_AVAILABLE else 'NO'}")
         self.log_activity(f"   PDF (.pdf): {'YES' if PDF_AVAILABLE else 'NO'}")
@@ -839,11 +839,11 @@ class AdvancedVirusScanner:
                 
             self.log_activity(f"Scanning directory: {directory}")
             
-            # Scan filename patterns
+            # Scan filename patterns (encrypted files priority)
             pattern_detections = self.scan_filename_patterns(directory)
             all_detections.extend(pattern_detections)
             
-            # Comprehensive document scanning
+            # Comprehensive encrypted file scanning
             try:
                 for root, dirs, files in os.walk(directory):
                     if self.quarantine_dir in root:
@@ -851,8 +851,8 @@ class AdvancedVirusScanner:
                         
                     for filename in files:
                         filepath = os.path.join(root, filename)
-                        document_detections = self.scan_document_comprehensive(filepath)
-                        all_detections.extend(document_detections)
+                        encrypted_file_detections = self.scan_encrypted_file_comprehensive(filepath)
+                        all_detections.extend(encrypted_file_detections)
                         
             except Exception as e:
                 self.log_activity(f"Error during comprehensive scan in {directory}: {str(e)}", "ERROR")
@@ -869,26 +869,23 @@ class AdvancedVirusScanner:
         self.log_activity(f"Scan completed in {scan_duration:.2f} seconds", "SUCCESS")
         self.log_activity(f"Scan Statistics:")
         self.log_activity(f"   Files scanned: {self.scan_statistics['files_scanned']}")
-        self.log_activity(f"   Documents analyzed: {self.scan_statistics['documents_analyzed']}")
+        self.log_activity(f"   Encrypted files found: {self.scan_statistics['encrypted_files_found']}")
+        self.log_activity(f"   Infected files found: {self.scan_statistics['infected_files_found']}")
+        self.log_activity(f"   Artifacts found: {self.scan_statistics['artifacts_found']}")
         self.log_activity(f"   Threats detected: {self.scan_statistics['threats_detected']}")
-        
-        if self.scan_statistics['document_types_scanned']:
-            self.log_activity(f"Document types processed:")
-            for doc_type, count in self.scan_statistics['document_types_scanned'].items():
-                self.log_activity(f"   {doc_type}: {count}")
         
         return all_detections
 
 class OdysseyVirusRemover:
     """
-    Virus removal and file recovery system
+    Virus removal and file recovery system for Odyssey Virus
 
-    Provides comprehensive removal capabilities for multi-document threats:
-    - Safe file decryption and recovery
-    - Word document reconstruction
-    - Multi-format document restoration
+    Provides comprehensive removal capabilities for encrypted files:
+    - Encrypted file decryption and recovery
+    - Word document reconstruction from encrypted content
+    - Multi-format document restoration from encrypted versions
     - Secure quarantine management
-    - Original file restoration
+    - Content recovery (original files are deleted)
     - Artifact cleanup
     """
     
@@ -898,10 +895,13 @@ class OdysseyVirusRemover:
         self.document_analyzer = DocumentAnalyzer(self.crypto_engine)
         self.removal_log = []
         self.recovery_statistics = {
+            'encrypted_files_processed': 0,
+            'infected_files_processed': 0,
             'files_decrypted': 0,
+            'files_cleaned': 0,
             'documents_recovered': 0,
             'word_docs_recovered': 0,
-            'files_restored': 0,
+            'content_recovered': 0,
             'artifacts_removed': 0,
             'files_quarantined': 0
         }
@@ -927,7 +927,8 @@ class OdysseyVirusRemover:
                 "quarantine_time": datetime.now().isoformat(),
                 "reason": reason,
                 "file_hash": self.scanner.calculate_file_hash(filepath),
-                "file_size": os.path.getsize(filepath)
+                "file_size": os.path.getsize(filepath),
+                "encrypted_file": "ODYSSEY_ENCRYPTED" in filename
             }
             
             # Move file to quarantine
@@ -946,20 +947,20 @@ class OdysseyVirusRemover:
             self.log_removal(f"Failed to quarantine {filepath}: {str(e)}", "ERROR")
             return False
     
-    def recover_word_document(self, infected_docx_path, output_path=None):
-        """Recover infected Word document"""
+    def recover_encrypted_word_document(self, encrypted_docx_path, output_path=None):
+        """Recover encrypted Word document"""
         if not DOCX_AVAILABLE:
             return False, "python-docx library not available"
         
         try:
-            # Analyze the infected document
-            analysis_result, error = self.document_analyzer.analyze_word_document(infected_docx_path)
+            # Analyze the encrypted document
+            analysis_result, error = self.document_analyzer.analyze_document(encrypted_docx_path)
             
             if error:
                 return False, error
             
-            if not analysis_result['is_infected']:
-                return False, "Document does not appear to be infected"
+            if not analysis_result.get('is_infected', False):
+                return False, "Document does not appear to be encrypted"
             
             # Extract text content and decrypt
             encrypted_content = analysis_result['text_content']
@@ -969,20 +970,26 @@ class OdysseyVirusRemover:
             decrypted_lines = []
             
             for line in content_lines:
-                # Skip virus signature lines
+                # Skip virus signature lines and metadata
                 if not (line.strip().startswith('<!--') or 
                        'ODYSSEY_VIRUS_2025_NTC' in line or
                        line.startswith('Encrypted Document - ROT13') or
-                       line.startswith('Educational Note:')):
+                       line.startswith('Educational Note:') or
+                       line.startswith('This document has been encrypted') or
+                       line.startswith('ROT13 is a simple Caesar cipher') or
+                       line.startswith('This is part of a cybersecurity')):
                     # Decrypt the line
                     decrypted_line = self.crypto_engine.rot13_decrypt(line)
-                    decrypted_lines.append(decrypted_line)
+                    if decrypted_line.strip():  # Only add non-empty lines
+                        decrypted_lines.append(decrypted_line)
             
             decrypted_content = '\n'.join(decrypted_lines)
             
             # Create recovered document
             if output_path is None:
-                output_path = infected_docx_path.replace("_ODYSSEY_ENCRYPTED", "_RECOVERED")
+                base_name = os.path.basename(encrypted_docx_path).replace("_ODYSSEY_ENCRYPTED", "")
+                name, ext = os.path.splitext(base_name)
+                output_path = os.path.join(os.path.dirname(encrypted_docx_path), f"{name}_RECOVERED{ext}")
             
             recovered_doc = Document()
             recovered_doc.add_heading('Recovered Document', 0)
@@ -997,66 +1004,104 @@ class OdysseyVirusRemover:
             # Add recovery metadata
             recovered_doc.add_paragraph('')
             recovered_doc.add_paragraph('--- Recovery Information ---')
-            recovered_doc.add_paragraph(f'Original file: {os.path.basename(infected_docx_path)}')
+            recovered_doc.add_paragraph(f'Encrypted file: {os.path.basename(encrypted_docx_path)}')
             recovered_doc.add_paragraph(f'Recovery time: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
             recovered_doc.add_paragraph('Recovered by: Odyssey Virus Hunter')
+            recovered_doc.add_paragraph('NOTE: Original file was deleted by virus')
             
             recovered_doc.save(output_path)
             
             self.recovery_statistics['word_docs_recovered'] += 1
-            self.log_removal(f"Word document recovered: {os.path.basename(infected_docx_path)}", "CRYPTO")
+            self.recovery_statistics['content_recovered'] += 1
+            self.log_removal(f"Word document recovered: {os.path.basename(encrypted_docx_path)}", "CRYPTO")
             return True, None
             
         except Exception as e:
             return False, f"Error recovering Word document: {str(e)}"
     
-    def decrypt_odyssey_file(self, encrypted_file_path, output_path=None):
-        """Decrypt Odyssey virus encrypted file"""
+    def decrypt_encrypted_text_file(self, encrypted_file_path, output_path=None):
+        """Decrypt encrypted text file"""
         try:
             # Determine output path
             if output_path is None:
-                if "_ODYSSEY_ENCRYPTED" in encrypted_file_path:
-                    output_path = encrypted_file_path.replace("_ODYSSEY_ENCRYPTED", "_RECOVERED")
+                base_name = os.path.basename(encrypted_file_path).replace("_ODYSSEY_ENCRYPTED", "")
+                if base_name.endswith('.txt'):
+                    # Try to restore original extension if possible
+                    # Look for original type in the content
+                    try:
+                        with open(encrypted_file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                            content = f.read()
+                        
+                        # Look for document type indicator
+                        for line in content.split('\n'):
+                            if line.startswith('Original File:'):
+                                original_name = line.split('Original File:')[1].strip()
+                                name, ext = os.path.splitext(original_name)
+                                output_path = os.path.join(os.path.dirname(encrypted_file_path), f"{name}_RECOVERED{ext}")
+                                break
+                        
+                        if output_path is None:
+                            name, ext = os.path.splitext(base_name)
+                            output_path = os.path.join(os.path.dirname(encrypted_file_path), f"{name}_RECOVERED{ext}")
+                            
+                    except:
+                        name, ext = os.path.splitext(base_name)
+                        output_path = os.path.join(os.path.dirname(encrypted_file_path), f"{name}_RECOVERED{ext}")
                 else:
-                    name, ext = os.path.splitext(encrypted_file_path)
-                    output_path = f"{name}_DECRYPTED{ext}"
+                    name, ext = os.path.splitext(base_name)
+                    output_path = os.path.join(os.path.dirname(encrypted_file_path), f"{name}_RECOVERED{ext}")
             
             # Read encrypted file
             with open(encrypted_file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 encrypted_content = f.read()
             
-            # Remove virus signatures and comments
+            # Extract the actual encrypted content
             lines = encrypted_content.split('\n')
-            clean_content = []
+            content_start = 0
             
-            for line in lines:
-                # Skip virus signature lines
-                if not (line.strip().startswith('<!--') and 'ODYSSEY' in line):
-                    clean_content.append(line)
+            # Find where actual content starts (after headers)
+            for i, line in enumerate(lines):
+                if '=' * 50 in line:
+                    content_start = i + 1
+                    break
             
-            # Remove trailing virus signatures
-            while clean_content and clean_content[-1].strip().startswith('<!--'):
-                clean_content.pop()
-            
-            encrypted_text = '\n'.join(clean_content)
-            
-            # Decrypt using ROT13
-            decrypted_content = self.crypto_engine.rot13_decrypt(encrypted_text)
-            
-            # Write decrypted file
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(decrypted_content)
-            
-            self.recovery_statistics['files_decrypted'] += 1
-            self.log_removal(f"Decrypted: {os.path.basename(encrypted_file_path)} -> {os.path.basename(output_path)}", "CRYPTO")
-            return True
+            if content_start < len(lines):
+                # Extract encrypted content (before virus signatures)
+                actual_content = []
+                for line in lines[content_start:]:
+                    if not line.strip().startswith('<!--'):
+                        actual_content.append(line)
+                
+                # Remove trailing virus signatures
+                while actual_content and actual_content[-1].strip().startswith('<!--'):
+                    actual_content.pop()
+                
+                encrypted_text = '\n'.join(actual_content)
+                decrypted_content = self.crypto_engine.rot13_decrypt(encrypted_text)
+                
+                # Write decrypted file
+                with open(output_path, 'w', encoding='utf-8') as f:
+                    f.write(decrypted_content)
+                    f.write(f"\n\n--- Recovery Information ---")
+                    f.write(f"\nEncrypted file: {os.path.basename(encrypted_file_path)}")
+                    f.write(f"\nRecovery time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                    f.write(f"\nRecovered by: Odyssey Virus Hunter")
+                    f.write(f"\nNOTE: Original file was deleted by virus")
+                
+                self.recovery_statistics['files_decrypted'] += 1
+                self.recovery_statistics['content_recovered'] += 1
+                self.log_removal(f"Decrypted: {os.path.basename(encrypted_file_path)} -> {os.path.basename(output_path)}", "CRYPTO")
+                return True
+            else:
+                self.log_removal(f"No encrypted content found in {encrypted_file_path}", "WARNING")
+                return False
             
         except Exception as e:
             self.log_removal(f"Failed to decrypt {encrypted_file_path}: {str(e)}", "ERROR")
             return False
     
     def process_encryption_manifest(self, directory):
-        """Process Odyssey virus encryption manifest"""
+        """Process Odyssey virus encryption manifest for recovery"""
         manifest_path = os.path.join(directory, "odyssey_encryption_manifest.json")
         
         if not os.path.exists(manifest_path):
@@ -1075,16 +1120,16 @@ class OdysseyVirusRemover:
                 encrypted_path = os.path.join(directory, encrypted_filename)
                 
                 if os.path.exists(encrypted_path):
+                    self.recovery_statistics['encrypted_files_processed'] += 1
                     original_filename = file_info.get('original_filename', 'unknown')
                     original_type = file_info.get('original_type', '.txt')
                     
+                    self.log_removal(f"Processing encrypted file: {encrypted_filename}")
+                    self.log_removal(f"  Original: {original_filename} ({original_type})")
+                    
                     # Handle Word documents specially
                     if encrypted_filename.endswith('_ODYSSEY_ENCRYPTED.docx') and DOCX_AVAILABLE:
-                        # This is an encrypted Word document
-                        recovery_filename = original_filename.replace('.docx', '_RECOVERED.docx')
-                        recovery_path = os.path.join(directory, recovery_filename)
-                        
-                        success, error = self.recover_word_document(encrypted_path, recovery_path)
+                        success, error = self.recover_encrypted_word_document(encrypted_path)
                         if success:
                             decrypted_count += 1
                             # Remove encrypted version
@@ -1097,53 +1142,23 @@ class OdysseyVirusRemover:
                             self.log_removal(f"Failed to recover Word document: {error}", "ERROR")
                     
                     else:
-                        # Handle other document types (converted to encrypted text)
-                        try:
-                            with open(encrypted_path, 'r', encoding='utf-8', errors='ignore') as f:
-                                encrypted_content = f.read()
+                        # Handle other document types (encrypted as text)
+                        success = self.decrypt_encrypted_text_file(encrypted_path)
+                        if success:
+                            decrypted_count += 1
+                            self.recovery_statistics['documents_recovered'] += 1
+                            self.log_removal(f"Document recovered: {original_filename} ({original_type})", "CRYPTO")
                             
-                            # Extract the actual encrypted content
-                            lines = encrypted_content.split('\n')
-                            content_start = 0
-                            
-                            # Find where actual content starts (after headers)
-                            for i, line in enumerate(lines):
-                                if '=' * 50 in line:
-                                    content_start = i + 1
-                                    break
-                            
-                            if content_start < len(lines):
-                                # Extract encrypted content (before virus signatures)
-                                actual_content = []
-                                for line in lines[content_start:]:
-                                    if not line.strip().startswith('<!--'):
-                                        actual_content.append(line)
-                                
-                                # Remove trailing virus signatures
-                                while actual_content and actual_content[-1].strip().startswith('<!--'):
-                                    actual_content.pop()
-                                
-                                encrypted_text = '\n'.join(actual_content)
-                                decrypted_content = self.crypto_engine.rot13_decrypt(encrypted_text)
-                                
-                                # Save recovered file
-                                name, ext = os.path.splitext(original_filename)
-                                recovery_filename = f"{name}_RECOVERED{original_type}"
-                                recovery_path = os.path.join(directory, recovery_filename)
-                                
-                                with open(recovery_path, 'w', encoding='utf-8') as f:
-                                    f.write(decrypted_content)
-                                
-                                decrypted_count += 1
-                                self.recovery_statistics['documents_recovered'] += 1
-                                self.log_removal(f"Document recovered: {original_filename} ({original_type})", "CRYPTO")
-                                
-                                # Remove encrypted version
+                            # Remove encrypted version
+                            try:
                                 os.remove(encrypted_path)
                                 self.log_removal(f"Removed encrypted file: {encrypted_filename}")
-                                
-                        except Exception as e:
-                            self.log_removal(f"Failed to recover {encrypted_filename}: {str(e)}", "ERROR")
+                            except Exception as e:
+                                self.log_removal(f"Could not remove {encrypted_filename}: {str(e)}", "WARNING")
+                        else:
+                            self.log_removal(f"Failed to recover {encrypted_filename}", "ERROR")
+                else:
+                    self.log_removal(f"Encrypted file not found: {encrypted_filename}", "WARNING")
             
             # Remove the manifest
             try:
@@ -1159,7 +1174,7 @@ class OdysseyVirusRemover:
             return 0
     
     def restore_locked_files(self, directory):
-        """Restore files that were temporarily locked by virus"""
+        """Restore files that were temporarily locked by virus (encrypted files only)"""
         restored_count = 0
         
         try:
@@ -1177,9 +1192,8 @@ class OdysseyVirusRemover:
                         if not os.path.exists(original_path):
                             try:
                                 os.rename(locked_path, original_path)
-                                self.recovery_statistics['files_restored'] += 1
-                                self.log_removal(f"Restored: {filename} -> {original_name}", "SUCCESS")
                                 restored_count += 1
+                                self.log_removal(f"Restored locked file: {filename} -> {original_name}", "SUCCESS")
                             except Exception as e:
                                 self.log_removal(f"Failed to restore {filename}: {str(e)}", "ERROR")
                         else:
@@ -1191,7 +1205,7 @@ class OdysseyVirusRemover:
                                 self.log_removal(f"Could not remove locked file {filename}: {str(e)}", "WARNING")
                                 
         except Exception as e:
-            self.log_removal(f"Error during file restoration: {str(e)}", "ERROR")
+            self.log_removal(f"Error during locked file restoration: {str(e)}", "ERROR")
         
         return restored_count
     
@@ -1205,9 +1219,7 @@ class OdysseyVirusRemover:
             ".odyssey_infection_marker",
             "odyssey_encrypted_payload.dat",
             "odyssey_encryption_manifest.json",
-            "*ODYSSEY_ENCRYPTED*",
-            "*ODYSSEY_LOCKED_*",
-            "cybersecurity_report_ODYSSEY_ENCRYPTED.docx"
+            "*ODYSSEY_LOCKED_*"
         ]
         
         try:
@@ -1234,10 +1246,157 @@ class OdysseyVirusRemover:
             self.log_removal(f"Error during artifact cleanup: {str(e)}", "ERROR")
         
         return artifacts_removed
+
+    def process_infection_manifest(self, directory):
+        """Process infection manifest and clean infected files"""
+        manifest_path = os.path.join(directory, "odyssey_infection_manifest.json")
+        
+        if not os.path.exists(manifest_path):
+            self.log_removal("No infection manifest found")
+            return 0
+        
+        try:
+            with open(manifest_path, 'r', encoding='utf-8') as f:
+                manifest_data = json.load(f)
+            
+            self.log_removal(f"Processing infection manifest: {len(manifest_data)} entries")
+            
+            cleaned_count = 0
+            
+            for filename, file_info in manifest_data.items():
+                file_path = os.path.join(directory, filename)
+                
+                if os.path.exists(file_path):
+                    self.recovery_statistics['infected_files_processed'] += 1
+                    self.log_removal(f"Cleaning infected file: {filename}")
+                    
+                    success = self.clean_infected_file(file_path)
+                    if success:
+                        cleaned_count += 1
+                        self.log_removal(f"Successfully cleaned: {filename}", "SUCCESS")
+                    else:
+                        self.log_removal(f"Failed to clean: {filename}", "ERROR")
+                else:
+                    self.log_removal(f"Infected file not found: {filename}", "WARNING")
+            
+            # Remove the infection manifest
+            try:
+                os.remove(manifest_path)
+                self.log_removal("Removed infection manifest")
+            except Exception as e:
+                self.log_removal(f"Could not remove infection manifest: {str(e)}", "WARNING")
+            
+            return cleaned_count
+            
+        except Exception as e:
+            self.log_removal(f"Error processing infection manifest: {str(e)}", "ERROR")
+            return 0
+
+    def clean_infected_file(self, infected_file_path):
+        """Clean virus infections from file"""
+        try:
+            filename = os.path.basename(infected_file_path)
+            
+            # Check for backup file
+            backup_path = infected_file_path + ".backup"
+            
+            if os.path.exists(backup_path):
+                # Restore from backup
+                try:
+                    with open(backup_path, 'r', encoding='utf-8') as f:
+                        original_content = f.read()
+                    
+                    with open(infected_file_path, 'w', encoding='utf-8') as f:
+                        f.write(original_content)
+                    
+                    # Remove backup
+                    os.remove(backup_path)
+                    
+                    self.recovery_statistics['files_cleaned'] += 1
+                    self.log_removal(f"Restored from backup: {filename}", "SUCCESS")
+                    return True
+                    
+                except Exception as e:
+                    self.log_removal(f"Failed to restore from backup {filename}: {str(e)}", "ERROR")
+                    return False
+            else:
+                # Manual cleaning - remove virus signatures
+                try:
+                    with open(infected_file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                        infected_content = f.read()
+                    
+                    # Remove known virus signatures
+                    cleaned_content = infected_content
+                    
+                    # Remove infection markers
+                    infection_patterns = [
+                        "ODYSSEY_VIRUS_2025_NTC INFECTION MARKER",
+                        "Educational Malware Injection",
+                        "Virus Code Injection",
+                        "Script Infection",
+                        "INFECTED BY ODYSSEY_VIRUS_2025_NTC",
+                        "Infection Time:",
+                        "Educational Purpose: Malware Behavior Simulation",
+                        "Institution: National Teachers College",
+                        "Educational virus injection completed",
+                        "Educational Virus Injection",
+                        "Infection performed for educational cybersecurity research",
+                        "National Teachers College - Security Analysis Project",
+                        "Educational Purpose Only",
+                        "Educational Malware Simulation"
+                    ]
+                    
+                    # Remove lines containing infection patterns
+                    lines = cleaned_content.split('\n')
+                    clean_lines = []
+                    
+                    for line in lines:
+                        should_remove = False
+                        for pattern in infection_patterns:
+                            if pattern in line:
+                                should_remove = True
+                                break
+                        
+                        # Also remove HTML/CSS comments and Python comments with virus signatures
+                        if (line.strip().startswith('<!--') and 'ODYSSEY' in line) or \
+                        (line.strip().startswith('#') and 'ODYSSEY' in line) or \
+                        (line.strip().startswith('/*') and 'ODYSSEY' in line) or \
+                        (line.strip().startswith('//') and 'ODYSSEY' in line):
+                            should_remove = True
+                        
+                        if not should_remove:
+                            clean_lines.append(line)
+                    
+                    cleaned_content = '\n'.join(clean_lines)
+                    
+                    # Remove trailing infection markers
+                    while cleaned_content.endswith('\n# INFECTED BY ODYSSEY_VIRUS_2025_NTC #') or \
+                        cleaned_content.endswith('# INFECTED BY ODYSSEY_VIRUS_2025_NTC #'):
+                        cleaned_content = cleaned_content.rsplit('# INFECTED BY ODYSSEY_VIRUS_2025_NTC #', 1)[0].rstrip()
+                    
+                    # Write cleaned content
+                    with open(infected_file_path, 'w', encoding='utf-8') as f:
+                        f.write(cleaned_content)
+                        f.write(f"\n\n# File cleaned by Odyssey Antivirus")
+                        f.write(f"\n# Cleaning time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                        f.write(f"\n# Virus signatures removed")
+                    
+                    self.recovery_statistics['files_cleaned'] += 1
+                    self.log_removal(f"Manually cleaned: {filename}", "SUCCESS")
+                    return True
+                    
+                except Exception as e:
+                    self.log_removal(f"Failed to clean {filename}: {str(e)}", "ERROR")
+                    return False
+                    
+        except Exception as e:
+            self.log_removal(f"Error cleaning infected file {infected_file_path}: {str(e)}", "ERROR")
+            return False
     
     def perform_complete_removal(self, target_directory="odyssey_test_environment"):
         """Perform complete Odyssey virus removal and recovery"""
         self.log_removal("Starting comprehensive Odyssey virus removal...", "REMOVAL")
+        self.log_removal("Focus: Encrypted file recovery and artifact cleanup", "REMOVAL")
         
         removal_start_time = time.time()
         
@@ -1245,16 +1404,20 @@ class OdysseyVirusRemover:
             self.log_removal(f"Target directory not found: {target_directory}", "WARNING")
             return False
         
-        # Step 1: Process encryption manifest and decrypt files
-        self.log_removal("Step 1: Processing encryption manifest...")
+        # Step 1: Process infection manifest and clean infected files
+        self.log_removal("Step 1: Processing infection manifest and cleaning infected files...")
+        cleaned_count = self.process_infection_manifest(target_directory)# Fixed call
+        
+        # Step 2: Process encryption manifest and decrypt files
+        self.log_removal("Step 2: Processing encryption manifest and recovering encrypted files...")
         decrypted_count = self.process_encryption_manifest(target_directory)
         
-        # Step 2: Restore locked files
-        self.log_removal("Step 2: Restoring locked files...")
+        # Step 3: Restore locked files (encrypted files only)
+        self.log_removal("Step 3: Restoring temporarily locked files...")
         restored_count = self.restore_locked_files(target_directory)
         
-        # Step 3: Clean up virus artifacts
-        self.log_removal("Step 3: Cleaning virus artifacts...")
+        # Step 4: Clean up virus artifacts
+        self.log_removal("Step 4: Cleaning virus artifacts...")
         artifacts_removed = self.clean_virus_artifacts(target_directory)
         
         # Calculate removal duration
@@ -1263,24 +1426,30 @@ class OdysseyVirusRemover:
         # Log summary
         self.log_removal(f"Removal completed in {removal_duration:.2f} seconds", "SUCCESS")
         self.log_removal(f"Recovery Statistics:")
-        self.log_removal(f"   Files decrypted: {decrypted_count}")
+        self.log_removal(f"   Infected files processed: {self.recovery_statistics['infected_files_processed']}")
+        self.log_removal(f"   Files cleaned: {self.recovery_statistics['files_cleaned']}")
+        self.log_removal(f"   Encrypted files processed: {self.recovery_statistics['encrypted_files_processed']}")
+        self.log_removal(f"   Files decrypted: {self.recovery_statistics['files_decrypted']}")
         self.log_removal(f"   Documents recovered: {self.recovery_statistics['documents_recovered']}")
         self.log_removal(f"   Word documents recovered: {self.recovery_statistics['word_docs_recovered']}")
+        self.log_removal(f"   Content recovered: {self.recovery_statistics['content_recovered']}")
         self.log_removal(f"   Files restored: {restored_count}")
         self.log_removal(f"   Artifacts removed: {artifacts_removed}")
+        self.log_removal("NOTE: Original files were deleted by virus - only recovered content and cleaned files available")
         
         return True
 
+
 class AntivirusGUI:
     """
-    GUI for the Odyssey Virus Hunter with multi-document support
+    GUI for the Odyssey Virus Hunter
     
     Features:
-    - Real-time scanning progress
+    - Real-time scanning progress focused on encrypted files
     - Multi-document threat analysis
     - Document format support indicators
-    - Interactive removal options
-    - Comprehensive reporting
+    - Interactive removal options for encrypted content
+    - Comprehensive reporting with recovery focus
     """
     
     def __init__(self):
@@ -1289,7 +1458,7 @@ class AntivirusGUI:
         try:
             self.root = tk.Tk()
             self.root.title("Odyssey Virus Hunter")
-            self.root.geometry("1100x750")
+            self.root.geometry("1200x800")
             self.root.configure(bg='#f0f0f0')
             print("DEBUG: tkinter root window created successfully")
             
@@ -1315,7 +1484,7 @@ class AntivirusGUI:
             
             # Virus Scanner tab
             self.scanner_frame = tk.Frame(self.notebook, bg='#f0f0f0')
-            self.notebook.add(self.scanner_frame, text="Virus Scanner")
+            self.notebook.add(self.scanner_frame, text="Encrypted File Scanner")
             self.setup_scanner_tab()
             
             # Detection Results tab
@@ -1323,9 +1492,9 @@ class AntivirusGUI:
             self.notebook.add(self.results_frame, text="Detection Results")
             self.setup_results_tab()
             
-            # Document Analysis tab
+            # Recovery Analysis tab
             self.analysis_frame = tk.Frame(self.notebook, bg='#f0f0f0')
-            self.notebook.add(self.analysis_frame, text="Document Analysis")
+            self.notebook.add(self.analysis_frame, text="Recovery Analysis")
             self.setup_analysis_tab()
 
             # Quarantine tab
@@ -1338,50 +1507,75 @@ class AntivirusGUI:
             raise
         
     def setup_scanner_tab(self):
-        """Setup the scanner interface"""
+        """Setup the scanner interface with improved layout"""
+        
+        # Main container with better space management
+        main_container = tk.Frame(self.scanner_frame, bg='#f0f0f0')
+        main_container.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+        
+        # Top section - titles and notices
+        top_section = tk.Frame(main_container, bg='#f0f0f0')
+        top_section.pack(fill=tk.X, pady=(0, 10))
+        
         # Title
-        title_label = tk.Label(self.scanner_frame,
+        title_label = tk.Label(top_section,
                              text="Odyssey Virus Hunter",
                              font=("Arial", 18, "bold"),
                              bg='#f0f0f0', fg='#333')
-        title_label.pack(pady=15)
+        title_label.pack(pady=(10, 5))
         
-        subtitle_label = tk.Label(self.scanner_frame,
-                                text="Multi-Document Odyssey Virus Detection & Removal System",
+        subtitle_label = tk.Label(top_section,
+                                text="Encrypted File Detection & Recovery System",
                                 font=("Arial", 12),
                                 bg='#f0f0f0', fg='#666')
-        subtitle_label.pack(pady=5)
+        subtitle_label.pack(pady=(0, 10))
         
-        # Document support status frame
-        support_frame = tk.LabelFrame(self.scanner_frame, text="Multi-Document Format Support", 
-                                    bg='#f0f0f0', font=("Arial", 10, "bold"))
-        support_frame.pack(fill=tk.X, padx=20, pady=10)
+        # Compact Important Notice
+        behavior_frame = tk.LabelFrame(top_section, text="Important Notice", 
+                                     bg='#fff3cd', font=("Arial", 9, "bold"))
+        behavior_frame.pack(fill=tk.X, pady=(0, 5))
         
-        support_text = f"""
-Word Documents (.docx): {'Available' if DOCX_AVAILABLE else 'Not Available (install python-docx)'}
-PDF Files (.pdf): {'Available' if PDF_AVAILABLE else 'Not Available (install PyPDF2)'}
-Excel Files (.xlsx): {'Available' if XLSX_AVAILABLE else 'Not Available (install openpyxl)'}
-PowerPoint (.pptx): {'Available' if PPTX_AVAILABLE else 'Not Available (install python-pptx)'}
-Text Files: Always Available
-        """
+        # More concise notice text
+        behavior_text = """⚠️  Original files DELETED by virus • Only encrypted files remain • Focus on recovery"""
         
-        support_label = tk.Label(support_frame, text=support_text.strip(),
-                               bg='#f0f0f0', font=("Courier", 9), justify=tk.LEFT)
-        support_label.pack(padx=10, pady=10)
+        behavior_label = tk.Label(behavior_frame, text=behavior_text.strip(),
+                                bg='#fff3cd', font=("Arial", 9), justify=tk.CENTER, fg='#856404')
+        behavior_label.pack(padx=10, pady=8)
         
-        # Control buttons frame
-        control_frame = tk.Frame(self.scanner_frame, bg='#f0f0f0')
-        control_frame.pack(pady=20)
+        # Compact Document support status
+        support_frame = tk.LabelFrame(top_section, text="Document Support", 
+                                    bg='#f0f0f0', font=("Arial", 9, "bold"))
+        support_frame.pack(fill=tk.X, pady=(0, 5))
+        
+        # Create a more compact layout using grid
+        support_container = tk.Frame(support_frame, bg='#f0f0f0')
+        support_container.pack(padx=10, pady=5)
+        
+        # First row
+        tk.Label(support_container, text=f"Word: {'✓' if DOCX_AVAILABLE else '✗'}", 
+                 bg='#f0f0f0', font=("Arial", 8), fg='green' if DOCX_AVAILABLE else 'red').grid(row=0, column=0, padx=5)
+        tk.Label(support_container, text=f"PDF: {'✓' if PDF_AVAILABLE else '✗'}", 
+                 bg='#f0f0f0', font=("Arial", 8), fg='green' if PDF_AVAILABLE else 'red').grid(row=0, column=1, padx=5)
+        tk.Label(support_container, text=f"Excel: {'✓' if XLSX_AVAILABLE else '✗'}", 
+                 bg='#f0f0f0', font=("Arial", 8), fg='green' if XLSX_AVAILABLE else 'red').grid(row=0, column=2, padx=5)
+        tk.Label(support_container, text=f"PowerPoint: {'✓' if PPTX_AVAILABLE else '✗'}", 
+                 bg='#f0f0f0', font=("Arial", 8), fg='green' if PPTX_AVAILABLE else 'red').grid(row=0, column=3, padx=5)
+        tk.Label(support_container, text="Text: ✓", 
+                 bg='#f0f0f0', font=("Arial", 8), fg='green').grid(row=0, column=4, padx=5)
+        
+        # Control buttons section
+        control_frame = tk.Frame(top_section, bg='#f0f0f0')
+        control_frame.pack(pady=10)
 
         # Scan button
         self.scan_button = tk.Button(control_frame,
-                                   text="Start Multi-Document Scan",
+                                   text="Start Encrypted File Scan",
                                    command=self.start_scan_thread,
                                    bg="#4CAF50", fg="white",
-                                   font=("Arial", 12, "bold"),
-                                   padx=30, pady=15,
+                                   font=("Arial", 11, "bold"),
+                                   padx=25, pady=12,
                                    cursor="hand2")
-        self.scan_button.pack(side=tk.LEFT, padx=10)
+        self.scan_button.pack(side=tk.LEFT, padx=8)
         
         # Quick scan button
         quick_scan_button = tk.Button(control_frame,
@@ -1389,45 +1583,56 @@ Text Files: Always Available
                                     command=self.quick_scan,
                                     bg="#2196F3", fg="white",
                                     font=("Arial", 10),
-                                    padx=20, pady=10,
+                                    padx=15, pady=8,
                                     cursor="hand2")
-        quick_scan_button.pack(side=tk.LEFT, padx=10)
+        quick_scan_button.pack(side=tk.LEFT, padx=8)
+        
+        # Middle section - Progress and Statistics (using PanedWindow for resizable layout)
+        middle_paned = tk.PanedWindow(main_container, orient=tk.VERTICAL, bg='#f0f0f0', sashrelief=tk.RAISED, sashwidth=3)
+        middle_paned.pack(fill=tk.BOTH, expand=True)
         
         # Progress frame
-        progress_frame = tk.Frame(self.scanner_frame, bg='#f0f0f0')
-        progress_frame.pack(fill=tk.X, padx=20, pady=10)
+        progress_frame = tk.LabelFrame(middle_paned, text="Scan Progress", bg='#f0f0f0', font=("Arial", 9, "bold"))
+        middle_paned.add(progress_frame, height=80, minsize=60)
 
-        tk.Label(progress_frame, text="Scan Progress:", bg='#f0f0f0', font=("Arial", 10)).pack(anchor=tk.W)
-
-        self.progress_var = tk.StringVar(value="Ready for multi-document scan")
+        self.progress_var = tk.StringVar(value="Ready for encrypted file scan")
         self.progress_label = tk.Label(progress_frame, textvariable=self.progress_var,
                                      bg='#f0f0f0', fg='#666', font=("Arial", 9))
-        self.progress_label.pack(anchor=tk.W, pady=5)
+        self.progress_label.pack(anchor=tk.W, padx=10, pady=5)
         
         self.progress_bar = ttk.Progressbar(progress_frame, mode='indeterminate')
-        self.progress_bar.pack(fill=tk.X, pady=5)
+        self.progress_bar.pack(fill=tk.X, padx=10, pady=5)
         
-        # Status frame
-        status_frame = tk.Frame(self.scanner_frame, bg='#f0f0f0')
-        status_frame.pack(fill=tk.X, padx=20, pady=10)
+        # Enhanced Statistics display with better space allocation
+        stats_frame = tk.LabelFrame(middle_paned, text="Scan Statistics", bg='#f0f0f0', font=("Arial", 9, "bold"))
+        middle_paned.add(stats_frame, minsize=120)
         
-        # Statistics display
-        stats_frame = tk.LabelFrame(status_frame, text="Scan Statistics", bg='#f0f0f0', font=("Arial", 10, "bold"))
-        stats_frame.pack(fill=tk.X, pady=10)
+        # Create a frame with scrollable text for statistics
+        stats_container = tk.Frame(stats_frame, bg='#f0f0f0')
+        stats_container.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
         
-        self.stats_text = tk.Text(stats_frame, height=8, width=80, font=("Courier", 9), bg='#ffffff')
-        self.stats_text.pack(padx=10, pady=10)
+        self.stats_text = scrolledtext.ScrolledText(stats_container, 
+                                                   height=8, 
+                                                   font=("Courier", 9), 
+                                                   bg='#ffffff',
+                                                   wrap=tk.WORD)
+        self.stats_text.pack(fill=tk.BOTH, expand=True)
         
-        # Console output
-        console_frame = tk.LabelFrame(self.scanner_frame, text="Scanner Console", bg='#f0f0f0', font=("Arial", 10, "bold"))
-        console_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
+        # Console output with flexible sizing
+        console_frame = tk.LabelFrame(middle_paned, text="Scanner Console", bg='#f0f0f0', font=("Arial", 9, "bold"))
+        middle_paned.add(console_frame, minsize=150)
         
         self.console_text = scrolledtext.ScrolledText(console_frame,
-                                                    height=12,
                                                     font=("Courier", 9),
                                                     bg='#1e1e1e', fg='#00ff00',
-                                                    insertbackground='#00ff00')
-        self.console_text.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+                                                    insertbackground='#00ff00',
+                                                    wrap=tk.WORD)
+        self.console_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # Set initial pane sizes (progress:stats:console = 1:2:3 ratio approximately)
+        self.scanner_frame.after(100, lambda: middle_paned.paneconfigure(progress_frame, height=80))
+        self.scanner_frame.after(100, lambda: middle_paned.paneconfigure(stats_frame, height=160))
+        self.scanner_frame.after(100, lambda: middle_paned.paneconfigure(console_frame, height=240))
         
     def setup_results_tab(self):
         """Setup the results analysis tab"""
@@ -1435,21 +1640,21 @@ Text Files: Always Available
         header_frame = tk.Frame(self.results_frame, bg='#f0f0f0')
         header_frame.pack(fill=tk.X, padx=20, pady=10)
 
-        tk.Label(header_frame, text="Multi-Document Threat Detection Results",
+        tk.Label(header_frame, text="Encrypted File Detection Results",
                 font=("Arial", 14, "bold"), bg='#f0f0f0').pack(anchor=tk.W)
 
         # Action buttons
         action_frame = tk.Frame(self.results_frame, bg='#f0f0f0')
         action_frame.pack(fill=tk.X, padx=20, pady=10)
         
-        self.remove_button = tk.Button(action_frame,
-                                     text="Remove All Threats",
-                                     command=self.remove_threats,
-                                     bg="#f44336", fg="white",
-                                     font=("Arial", 11, "bold"),
-                                     padx=20, pady=10,
-                                     cursor="hand2")
-        self.remove_button.pack(side=tk.LEFT, padx=5)
+        self.recover_button = tk.Button(action_frame,
+                                      text="Recover & Clean All Files",
+                                      command=self.recover_encrypted_files,
+                                      bg="#4CAF50", fg="white",
+                                      font=("Arial", 11, "bold"),
+                                      padx=20, pady=10,
+                                      cursor="hand2")
+        self.recover_button.pack(side=tk.LEFT, padx=5)
         
         self.quarantine_button = tk.Button(action_frame,
                                          text="Quarantine Threats",
@@ -1468,12 +1673,12 @@ Text Files: Always Available
         self.results_text.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
         
     def setup_analysis_tab(self):
-        """Setup the document analysis tab"""
+        """Setup the recovery analysis tab"""
         # Analysis header
         header_frame = tk.Frame(self.analysis_frame, bg='#f0f0f0')
         header_frame.pack(fill=tk.X, padx=20, pady=10)
 
-        tk.Label(header_frame, text="Document Analysis & Statistics",
+        tk.Label(header_frame, text="Encrypted File Recovery Analysis",
                 font=("Arial", 14, "bold"), bg='#f0f0f0').pack(anchor=tk.W)
         
         # Analysis display
@@ -1550,7 +1755,7 @@ Text Files: Always Available
             self.scanner.log_activity = gui_log
 
             # Perform scan
-            self.update_progress("Scanning for Odyssey virus...")
+            self.update_progress("Scanning for encrypted files and artifacts...")
             self.detections = self.scanner.perform_comprehensive_scan()
             
             # Update results tab
@@ -1570,13 +1775,13 @@ Text Files: Always Available
         finally:
             # Reset UI
             self.scan_in_progress = False
-            self.scan_button.config(state=tk.NORMAL, text="Start Multi-Document Scan")
+            self.scan_button.config(state=tk.NORMAL, text="Start Encrypted File Scan")
             self.progress_bar.stop()
             self.update_progress("Scan completed")
 
     def quick_scan(self):
         """Perform quick scan of current directory only"""
-        self.log_to_console("Starting quick scan...")
+        self.log_to_console("Starting quick encrypted file scan...")
         self.detections = self.scanner.perform_comprehensive_scan(["."])
         self.update_results_display()
         self.update_analysis_display()
@@ -1587,10 +1792,10 @@ Text Files: Always Available
         self.results_text.delete(1.0, tk.END)
         
         if not self.detections:
-            self.results_text.insert(tk.END, "No threats detected in any document format. System appears clean.\n")
+            self.results_text.insert(tk.END, "No encrypted files or threats detected. System appears clean.\n")
             return
 
-        self.results_text.insert(tk.END, f"THREAT DETECTION REPORT\n")
+        self.results_text.insert(tk.END, f"ENCRYPTED FILE DETECTION REPORT\n")
         self.results_text.insert(tk.END, f"=" * 60 + "\n")
         self.results_text.insert(tk.END, f"Total threats detected: {len(self.detections)}\n")
         self.results_text.insert(tk.END, f"Scan time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
@@ -1625,6 +1830,9 @@ Text Files: Always Available
                 if 'description' in detection:
                     self.results_text.insert(tk.END, f"   Description: {detection['description']}\n")
                 
+                if detection.get('encrypted', False):
+                    self.results_text.insert(tk.END, f"   Status: ENCRYPTED FILE (recoverable)\n")
+                
                 self.results_text.insert(tk.END, f"   Confidence: {detection.get('confidence', 'MEDIUM')}\n")
                 self.results_text.insert(tk.END, f"   Detection Time: {detection.get('detection_time', 'Unknown')}\n")
             
@@ -1635,13 +1843,15 @@ Text Files: Always Available
         stats = self.scanner.scan_statistics
         
         stats_text = f"""
-Files Scanned:        {stats['files_scanned']}
-Documents Analyzed:   {stats['documents_analyzed']}
-Threats Detected:     {stats['threats_detected']}
-Scan Duration:        {stats['scan_duration']:.2f} seconds
-Files Quarantined:    {stats.get('files_quarantined', 0)}
-Files Cleaned:        {stats.get('files_cleaned', 0)}
-Last Scan:           {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+Files Scanned:          {stats['files_scanned']}
+Encrypted Files Found:  {stats['encrypted_files_found']}
+Infected Files Found:   {stats['infected_files_found']}
+Artifacts Found:        {stats['artifacts_found']}
+Threats Detected:       {stats['threats_detected']}
+Scan Duration:          {stats['scan_duration']:.2f} seconds
+Files Quarantined:      {stats.get('files_quarantined', 0)}
+Files Cleaned:          {stats.get('files_cleaned', 0)}
+Last Scan:             {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
 Document Types Scanned:
 """
@@ -1656,18 +1866,20 @@ Document Types Scanned:
         self.stats_text.insert(tk.END, stats_text.strip())
         
     def update_analysis_display(self):
-        """Update document analysis display"""
+        """Update recovery analysis display"""
         self.analysis_text.delete(1.0, tk.END)
         
         stats = self.scanner.scan_statistics
         
         analysis_report = f"""
-DOCUMENT ANALYSIS REPORT
+ENCRYPTED FILE RECOVERY ANALYSIS REPORT
 {'=' * 60}
 
 SCAN OVERVIEW:
 Files Scanned: {stats['files_scanned']}
-Documents Analyzed: {stats['documents_analyzed']}
+Encrypted Files Found: {stats['encrypted_files_found']}
+Infected Files Found: {stats['infected_files_found']}
+Artifacts Found: {stats['artifacts_found']}
 Threats Detected: {stats['threats_detected']}
 Scan Duration: {stats['scan_duration']:.2f} seconds
 
@@ -1677,20 +1889,65 @@ PDF Support: {'YES' if PDF_AVAILABLE else 'NO'}
 Excel Support: {'YES' if XLSX_AVAILABLE else 'NO'}
 PowerPoint Support: {'YES' if PPTX_AVAILABLE else 'NO'}
 
-DOCUMENT TYPES PROCESSED:
+ENCRYPTED FILES ANALYSIS:
 """
         
-        if stats['document_types_scanned']:
-            for doc_type, count in stats['document_types_scanned'].items():
-                analysis_report += f"• {doc_type}: {count} files\n"
-        else:
-            analysis_report += "• No documents processed\n"
+        # Count encrypted and infected files by type
+        encrypted_by_type = {}
+        infected_by_type = {}
+        for detection in self.detections:
+            if detection.get('type') in ['encrypted_file', 'encrypted_document_infection']:
+                filename = os.path.basename(detection['file'])
+                if filename.endswith('.docx'):
+                    file_type = 'Word Document'
+                elif filename.endswith('.txt'):
+                    file_type = 'Text File'
+                else:
+                    file_type = 'Other'
+                    
+                if file_type in encrypted_by_type:
+                    encrypted_by_type[file_type] += 1
+                else:
+                    encrypted_by_type[file_type] = 1
+            
+            elif detection.get('type') == 'infected_file':
+                filename = os.path.basename(detection['file'])
+                file_extension = os.path.splitext(filename)[1].lower()
+                if file_extension == '.py':
+                    file_type = 'Python Script'
+                elif file_extension == '.js':
+                    file_type = 'JavaScript File'
+                elif file_extension in ['.txt', '.md']:
+                    file_type = 'Text File'
+                elif file_extension == '.csv':
+                    file_type = 'CSV File'
+                else:
+                    file_type = 'Other'
+                    
+                if file_type in infected_by_type:
+                    infected_by_type[file_type] += 1
+                else:
+                    infected_by_type[file_type] = 1
+        
+        if encrypted_by_type:
+            analysis_report += "ENCRYPTED FILES:\n"
+            for file_type, count in encrypted_by_type.items():
+                analysis_report += f"• {file_type}: {count} encrypted files\n"
+        
+        if infected_by_type:
+            analysis_report += "INFECTED FILES:\n"
+            for file_type, count in infected_by_type.items():
+                analysis_report += f"• {file_type}: {count} infected files\n"
+        
+        if not encrypted_by_type and not infected_by_type:
+            analysis_report += "• No encrypted or infected files found\n"
         
         analysis_report += f"""
 
-DETECTION EFFECTIVENESS:
+RECOVERY POTENTIAL:
 Detection Rate: {(stats['threats_detected'] / max(stats['files_scanned'], 1) * 100):.1f}%
-Document Analysis Rate: {(stats['documents_analyzed'] / max(stats['files_scanned'], 1) * 100):.1f}%
+Encrypted File Rate: {(stats['encrypted_files_found'] / max(stats['files_scanned'], 1) * 100):.1f}%
+Infected File Rate: {(stats['infected_files_found'] / max(stats['files_scanned'], 1) * 100):.1f}%
 
 THREAT BREAKDOWN:
 """
@@ -1707,33 +1964,47 @@ THREAT BREAKDOWN:
         for threat_type, count in threat_types.items():
             analysis_report += f"• {threat_type.replace('_', ' ').title()}: {count}\n"
         
+        analysis_report += f"""
+
+RECOVERY NOTES:
+• Original files were deleted by the virus
+• Encrypted files can be decrypted using ROT13
+• Infected files can be cleaned by removing virus signatures
+• Backup files may be available for infected file restoration
+• Recovered files will be marked with recovery metadata
+• Cleaned files will be marked with cleaning metadata
+"""
+        
         self.analysis_text.insert(tk.END, analysis_report.strip())
         
-    def remove_threats(self):
-        """Remove all detected threats with capabilities"""
+    def recover_encrypted_files(self):
+        """Recover all detected encrypted files and clean infected files"""
         if not self.detections:
-            messagebox.showinfo("No Threats", "No threats detected to remove.")
+            messagebox.showinfo("No Threats", "No encrypted files or infected files detected to process.")
             return
             
-        # Count document types in threats
-        doc_types = set()
-        for detection in self.detections:
-            if 'document_type' in detection:
-                doc_types.add(detection['document_type'])
+        # Count encrypted and infected files
+        encrypted_files = [d for d in self.detections if d.get('type') in ['encrypted_file', 'encrypted_document_infection']]
+        infected_files = [d for d in self.detections if d.get('type') == 'infected_file']
         
-        doc_list = ", ".join(doc_types) if doc_types else "various files"
+        if not encrypted_files and not infected_files:
+            messagebox.showinfo("No Files to Process", "No encrypted or infected files found to process.")
+            return
 
-        result = messagebox.askyesno("Confirm Removal",
-                                   f"Remove {len(self.detections)} detected threats?\n\n"
-                                   f"Affected document types: {doc_list}\n\n"
-                                   f"This will decrypt and recover documents across multiple formats.")
+        result = messagebox.askyesno("Confirm Recovery & Cleaning",
+                                   f"Process {len(encrypted_files)} encrypted files and {len(infected_files)} infected files?\n\n"
+                                   f"This will:\n"
+                                   f"• Decrypt encrypted files and create recovered versions\n"
+                                   f"• Clean infected files by removing virus signatures\n"
+                                   f"• Restore from backups where available\n\n"
+                                   f"Note: Original files were deleted by the virus.")
         if not result:
             return
             
         # Switch to scanner tab to show progress
         self.notebook.select(0)
 
-        self.log_to_console("\nStarting threat removal process...")
+        self.log_to_console("\nStarting file recovery and cleaning process...")
         
         # Override remover's log to also log to GUI
         original_log = self.remover.log_removal
@@ -1744,19 +2015,22 @@ THREAT BREAKDOWN:
             
         self.remover.log_removal = gui_removal_log
 
-        # Perform removal
+        # Perform recovery and cleaning
         success = self.remover.perform_complete_removal()
         
         if success:
-            self.log_to_console("\nThreat removal completed successfully!")
+            self.log_to_console("\nFile recovery and cleaning completed successfully!")
 
             # Update statistics
             recovery_stats = self.remover.recovery_statistics
-            self.log_to_console(f"\nRecovery Statistics:")
+            self.log_to_console(f"\nRecovery & Cleaning Statistics:")
+            self.log_to_console(f"   Infected Files Processed: {recovery_stats['infected_files_processed']}")
+            self.log_to_console(f"   Files Cleaned: {recovery_stats['files_cleaned']}")
+            self.log_to_console(f"   Encrypted Files Processed: {recovery_stats['encrypted_files_processed']}")
             self.log_to_console(f"   Files Decrypted: {recovery_stats['files_decrypted']}")
             self.log_to_console(f"   Documents Recovered: {recovery_stats['documents_recovered']}")
             self.log_to_console(f"   Word Documents Recovered: {recovery_stats['word_docs_recovered']}")
-            self.log_to_console(f"   Files Restored: {recovery_stats['files_restored']}")
+            self.log_to_console(f"   Content Recovered: {recovery_stats['content_recovered']}")
             self.log_to_console(f"   Artifacts Removed: {recovery_stats['artifacts_removed']}")
             
             # Clear detections
@@ -1764,18 +2038,22 @@ THREAT BREAKDOWN:
             self.update_results_display()
             self.update_analysis_display()
 
-            messagebox.showinfo("Removal Complete",
-                              "All threats have been successfully removed!\n\n"
+            messagebox.showinfo("Recovery & Cleaning Complete",
+                              "All files have been successfully processed!\n\n"
+                              f"Infected files processed: {recovery_stats['infected_files_processed']}\n"
+                              f"Files cleaned: {recovery_stats['files_cleaned']}\n"
+                              f"Encrypted files processed: {recovery_stats['encrypted_files_processed']}\n"
                               f"Files decrypted: {recovery_stats['files_decrypted']}\n"
                               f"Documents recovered: {recovery_stats['documents_recovered']}\n"
                               f"Word docs recovered: {recovery_stats['word_docs_recovered']}\n"
-                              f"Files restored: {recovery_stats['files_restored']}\n"
-                              f"Artifacts removed: {recovery_stats['artifacts_removed']}")
+                              f"Content recovered: {recovery_stats['content_recovered']}\n"
+                              f"Artifacts removed: {recovery_stats['artifacts_removed']}\n\n"
+                              f"NOTE: Original files were deleted by virus")
         else:
-            messagebox.showerror("Removal Failed", "Threat removal process encountered errors.")
+            messagebox.showerror("Recovery Failed", "File recovery and cleaning process encountered errors.")
 
     def quarantine_threats(self):
-        """Quarantine detected threats instead of removing them"""
+        """Quarantine detected threats instead of recovering them"""
         if not self.detections:
             messagebox.showinfo("No Threats", "No threats detected to quarantine.")
             return
@@ -1790,9 +2068,11 @@ THREAT BREAKDOWN:
         for detection in self.detections:
             filepath = detection['file']
             if os.path.exists(filepath):
-                reason = f" Threat: {detection['type']}"
+                reason = f"Threat: {detection['type']}"
                 if 'document_type' in detection:
                     reason += f" ({detection['document_type']})"
+                if detection.get('encrypted', False):
+                    reason += " [ENCRYPTED FILE]"
                     
                 if self.remover.quarantine_file(filepath, reason):
                     quarantined_count += 1
@@ -1838,6 +2118,9 @@ THREAT BREAKDOWN:
                         self.quarantine_text.insert(tk.END, f"  Reason: {metadata.get('reason', 'Unknown')}\n")
                         self.quarantine_text.insert(tk.END, f"  Size: {metadata.get('file_size', 'Unknown')} bytes\n")
                         
+                        if metadata.get('encrypted_file', False):
+                            self.quarantine_text.insert(tk.END, f"  Type: ENCRYPTED FILE\n")
+                        
                     except Exception as e:
                         self.quarantine_text.insert(tk.END, f"  Error reading metadata: {str(e)}\n")
                         
@@ -1856,7 +2139,7 @@ THREAT BREAKDOWN:
             raise
 
 class CommandLineInterface:
-    """Command-line interface"""
+    """Command-line interface for Odyssey Virus Hunter"""
 
     def __init__(self):
         self.scanner = AdvancedVirusScanner()
@@ -1867,14 +2150,14 @@ class CommandLineInterface:
         banner = """
 ODYSSEY VIRUS HUNTER
 ===============================================================
-    Multi-Document Odyssey Virus Detection & Removal System
+    Encrypted File Detection & Recovery System
     National Teachers College - Information Assurance and Security 1 Finals Project
 ===============================================================
 
 Target: Odyssey Virus
 Encryption: ROT13 Decryption Engine
-Features: Advanced Multi-Document Detection & Removal
-Reporting: Comprehensive Analysis
+Features: Advanced Encrypted File Detection & Recovery
+Behavior: Original files deleted - only encrypted files remain
 Documents: Word, PDF, Excel, PowerPoint Support
 
 """
@@ -1885,6 +2168,8 @@ Documents: Word, PDF, Excel, PowerPoint Support
         self.display_banner()
 
         print("Initializing Antivirus Scanner...")
+        print("⚠️  NOTICE: This version focuses on encrypted file recovery")
+        print("⚠️  Original files were deleted by the virus")
         print(f"Document format support:")
         print(f"   Word (.docx): {'YES' if DOCX_AVAILABLE else 'NO'}")
         print(f"   PDF (.pdf): {'YES' if PDF_AVAILABLE else 'NO'}")
@@ -1897,12 +2182,12 @@ Documents: Word, PDF, Excel, PowerPoint Support
         while True:
             print("\n" + "="*60)
             print("Odyssey Virus Hunter - Select an option:")
-            print("1. Comprehensive System Scan")
+            print("1. Comprehensive Encrypted & Infected File Scan")
             print("2. Quick Scan (Current Directory)")
-            print("3. Remove Detected Threats")
+            print("3. Recover & Clean All Files")
             print("4. View Quarantine")
             print("5. View Statistics")
-            print("6. View Document Analysis")
+            print("6. View Recovery Analysis")
             print("7. Exit")
             
             choice = input("\nEnter your choice (1-7): ").strip()
@@ -1912,13 +2197,13 @@ Documents: Word, PDF, Excel, PowerPoint Support
             elif choice == '2':
                 self.perform_quick_scan()
             elif choice == '3':
-                self.perform_removal()
+                self.perform_recovery()
             elif choice == '4':
                 self.view_quarantine()
             elif choice == '5':
                 self.view_statistics()
             elif choice == '6':
-                self.view_document_analysis()
+                self.view_recovery_analysis()
             elif choice == '7':
                 print("\nThank you for using Odyssey Virus Hunter!")
                 break
@@ -1927,19 +2212,19 @@ Documents: Word, PDF, Excel, PowerPoint Support
                 
     def perform_comprehensive_scan(self):
         """Perform comprehensive scan"""
-        print("\nStarting comprehensive Odyssey virus scan...")
+        print("\nStarting comprehensive Odyssey virus scan (encrypted files, infected files, and artifacts)...")
         detections = self.scanner.perform_comprehensive_scan()
         self.display_scan_results(detections)
         
     def perform_quick_scan(self):
         """Perform quick scan"""
-        print("\nStarting quick scan...")
+        print("\nStarting quick scan for encrypted and infected files...")
         detections = self.scanner.perform_comprehensive_scan(["."])
         self.display_scan_results(detections)
         
     def display_scan_results(self, detections):
         """Display scan results"""
-        print(f"\nSCAN RESULTS")
+        print(f"\nENCRYPTED FILE SCAN RESULTS")
         print("="*50)
         print(f"Threats detected: {len(detections)}")
         
@@ -1969,14 +2254,17 @@ Documents: Word, PDF, Excel, PowerPoint Support
                         print(f"   Virus: {info['name']}")
                         print(f"   Risk: {info['risk_level']}")
                     
+                    if detection.get('encrypted', False):
+                        print(f"   Status: ENCRYPTED FILE (recoverable)")
+                    
                     if 'virus_indicators' in detection and detection['virus_indicators']:
                         print(f"   Indicators: {len(detection['virus_indicators'])} found")
         else:
-            print("\nNo threats detected. System appears clean!")
+            print("\nNo encrypted files or threats detected. System appears clean!")
 
-    def perform_removal(self):
-        """Perform threat removal"""
-        print("\nStarting threat removal process...")
+    def perform_recovery(self):
+        """Perform file recovery and cleaning"""
+        print("\nStarting file recovery and cleaning process...")
         
         target_dir = "odyssey_test_environment"
         if not os.path.exists(target_dir):
@@ -1986,16 +2274,20 @@ Documents: Word, PDF, Excel, PowerPoint Support
         success = self.remover.perform_complete_removal(target_dir)
         
         if success:
-            print("\nThreat removal completed successfully!")
+            print("\nFile recovery and cleaning completed successfully!")
             stats = self.remover.recovery_statistics
-            print(f"\nRecovery Statistics:")
+            print(f"\nRecovery & Cleaning Statistics:")
+            print(f"   Infected Files Processed: {stats['infected_files_processed']}")
+            print(f"   Files Cleaned: {stats['files_cleaned']}")
+            print(f"   Encrypted Files Processed: {stats['encrypted_files_processed']}")
             print(f"   Files Decrypted: {stats['files_decrypted']}")
             print(f"   Documents Recovered: {stats['documents_recovered']}")
             print(f"   Word Documents Recovered: {stats['word_docs_recovered']}")
-            print(f"   Files Restored: {stats['files_restored']}")
+            print(f"   Content Recovered: {stats['content_recovered']}")
             print(f"   Artifacts Removed: {stats['artifacts_removed']}")
+            print("\nNOTE: Original files were deleted by virus - recovered content and cleaned files available")
         else:
-            print("\nThreat removal encountered errors.")
+            print("\nFile recovery and cleaning encountered errors.")
 
     def view_quarantine(self):
         """View quarantine information"""
@@ -2036,7 +2328,9 @@ Documents: Word, PDF, Excel, PowerPoint Support
 
         print(f"Scan Statistics:")
         print(f"  Files Scanned: {stats['files_scanned']}")
-        print(f"  Documents Analyzed: {stats['documents_analyzed']}")
+        print(f"  Encrypted Files Found: {stats['encrypted_files_found']}")
+        print(f"  Infected Files Found: {stats['infected_files_found']}")
+        print(f"  Artifacts Found: {stats['artifacts_found']}")
         print(f"  Threats Detected: {stats['threats_detected']}")
         print(f"  Last Scan Duration: {stats['scan_duration']:.2f} seconds")
         
@@ -2048,16 +2342,19 @@ Documents: Word, PDF, Excel, PowerPoint Support
             print("  No documents processed yet")
 
         print(f"\nRecovery Statistics:")
+        print(f"  Infected Files Processed: {recovery_stats['infected_files_processed']}")
+        print(f"  Files Cleaned: {recovery_stats['files_cleaned']}")
+        print(f"  Encrypted Files Processed: {recovery_stats['encrypted_files_processed']}")
         print(f"  Files Decrypted: {recovery_stats['files_decrypted']}")
         print(f"  Documents Recovered: {recovery_stats['documents_recovered']}")
         print(f"  Word Documents Recovered: {recovery_stats['word_docs_recovered']}")
-        print(f"  Files Restored: {recovery_stats['files_restored']}")
+        print(f"  Content Recovered: {recovery_stats['content_recovered']}")
         print(f"  Artifacts Removed: {recovery_stats['artifacts_removed']}")
         print(f"  Files Quarantined: {recovery_stats['files_quarantined']}")
         
-    def view_document_analysis(self):
-        """View document analysis information"""
-        print(f"\nDOCUMENT FORMAT ANALYSIS")
+    def view_recovery_analysis(self):
+        """View encrypted file recovery analysis information"""
+        print(f"\nENCRYPTED FILE RECOVERY ANALYSIS")
         print("="*50)
         
         print("Library Availability:")
@@ -2068,15 +2365,146 @@ Documents: Word, PDF, Excel, PowerPoint Support
         
         stats = self.scanner.scan_statistics
         
-        print(f"\nDocument Processing Statistics:")
+        print(f"\nFile Processing Statistics:")
         print(f"  Total Files Scanned: {stats['files_scanned']}")
-        print(f"  Documents Analyzed: {stats['documents_analyzed']}")
-        print(f"  Analysis Rate: {(stats['documents_analyzed'] / max(stats['files_scanned'], 1) * 100):.1f}%")
+        print(f"  Encrypted Files Found: {stats['encrypted_files_found']}")
+        print(f"  Infected Files Found: {stats['infected_files_found']}")
+        print(f"  Artifacts Found: {stats['artifacts_found']}")
+        print(f"  Detection Rate: {(stats['threats_detected'] / max(stats['files_scanned'], 1) * 100):.1f}%")
+        print(f"  Encrypted File Rate: {(stats['encrypted_files_found'] / max(stats['files_scanned'], 1) * 100):.1f}%")
+        print(f"  Infected File Rate: {(stats['infected_files_found'] / max(stats['files_scanned'], 1) * 100):.1f}%")
         
         if stats['document_types_scanned']:
             print(f"\nDocument Types Processed:")
             for doc_type, count in stats['document_types_scanned'].items():
                 print(f"  • {doc_type}: {count} files")
+        
+        recovery_stats = self.remover.recovery_statistics
+        if recovery_stats['encrypted_files_processed'] > 0 or recovery_stats['infected_files_processed'] > 0:
+            print(f"\nRecovery Analysis:")
+            print(f"  Infected Files Processed: {recovery_stats['infected_files_processed']}")
+            print(f"  Files Cleaned: {recovery_stats['files_cleaned']}")
+            print(f"  Encrypted Files Processed: {recovery_stats['encrypted_files_processed']}")
+            print(f"  Decryption Success Rate: {(recovery_stats['content_recovered'] / max(recovery_stats['encrypted_files_processed'], 1) * 100):.1f}%")
+            print(f"  Cleaning Success Rate: {(recovery_stats['files_cleaned'] / max(recovery_stats['infected_files_processed'], 1) * 100):.1f}%")
+            print(f"  Word Document Recovery: {recovery_stats['word_docs_recovered']} files")
+            print(f"  Text File Recovery: {recovery_stats['files_decrypted']} files")
+        
+        print(f"\nRecovery Notes:")
+        print("  • Original files were deleted by the virus")
+        print("  • Encrypted files can be decrypted using ROT13")
+        print("  • Infected files can be cleaned by removing virus signatures")
+        print("  • Backup files may be available for infected file restoration")
+        print("  • ROT13 decryption restores original content")
+        print("  • Recovered and cleaned files are marked with metadata")
+
+def main():
+    """Main entry point for Odyssey Virus Hunter"""
+    print("DEBUG: Starting main function ...")
+    print("Odyssey Virus Hunter - Initializing...")
+    
+    # Display library status
+    print("\nDocument Processing Library Status:")
+    print(f"   python-docx (Word): {'Available' if DOCX_AVAILABLE else 'Not Available - install with: pip install python-docx'}")
+    print(f"   PyPDF2 (PDF): {'Available' if PDF_AVAILABLE else 'Not Available - install with: pip install PyPDF2'}")
+    print(f"   openpyxl (Excel): {'Available' if XLSX_AVAILABLE else 'Not Available - install with: pip install openpyxl'}")
+    print(f"   python-pptx (PowerPoint): {'Available' if PPTX_AVAILABLE else 'Not Available - install with: pip install python-pptx'}")
+    
+    missing_libs = []
+    if not DOCX_AVAILABLE:
+        missing_libs.append("python-docx")
+    if not PDF_AVAILABLE:
+        missing_libs.append("PyPDF2")
+    if not XLSX_AVAILABLE:
+        missing_libs.append("openpyxl")
+    if not PPTX_AVAILABLE:
+        missing_libs.append("python-pptx")
+    
+    if missing_libs:
+        print(f"\nOptional libraries missing: {', '.join(missing_libs)}")
+        print("Install all with: pip install python-docx PyPDF2 openpyxl python-pptx")
+        print("(Antivirus will work with reduced functionality)\n")
+    else:
+        print("\nAll document processing libraries available!\n")
+    
+    print("🎯 VERSION FEATURES:")
+    print("   • Focus on encrypted file detection and recovery")
+    print("   • Original files were deleted by virus")
+    print("   • ROT13 decryption for content recovery")
+    print("   • Multi-format document processing")
+    print("   • Enhanced artifact detection")
+    print()
+    
+    # Check for GUI availability with improved error handling
+    if GUI_AVAILABLE:
+        print("GUI available. Choose interface:")
+        print("1. Graphical Interface (Recommended)")
+        print("2. Command Line Interface")
+        
+        max_attempts = 3
+        attempt = 0
+        
+        while attempt < max_attempts:
+            try:
+                choice = input("\nEnter choice (1 or 2): ").strip()
+                
+                if choice == '1':
+                    print("Starting GUI mode...")
+                    print("DEBUG: About to create AntivirusGUI instance...")
+                    
+                    try:
+                        antivirus = AntivirusGUI()
+                        print("DEBUG: AntivirusGUI created successfully")
+                        antivirus.run()
+                        print("DEBUG: GUI run completed")
+                    except Exception as e:
+                        print(f"GUI Error: {str(e)}")
+                        print("DEBUG: Full GUI error details:")
+                        import traceback
+                        traceback.print_exc()
+                        print("Falling back to CLI mode...")
+                        cli = CommandLineInterface()
+                        cli.run_interactive_scan()
+                    break
+                elif choice == '2':
+                    print("Starting CLI mode...")
+                    cli = CommandLineInterface()
+                    cli.run_interactive_scan()
+                    break
+                else:
+                    print("Invalid choice. Please enter 1 or 2.")
+                    attempt += 1
+                    
+            except KeyboardInterrupt:
+                print("\nExiting...")
+                break
+            except Exception as e:
+                print(f"Input error: {e}")
+                attempt += 1
+                
+        if attempt >= max_attempts:
+            print("Too many invalid attempts. Starting CLI mode...")
+            cli = CommandLineInterface()
+            cli.run_interactive_scan()
+                
+    else:
+        # GUI not available, use CLI
+        print("GUI not available, using command line interface...")
+        cli = CommandLineInterface()
+        cli.run_interactive_scan()
+
+if __name__ == "__main__":
+    print("DEBUG: Script starting...")
+    try:
+        main()
+    except Exception as e:
+        print(f"FATAL ERROR: {str(e)}")
+        print("DEBUG: Full error details:")
+        import traceback
+        traceback.print_exc()
+        input("Press Enter to exit...")
+    finally:
+        print("DEBUG: Script ending...")
 
 def main():
     """Main entry point for Odyssey Virus Hunter"""
@@ -2106,6 +2534,14 @@ def main():
         print("(Antivirus will work with reduced functionality)\n")
     else:
         print("\nAll document processing libraries available!\n")
+
+    print("🎯 VERSION FEATURES:")
+    print("   • Focus on encrypted file detection and recovery")
+    print("   • Original files were deleted by virus")
+    print("   • ROT13 decryption for content recovery")
+    print("   • Multi-format document processing")
+    print("   • Enhanced artifact detection")
+    print()
     
     # Check for GUI availability with improved error handling
     if GUI_AVAILABLE:

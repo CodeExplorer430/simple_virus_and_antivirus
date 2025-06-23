@@ -1,7 +1,0 @@
-{
-  "original_path": ".\\odyssey_test_environment\\odyssey_encrypted_payload.dat",
-  "quarantine_time": "2025-06-23T03:36:17.924042",
-  "reason": "Threat: filename_pattern",
-  "file_hash": "3fe57d389c901be3618aebfd1dc145ce9a7e286fef92b06a6a4f273c8f966d52",
-  "file_size": 1428
-}
