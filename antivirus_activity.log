@@ -19,3 +19,1788 @@
 [2025-06-23 03:36:35] 📝 📊 Files decrypted: 0
 [2025-06-23 03:36:35] 📝 📊 Files restored: 0
 [2025-06-23 03:36:35] 📝 📊 Artifacts removed: 0
+[2025-06-23 08:04:30] [INFO] Using existing Odyssey quarantine: odyssey_antivirus_quarantine
+[2025-06-23 08:05:47] [INFO] Starting comprehensive Odyssey virus scan...
+[2025-06-23 08:05:47] [INFO] Document format support:
+[2025-06-23 08:05:47] [INFO]    Word (.docx): YES
+[2025-06-23 08:05:47] [INFO]    PDF (.pdf): YES
+[2025-06-23 08:05:47] [INFO]    Excel (.xlsx): YES
+[2025-06-23 08:05:47] [INFO]    PowerPoint (.pptx): YES
+[2025-06-23 08:05:47] [INFO] Scanning directory: .
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: odyssey_activity.log
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: .odyssey_infection_marker
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: cybersecurity_report_ODYSSEY_ENCRYPTED.docx
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: odyssey_encrypted_payload.dat
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: odyssey_encryption_manifest.json
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:47] [DETECT] Suspicious filename pattern: student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:47] [DETECT] Infected document detected: antivirus.py (Python Script)
+[2025-06-23 08:05:47] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: National Teachers College... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Odyssey Virus... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: ROT13 Cryptographic Implementa... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: === ENCRYPTED .DOCX CONTENT ==... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: === ENCRYPTED .PDF CONTENT ===... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: === ENCRYPTED .XLSX CONTENT ==... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: === ENCRYPTED .PPTX CONTENT ==... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Odyssey Virus... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Multi-Document Support... in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Content infection indicators: 19 found in antivirus.py
+[2025-06-23 08:05:47] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: National Teachers College... in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Odyssey Virus... in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: === ENCRYPTED .PDF CONTENT ===... in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Odyssey Virus... in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Multi-Document Support... in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Content infection indicators: 9 found in antivirus_activity.log
+[2025-06-23 08:05:47] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: National Teachers College... in odyssey_activity.log
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Multi-Document Support... in odyssey_activity.log
+[2025-06-23 08:05:47] [DETECT] Content infection indicators: 3 found in odyssey_activity.log
+[2025-06-23 08:05:47] [DETECT] Infected document detected: README.md (Markdown File)
+[2025-06-23 08:05:47] [DETECT] Content signature detected: National Teachers College... in README.md
+[2025-06-23 08:05:47] [DETECT] Content infection indicators: 1 found in README.md
+[2025-06-23 08:05:47] [DETECT] Infected document detected: virus.py (Python Script)
+[2025-06-23 08:05:47] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in virus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in virus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in virus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: National Teachers College... in virus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Odyssey Virus... in virus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: ROT13 Cryptographic Implementa... in virus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Odyssey Virus... in virus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Multi-Document Support... in virus.py
+[2025-06-23 08:05:47] [DETECT] Content infection indicators: 14 found in virus.py
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Odyssey Virus... in COMMIT_EDITMSG
+[2025-06-23 08:05:47] [DETECT] Content signature detected: Odyssey Virus... in COMMIT_EDITMSG
+[2025-06-23 08:05:47] [DETECT] Content infection indicators: 2 found in COMMIT_EDITMSG
+[2025-06-23 08:05:48] [DETECT] Content signature detected: Odyssey Virus... in HEAD
+[2025-06-23 08:05:48] [DETECT] Content signature detected: Odyssey Virus... in HEAD
+[2025-06-23 08:05:48] [DETECT] Content infection indicators: 2 found in HEAD
+[2025-06-23 08:05:48] [DETECT] Content signature detected: Odyssey Virus... in main
+[2025-06-23 08:05:48] [DETECT] Content signature detected: Odyssey Virus... in main
+[2025-06-23 08:05:48] [DETECT] Content infection indicators: 2 found in main
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 7c45f06e6fe93c9f0f4dc1ef7646c5431294fb
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 33d43b212e6cb874362f27571d563135aa4549
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 6de1f1348388fa948805bd3e77d55d78165998
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in e88feb0cd7b4a364f610fb7c102380629a1625
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 444f31f6f4902386bd7928187e0c4ccc97eb4c
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 8eae97936f628cb9227d84fb0ee9742a935ea6
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 56893a4636a08621de42ef623d0d5452e0f556
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 9f5bd17c0daeaf764a8a6cf215eeada6cbf4f1
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in a7fe92ebbdbbd5138791a6b9f4838111421082
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in b7aba0732576c4aca7a971ce54f5c19e1e2eaa
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in f5d8125db68c86e7ed2e9ce237ab00bc7b5777
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 8f909923bc69e3a2d5f88fc61645597f943120
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in d418cf46149c6cffd3def205b77a85f1e05dab
+[2025-06-23 08:05:48] [CRYPTO] ROT13 encryption detected in 40d05e98cdeea2603d1f28e9c72054edfc5015
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in oxml.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in shape.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in simpletypes.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in xmlchemy.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in latent.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in shared.cpython-312.pyc
+[2025-06-23 08:05:49] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:50] [CRYPTO] ROT13 encryption detected in builder.cpython-312.pyc
+[2025-06-23 08:05:50] [CRYPTO] ROT13 encryption detected in defs.cpython-312.pyc
+[2025-06-23 08:05:50] [CRYPTO] ROT13 encryption detected in diff.cpython-312.pyc
+[2025-06-23 08:05:50] [CRYPTO] ROT13 encryption detected in formfill.cpython-312.pyc
+[2025-06-23 08:05:50] [CRYPTO] ROT13 encryption detected in soupparser.cpython-312.pyc
+[2025-06-23 08:05:50] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in doctestcompare.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in _elementpath.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in cell.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in reader.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in numbers.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in base.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in effect.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in fill.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in geometry.cpython-312.pyc
+[2025-06-23 08:05:52] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in custom.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in manifest.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in cache.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in excel.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in builtins.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in numbers.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in cell.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in dataframe.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in workbook.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in filters.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in worksheet.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in _reader.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:05:53] [CRYPTO] ROT13 encryption detected in functions.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in AvifImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in BlpImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in BmpImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in DdsImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in EpsImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in GifImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in IcnsImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in IcoImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in Image.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImageCms.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImageColor.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImageFile.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImageFilter.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImageFont.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImageOps.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImageQt.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImageShow.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in ImImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in JpegImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in PcxImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in PdfParser.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in PngImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in PpmImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in SgiImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in SpiderImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in TiffImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in TiffTags.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in WebPImagePlugin.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in _typing.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in cmdoptions.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in progress_bars.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in req_command.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in cache.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in debug.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in install.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in list.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in search.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in collector.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in package_finder.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in sources.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in _distutils.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in _sysconfig.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in base.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in direct_url.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in link.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in pylock.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in download.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in session.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in wheel.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in check.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in prepare.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in constructors.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in req_file.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in req_install.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in req_uninstall.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in resolver.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in candidates.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in factory.cpython-312.pyc
+[2025-06-23 08:05:54] [CRYPTO] ROT13 encryption detected in resolver.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in compatibility_tags.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in logging.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in misc.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in subprocess.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in unpacking.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in git.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in versioncontrol.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in configuration.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in self_outdated_check.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in wheel_builder.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in compat.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in database.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in locators.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in metadata.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in resources.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in scripts.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in util.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in version.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in wheel.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in distro.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in core.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in idnadata.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in uts46data.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in fallback.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in _spdx.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in markers.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in metadata.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in tags.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in utils.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in version.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in _musllinux.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in _tokenizer.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in _mapping.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in lexer.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in token.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in unistring.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in util.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in _impl.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in adapters.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in models.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in packages.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in sessions.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in utils.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:55] [CRYPTO] ROT13 encryption detected in structs.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in align.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in ansi.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in box.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in cells.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in color.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in columns.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in console.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in control.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in default_styles.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in emoji.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in highlighter.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in json.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in layout.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in live.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in logging.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in markup.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in palette.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in pretty.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in progress.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in progress_bar.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in prompt.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in repr.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in segment.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in status.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in syntax.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in theme.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in traceback.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in tree.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _cell_widths.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _emoji_codes.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _palettes.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _spinners.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _win32_console.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in __main__.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _parser.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _writer.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _api.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _macos.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _openssl.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in _windows.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in bindings.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in appengine.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in pyopenssl.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in securetransport.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in six.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in ssl_.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in url.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in connection.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in connectionpool.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in poolmanager.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in response.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in typing_extensions.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in xmlwriter.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in oxml.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in package.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in autoshape.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in simpletypes.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in slide.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in xmlchemy.cpython-312.pyc
+[2025-06-23 08:05:56] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in placeholder.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in shapetree.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in pptx-icon.emf
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in slide.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _base.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _data_structures.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _fit.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in std.py
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in adobe_glyphs.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in pdfdoc.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in symbol.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in zapfding.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in filters.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in xmp.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _cmap.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _encryption.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _page.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _reader.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _utils.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in _writer.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in format.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in styles.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in utility.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in workbook.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in worksheet.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in xmlwriter.cpython-312.pyc
+[2025-06-23 08:05:57] [CRYPTO] ROT13 encryption detected in typing_extensions.cpython-312.pyc
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in vba_extract.cpython-312.pyc
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in .odyssey_infection_marker
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in .odyssey_infection_marker
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in .odyssey_infection_marker
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 2 found in .odyssey_infection_marker
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in assignment_instructions.md
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 3 found in assignment_instructions.md
+[2025-06-23 08:05:58] [DETECT] Infected document detected: assignment_instructions_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 7 found in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Infected document detected: cybersecurity_report_ODYSSEY_ENCRYPTED.docx (Word Document)
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in lab_report.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 3 found in lab_report.py
+[2025-06-23 08:05:58] [DETECT] Infected document detected: lab_report_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 7 found in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encrypted_payload.dat
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encrypted_payload.dat
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in odyssey_encrypted_payload.dat
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Multi-Document Support... in odyssey_encrypted_payload.dat
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 3 found in odyssey_encrypted_payload.dat
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encryption_manifest.json
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encryption_manifest.json
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 1 found in odyssey_encryption_manifest.json
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in research_data.csv
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 3 found in research_data.csv
+[2025-06-23 08:05:58] [DETECT] Infected document detected: research_data_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 7 found in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in student_notes.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 3 found in student_notes.txt
+[2025-06-23 08:05:58] [DETECT] Infected document detected: student_notes_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 7 found in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [SUCCESS] Scan completed in 11.03 seconds
+[2025-06-23 08:05:58] [INFO] Scan Statistics:
+[2025-06-23 08:05:58] [INFO]    Files scanned: 2419
+[2025-06-23 08:05:58] [INFO]    Documents analyzed: 1035
+[2025-06-23 08:05:58] [INFO]    Threats detected: 383
+[2025-06-23 08:05:58] [INFO] Document types processed:
+[2025-06-23 08:05:58] [INFO]    Python Script: 1002
+[2025-06-23 08:05:58] [INFO]    Markdown File: 2
+[2025-06-23 08:05:58] [INFO]    Word Document: 3
+[2025-06-23 08:05:58] [INFO]    Text File: 24
+[2025-06-23 08:05:58] [INFO]    PowerPoint Presentation: 1
+[2025-06-23 08:05:58] [INFO]    CSV File: 3
+[2025-06-23 08:05:58] [INFO] Starting comprehensive Odyssey virus scan...
+[2025-06-23 08:05:58] [INFO] Document format support:
+[2025-06-23 08:05:58] [INFO]    Word (.docx): YES
+[2025-06-23 08:05:58] [INFO]    PDF (.pdf): YES
+[2025-06-23 08:05:58] [INFO]    Excel (.xlsx): YES
+[2025-06-23 08:05:58] [INFO]    PowerPoint (.pptx): YES
+[2025-06-23 08:05:58] [INFO] Scanning directory: .
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: odyssey_activity.log
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: .odyssey_infection_marker
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: cybersecurity_report_ODYSSEY_ENCRYPTED.docx
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: odyssey_encrypted_payload.dat
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: odyssey_encryption_manifest.json
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Suspicious filename pattern: student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:05:58] [DETECT] Infected document detected: antivirus.py (Python Script)
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ROT13 Cryptographic Implementa... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: === ENCRYPTED .DOCX CONTENT ==... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: === ENCRYPTED .PDF CONTENT ===... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: === ENCRYPTED .XLSX CONTENT ==... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: === ENCRYPTED .PPTX CONTENT ==... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Multi-Document Support... in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 19 found in antivirus.py
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: === ENCRYPTED .PDF CONTENT ===... in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Multi-Document Support... in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 9 found in antivirus_activity.log
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in odyssey_activity.log
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Multi-Document Support... in odyssey_activity.log
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 3 found in odyssey_activity.log
+[2025-06-23 08:05:58] [DETECT] Infected document detected: README.md (Markdown File)
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in README.md
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 1 found in README.md
+[2025-06-23 08:05:58] [DETECT] Infected document detected: virus.py (Python Script)
+[2025-06-23 08:05:58] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in virus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in virus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in virus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: National Teachers College... in virus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in virus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: ROT13 Cryptographic Implementa... in virus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in virus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Multi-Document Support... in virus.py
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 14 found in virus.py
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in COMMIT_EDITMSG
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in COMMIT_EDITMSG
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 2 found in COMMIT_EDITMSG
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in HEAD
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in HEAD
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 2 found in HEAD
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in main
+[2025-06-23 08:05:58] [DETECT] Content signature detected: Odyssey Virus... in main
+[2025-06-23 08:05:58] [DETECT] Content infection indicators: 2 found in main
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 7c45f06e6fe93c9f0f4dc1ef7646c5431294fb
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 33d43b212e6cb874362f27571d563135aa4549
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 6de1f1348388fa948805bd3e77d55d78165998
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in e88feb0cd7b4a364f610fb7c102380629a1625
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 444f31f6f4902386bd7928187e0c4ccc97eb4c
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 8eae97936f628cb9227d84fb0ee9742a935ea6
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 56893a4636a08621de42ef623d0d5452e0f556
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 9f5bd17c0daeaf764a8a6cf215eeada6cbf4f1
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in a7fe92ebbdbbd5138791a6b9f4838111421082
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in b7aba0732576c4aca7a971ce54f5c19e1e2eaa
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in f5d8125db68c86e7ed2e9ce237ab00bc7b5777
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 8f909923bc69e3a2d5f88fc61645597f943120
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in d418cf46149c6cffd3def205b77a85f1e05dab
+[2025-06-23 08:05:58] [CRYPTO] ROT13 encryption detected in 40d05e98cdeea2603d1f28e9c72054edfc5015
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in oxml.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in shape.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in simpletypes.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in xmlchemy.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in latent.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in shared.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in builder.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in defs.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in diff.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in formfill.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in soupparser.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in doctestcompare.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in _elementpath.cpython-312.pyc
+[2025-06-23 08:05:59] [CRYPTO] ROT13 encryption detected in cell.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in reader.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in numbers.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in base.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in effect.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in fill.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in geometry.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in custom.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in manifest.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in cache.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in excel.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in builtins.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in numbers.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in cell.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in dataframe.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in workbook.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in filters.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in worksheet.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in _reader.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:06:00] [CRYPTO] ROT13 encryption detected in functions.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in AvifImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in BlpImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in BmpImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in DdsImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in EpsImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in GifImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in IcnsImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in IcoImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in Image.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImageCms.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImageColor.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImageFile.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImageFilter.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImageFont.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImageOps.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImageQt.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImageShow.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in ImImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in JpegImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in PcxImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in PdfParser.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in PngImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in PpmImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in SgiImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in SpiderImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in TiffImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in TiffTags.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in WebPImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in _typing.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in cmdoptions.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in progress_bars.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in req_command.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in cache.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in debug.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in install.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in list.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in search.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in collector.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in package_finder.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in sources.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in _distutils.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in _sysconfig.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in base.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in direct_url.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in link.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in pylock.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in download.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in session.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in wheel.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in check.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in prepare.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in constructors.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in req_file.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in req_install.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in req_uninstall.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in resolver.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in candidates.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in factory.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in resolver.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in compatibility_tags.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in logging.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in misc.cpython-312.pyc
+[2025-06-23 08:06:01] [CRYPTO] ROT13 encryption detected in subprocess.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in unpacking.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in git.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in versioncontrol.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in configuration.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in self_outdated_check.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in wheel_builder.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in compat.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in database.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in locators.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in metadata.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in resources.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in scripts.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in util.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in version.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in wheel.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in distro.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in core.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in idnadata.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in uts46data.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in fallback.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in _spdx.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in markers.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in metadata.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in tags.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in utils.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in version.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in _musllinux.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in _tokenizer.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in _mapping.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in lexer.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in token.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in unistring.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in util.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in _impl.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in adapters.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in models.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in packages.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in sessions.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in utils.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in structs.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in align.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in ansi.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in box.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in cells.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in color.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in columns.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in console.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in control.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in default_styles.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in emoji.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in highlighter.cpython-312.pyc
+[2025-06-23 08:06:02] [CRYPTO] ROT13 encryption detected in json.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in layout.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in live.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in logging.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in markup.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in palette.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in pretty.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in progress.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in progress_bar.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in prompt.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in repr.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in segment.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in status.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in syntax.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in theme.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in traceback.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in tree.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _cell_widths.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _emoji_codes.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _palettes.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _spinners.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _win32_console.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in __main__.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _parser.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _writer.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _api.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _macos.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _openssl.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in _windows.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in bindings.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in appengine.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in pyopenssl.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in securetransport.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in six.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in ssl_.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in url.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in connection.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in connectionpool.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in poolmanager.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in response.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in typing_extensions.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in xmlwriter.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in oxml.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in package.cpython-312.pyc
+[2025-06-23 08:06:03] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in autoshape.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in simpletypes.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in slide.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in xmlchemy.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in placeholder.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in shapetree.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in pptx-icon.emf
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in slide.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _base.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _data_structures.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _fit.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in std.py
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in adobe_glyphs.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in pdfdoc.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in symbol.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in zapfding.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in filters.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in xmp.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _cmap.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _encryption.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _page.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _reader.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _utils.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in _writer.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in format.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in styles.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in utility.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in workbook.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in worksheet.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in xmlwriter.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in typing_extensions.cpython-312.pyc
+[2025-06-23 08:06:04] [CRYPTO] ROT13 encryption detected in vba_extract.cpython-312.pyc
+[2025-06-23 08:06:04] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in .odyssey_infection_marker
+[2025-06-23 08:06:04] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in .odyssey_infection_marker
+[2025-06-23 08:06:04] [DETECT] Content signature detected: National Teachers College... in .odyssey_infection_marker
+[2025-06-23 08:06:04] [DETECT] Content infection indicators: 2 found in .odyssey_infection_marker
+[2025-06-23 08:06:04] [DETECT] Content signature detected: National Teachers College... in assignment_instructions.md
+[2025-06-23 08:06:04] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:06:04] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:06:04] [DETECT] Content infection indicators: 3 found in assignment_instructions.md
+[2025-06-23 08:06:04] [DETECT] Infected document detected: assignment_instructions_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:04] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:04] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:04] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:04] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:04] [DETECT] Content infection indicators: 7 found in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Infected document detected: cybersecurity_report_ODYSSEY_ENCRYPTED.docx (Word Document)
+[2025-06-23 08:06:05] [DETECT] Content signature detected: National Teachers College... in lab_report.py
+[2025-06-23 08:06:05] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:06:05] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:06:05] [DETECT] Content infection indicators: 3 found in lab_report.py
+[2025-06-23 08:06:05] [DETECT] Infected document detected: lab_report_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:05] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content infection indicators: 7 found in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:05] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:05] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:05] [DETECT] Content signature detected: Multi-Document Support... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:05] [DETECT] Content infection indicators: 3 found in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:05] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encryption_manifest.json
+[2025-06-23 08:06:05] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encryption_manifest.json
+[2025-06-23 08:06:05] [DETECT] Content infection indicators: 1 found in odyssey_encryption_manifest.json
+[2025-06-23 08:06:05] [DETECT] Content signature detected: National Teachers College... in research_data.csv
+[2025-06-23 08:06:05] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:06:05] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:06:05] [DETECT] Content infection indicators: 3 found in research_data.csv
+[2025-06-23 08:06:05] [DETECT] Infected document detected: research_data_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:05] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content infection indicators: 7 found in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: National Teachers College... in student_notes.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:06:05] [DETECT] Content infection indicators: 3 found in student_notes.txt
+[2025-06-23 08:06:05] [DETECT] Infected document detected: student_notes_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:05] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [DETECT] Content infection indicators: 7 found in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:05] [SUCCESS] Scan completed in 6.70 seconds
+[2025-06-23 08:06:05] [INFO] Scan Statistics:
+[2025-06-23 08:06:05] [INFO]    Files scanned: 4838
+[2025-06-23 08:06:05] [INFO]    Documents analyzed: 2070
+[2025-06-23 08:06:05] [INFO]    Threats detected: 383
+[2025-06-23 08:06:05] [INFO] Document types processed:
+[2025-06-23 08:06:05] [INFO]    Python Script: 2004
+[2025-06-23 08:06:05] [INFO]    Markdown File: 4
+[2025-06-23 08:06:05] [INFO]    Word Document: 6
+[2025-06-23 08:06:05] [INFO]    Text File: 48
+[2025-06-23 08:06:05] [INFO]    PowerPoint Presentation: 2
+[2025-06-23 08:06:05] [INFO]    CSV File: 6
+[2025-06-23 08:06:31] [INFO] Using existing Odyssey quarantine: odyssey_antivirus_quarantine
+[2025-06-23 08:06:31] [INFO] Starting comprehensive Odyssey virus scan...
+[2025-06-23 08:06:31] [INFO] Document format support:
+[2025-06-23 08:06:31] [INFO]    Word (.docx): YES
+[2025-06-23 08:06:31] [INFO]    PDF (.pdf): YES
+[2025-06-23 08:06:31] [INFO]    Excel (.xlsx): YES
+[2025-06-23 08:06:31] [INFO]    PowerPoint (.pptx): YES
+[2025-06-23 08:06:31] [INFO] Scanning directory: .
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: odyssey_activity.log
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: .odyssey_infection_marker
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: cybersecurity_report_ODYSSEY_ENCRYPTED.docx
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: odyssey_encrypted_payload.dat
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: odyssey_encryption_manifest.json
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:31] [DETECT] Suspicious filename pattern: student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:31] [DETECT] Infected document detected: antivirus.py (Python Script)
+[2025-06-23 08:06:31] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: National Teachers College... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: Odyssey Virus... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: ROT13 Cryptographic Implementa... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: === ENCRYPTED .DOCX CONTENT ==... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: === ENCRYPTED .PDF CONTENT ===... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: === ENCRYPTED .XLSX CONTENT ==... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: === ENCRYPTED .PPTX CONTENT ==... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: Odyssey Virus... in antivirus.py
+[2025-06-23 08:06:31] [DETECT] Content signature detected: Multi-Document Support... in antivirus.py
+[2025-06-23 08:06:32] [DETECT] Content infection indicators: 19 found in antivirus.py
+[2025-06-23 08:06:32] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: National Teachers College... in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: === ENCRYPTED .PDF CONTENT ===... in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Multi-Document Support... in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Content infection indicators: 9 found in antivirus_activity.log
+[2025-06-23 08:06:32] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: National Teachers College... in odyssey_activity.log
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Multi-Document Support... in odyssey_activity.log
+[2025-06-23 08:06:32] [DETECT] Content infection indicators: 3 found in odyssey_activity.log
+[2025-06-23 08:06:32] [DETECT] Infected document detected: README.md (Markdown File)
+[2025-06-23 08:06:32] [DETECT] Content signature detected: National Teachers College... in README.md
+[2025-06-23 08:06:32] [DETECT] Content infection indicators: 1 found in README.md
+[2025-06-23 08:06:32] [DETECT] Infected document detected: virus.py (Python Script)
+[2025-06-23 08:06:32] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in virus.py
+[2025-06-23 08:06:32] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in virus.py
+[2025-06-23 08:06:32] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in virus.py
+[2025-06-23 08:06:32] [DETECT] Content signature detected: National Teachers College... in virus.py
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in virus.py
+[2025-06-23 08:06:32] [DETECT] Content signature detected: ROT13 Cryptographic Implementa... in virus.py
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in virus.py
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Multi-Document Support... in virus.py
+[2025-06-23 08:06:32] [DETECT] Content infection indicators: 14 found in virus.py
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in COMMIT_EDITMSG
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in COMMIT_EDITMSG
+[2025-06-23 08:06:32] [DETECT] Content infection indicators: 2 found in COMMIT_EDITMSG
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in HEAD
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in HEAD
+[2025-06-23 08:06:32] [DETECT] Content infection indicators: 2 found in HEAD
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in main
+[2025-06-23 08:06:32] [DETECT] Content signature detected: Odyssey Virus... in main
+[2025-06-23 08:06:32] [DETECT] Content infection indicators: 2 found in main
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 7c45f06e6fe93c9f0f4dc1ef7646c5431294fb
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 33d43b212e6cb874362f27571d563135aa4549
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 6de1f1348388fa948805bd3e77d55d78165998
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in e88feb0cd7b4a364f610fb7c102380629a1625
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 444f31f6f4902386bd7928187e0c4ccc97eb4c
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 8eae97936f628cb9227d84fb0ee9742a935ea6
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 56893a4636a08621de42ef623d0d5452e0f556
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 9f5bd17c0daeaf764a8a6cf215eeada6cbf4f1
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in a7fe92ebbdbbd5138791a6b9f4838111421082
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in b7aba0732576c4aca7a971ce54f5c19e1e2eaa
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in f5d8125db68c86e7ed2e9ce237ab00bc7b5777
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 8f909923bc69e3a2d5f88fc61645597f943120
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in d418cf46149c6cffd3def205b77a85f1e05dab
+[2025-06-23 08:06:32] [CRYPTO] ROT13 encryption detected in 40d05e98cdeea2603d1f28e9c72054edfc5015
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in oxml.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in shape.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in simpletypes.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in xmlchemy.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in latent.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in shared.cpython-312.pyc
+[2025-06-23 08:06:33] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in builder.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in defs.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in diff.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in formfill.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in soupparser.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in doctestcompare.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in _elementpath.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in cell.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in reader.cpython-312.pyc
+[2025-06-23 08:06:34] [CRYPTO] ROT13 encryption detected in numbers.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in base.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in effect.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in fill.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in geometry.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in custom.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in manifest.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in cache.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in excel.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in builtins.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in numbers.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in cell.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in dataframe.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in workbook.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in filters.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in worksheet.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in _reader.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:06:35] [CRYPTO] ROT13 encryption detected in functions.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in AvifImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in BlpImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in BmpImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in DdsImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in EpsImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in GifImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in IcnsImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in IcoImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in Image.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImageCms.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImageColor.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImageFile.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImageFilter.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImageFont.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImageOps.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImageQt.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImageShow.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in ImImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:36] [CRYPTO] ROT13 encryption detected in JpegImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in PcxImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in PdfParser.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in PngImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in PpmImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in SgiImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in SpiderImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in TiffImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in TiffTags.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in WebPImagePlugin.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in _typing.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in cmdoptions.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in progress_bars.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in req_command.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in cache.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in debug.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in install.cpython-312.pyc
+[2025-06-23 08:06:37] [CRYPTO] ROT13 encryption detected in list.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in search.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in collector.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in package_finder.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in sources.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in _distutils.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in _sysconfig.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in base.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in direct_url.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in link.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in pylock.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in download.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in session.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in wheel.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in check.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in prepare.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in constructors.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in req_file.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in req_install.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in req_uninstall.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in resolver.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in candidates.cpython-312.pyc
+[2025-06-23 08:06:38] [CRYPTO] ROT13 encryption detected in factory.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in resolver.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in compatibility_tags.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in logging.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in misc.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in subprocess.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in unpacking.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in git.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in versioncontrol.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in configuration.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in self_outdated_check.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in wheel_builder.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in compat.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in database.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in locators.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in metadata.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in resources.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in scripts.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in util.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in version.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in wheel.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in distro.cpython-312.pyc
+[2025-06-23 08:06:39] [CRYPTO] ROT13 encryption detected in core.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in idnadata.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in uts46data.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in fallback.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in _spdx.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in markers.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in metadata.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in tags.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in utils.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in version.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in _musllinux.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in _tokenizer.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in _mapping.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in lexer.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in token.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in unistring.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in util.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in _impl.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in adapters.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in models.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in packages.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in sessions.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in utils.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in structs.cpython-312.pyc
+[2025-06-23 08:06:40] [CRYPTO] ROT13 encryption detected in align.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in ansi.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in box.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in cells.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in color.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in columns.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in console.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in control.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in default_styles.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in emoji.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in highlighter.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in json.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in layout.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in live.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in logging.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in markup.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in palette.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in pretty.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in progress.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in progress_bar.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in prompt.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in repr.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in segment.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in status.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in syntax.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in theme.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in traceback.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in tree.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _cell_widths.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _emoji_codes.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _palettes.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _spinners.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _win32_console.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in __main__.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _parser.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _writer.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _api.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _macos.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _openssl.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in _windows.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in bindings.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in appengine.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in pyopenssl.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in securetransport.cpython-312.pyc
+[2025-06-23 08:06:41] [CRYPTO] ROT13 encryption detected in six.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in ssl_.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in url.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in connection.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in connectionpool.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in poolmanager.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in response.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in typing_extensions.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in xmlwriter.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in oxml.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in package.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in autoshape.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in simpletypes.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in slide.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in xmlchemy.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in placeholder.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in shapetree.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in pptx-icon.emf
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in slide.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:06:42] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _base.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _data_structures.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _fit.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in std.py
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in adobe_glyphs.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in pdfdoc.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in symbol.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in zapfding.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in filters.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in xmp.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _cmap.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _encryption.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _page.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _reader.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _utils.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in _writer.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in format.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in styles.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in utility.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in workbook.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in worksheet.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in xmlwriter.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in typing_extensions.cpython-312.pyc
+[2025-06-23 08:06:43] [CRYPTO] ROT13 encryption detected in vba_extract.cpython-312.pyc
+[2025-06-23 08:06:43] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in .odyssey_infection_marker
+[2025-06-23 08:06:43] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in .odyssey_infection_marker
+[2025-06-23 08:06:43] [DETECT] Content signature detected: National Teachers College... in .odyssey_infection_marker
+[2025-06-23 08:06:43] [DETECT] Content infection indicators: 2 found in .odyssey_infection_marker
+[2025-06-23 08:06:44] [DETECT] Content signature detected: National Teachers College... in assignment_instructions.md
+[2025-06-23 08:06:44] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:06:44] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:06:44] [DETECT] Content infection indicators: 3 found in assignment_instructions.md
+[2025-06-23 08:06:44] [DETECT] Infected document detected: assignment_instructions_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:44] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Content infection indicators: 7 found in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Infected document detected: cybersecurity_report_ODYSSEY_ENCRYPTED.docx (Word Document)
+[2025-06-23 08:06:44] [DETECT] Content signature detected: National Teachers College... in lab_report.py
+[2025-06-23 08:06:44] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:06:44] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:06:44] [DETECT] Content infection indicators: 3 found in lab_report.py
+[2025-06-23 08:06:44] [DETECT] Infected document detected: lab_report_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:44] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Content infection indicators: 7 found in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:44] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:44] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:44] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:44] [DETECT] Content signature detected: Multi-Document Support... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:45] [DETECT] Content infection indicators: 3 found in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:45] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encryption_manifest.json
+[2025-06-23 08:06:45] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encryption_manifest.json
+[2025-06-23 08:06:45] [DETECT] Content infection indicators: 1 found in odyssey_encryption_manifest.json
+[2025-06-23 08:06:45] [DETECT] Content signature detected: National Teachers College... in research_data.csv
+[2025-06-23 08:06:45] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:06:45] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:06:45] [DETECT] Content infection indicators: 3 found in research_data.csv
+[2025-06-23 08:06:45] [DETECT] Infected document detected: research_data_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:45] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content infection indicators: 7 found in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: National Teachers College... in student_notes.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:06:45] [DETECT] Content infection indicators: 3 found in student_notes.txt
+[2025-06-23 08:06:45] [DETECT] Infected document detected: student_notes_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:45] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Content infection indicators: 7 found in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [INFO] Scanning directory: odyssey_test_environment
+[2025-06-23 08:06:45] [DETECT] Suspicious filename pattern: .odyssey_infection_marker
+[2025-06-23 08:06:45] [DETECT] Suspicious filename pattern: assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Suspicious filename pattern: cybersecurity_report_ODYSSEY_ENCRYPTED.docx
+[2025-06-23 08:06:45] [DETECT] Suspicious filename pattern: lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Suspicious filename pattern: odyssey_encrypted_payload.dat
+[2025-06-23 08:06:45] [DETECT] Suspicious filename pattern: odyssey_encryption_manifest.json
+[2025-06-23 08:06:45] [DETECT] Suspicious filename pattern: research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Suspicious filename pattern: student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:45] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in .odyssey_infection_marker
+[2025-06-23 08:06:45] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in .odyssey_infection_marker
+[2025-06-23 08:06:45] [DETECT] Content signature detected: National Teachers College... in .odyssey_infection_marker
+[2025-06-23 08:06:45] [DETECT] Content infection indicators: 2 found in .odyssey_infection_marker
+[2025-06-23 08:06:45] [DETECT] Content signature detected: National Teachers College... in assignment_instructions.md
+[2025-06-23 08:06:46] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:06:46] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:06:46] [DETECT] Content infection indicators: 3 found in assignment_instructions.md
+[2025-06-23 08:06:46] [DETECT] Infected document detected: assignment_instructions_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:46] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Content infection indicators: 7 found in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Infected document detected: cybersecurity_report_ODYSSEY_ENCRYPTED.docx (Word Document)
+[2025-06-23 08:06:46] [DETECT] Content signature detected: National Teachers College... in lab_report.py
+[2025-06-23 08:06:46] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:06:46] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:06:46] [DETECT] Content infection indicators: 3 found in lab_report.py
+[2025-06-23 08:06:46] [DETECT] Infected document detected: lab_report_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:46] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Content infection indicators: 7 found in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:46] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:46] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:46] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:46] [DETECT] Content signature detected: Multi-Document Support... in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:46] [DETECT] Content infection indicators: 3 found in odyssey_encrypted_payload.dat
+[2025-06-23 08:06:46] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encryption_manifest.json
+[2025-06-23 08:06:46] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encryption_manifest.json
+[2025-06-23 08:06:46] [DETECT] Content infection indicators: 1 found in odyssey_encryption_manifest.json
+[2025-06-23 08:06:46] [DETECT] Content signature detected: National Teachers College... in research_data.csv
+[2025-06-23 08:06:46] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:06:46] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:06:46] [DETECT] Content infection indicators: 3 found in research_data.csv
+[2025-06-23 08:06:47] [DETECT] Infected document detected: research_data_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:47] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content infection indicators: 7 found in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: National Teachers College... in student_notes.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:06:47] [DETECT] Content infection indicators: 3 found in student_notes.txt
+[2025-06-23 08:06:47] [DETECT] Infected document detected: student_notes_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:06:47] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Content infection indicators: 7 found in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:06:47] [DETECT] Odyssey infection marker found - analyzing...
+[2025-06-23 08:06:47] [INFO]    Virus Signature: ODYSSEY_VIRUS_2025_NTC
+[2025-06-23 08:06:47] [INFO]    Virus Version: 2.0_EDUCATIONAL_MULTIDOC
+[2025-06-23 08:06:47] [INFO]    Infection Time: 2025-06-23T07:36:19.563933
+[2025-06-23 08:06:47] [INFO]    Execution Duration: 49.493971s
+[2025-06-23 08:06:47] [INFO]    Document Support Status:
+[2025-06-23 08:06:47] [INFO]      Word (.docx): YES
+[2025-06-23 08:06:47] [INFO]      PDF (.pdf): YES
+[2025-06-23 08:06:47] [INFO]      Excel (.xlsx): YES
+[2025-06-23 08:06:47] [INFO]      PowerPoint (.pptx): YES
+[2025-06-23 08:06:47] [INFO]    Files Processed: 5
+[2025-06-23 08:06:47] [INFO]    Encryption Operations: 5
+[2025-06-23 08:06:47] [INFO]    Document Types Infected: ['.md', '.docx', '.py', '.csv', '.txt']
+[2025-06-23 08:06:47] [CRYPTO] Analyzing Odyssey encrypted payload...
+[2025-06-23 08:06:47] [SUCCESS] Successfully decrypted Odyssey virus payload:
+[2025-06-23 08:06:47] [INFO]    Virus Name: Odyssey Virus
+[2025-06-23 08:06:47] [INFO]    Version: 2.0_EDUCATIONAL_MULTIDOC
+[2025-06-23 08:06:47] [INFO]    Institution: National Teachers College
+[2025-06-23 08:06:47] [INFO]    Document Processing Capabilities:
+[2025-06-23 08:06:47] [INFO]      Supported Formats: ['.txt', '.md', '.csv', '.py', '.js', '.html', '.css', '.docx', '.pdf', '.xlsx', '.pptx']
+[2025-06-23 08:06:47] [INFO]      Word Support: True
+[2025-06-23 08:06:47] [INFO]      PDF Support: True
+[2025-06-23 08:06:47] [INFO]      Excel Support: True
+[2025-06-23 08:06:47] [INFO]      PowerPoint Support: True
+[2025-06-23 08:06:47] [INFO]    Encryption: ROT13
+[2025-06-23 08:06:47] [SUCCESS] Scan completed in 16.54 seconds
+[2025-06-23 08:06:47] [INFO] Scan Statistics:
+[2025-06-23 08:06:47] [INFO]    Files scanned: 7270
+[2025-06-23 08:06:47] [INFO]    Documents analyzed: 3115
+[2025-06-23 08:06:47] [INFO]    Threats detected: 444
+[2025-06-23 08:06:47] [INFO] Document types processed:
+[2025-06-23 08:06:48] [INFO]    Python Script: 3007
+[2025-06-23 08:06:48] [INFO]    Markdown File: 7
+[2025-06-23 08:06:48] [INFO]    Word Document: 11
+[2025-06-23 08:06:48] [INFO]    Text File: 77
+[2025-06-23 08:06:48] [INFO]    PowerPoint Presentation: 3
+[2025-06-23 08:06:48] [INFO]    CSV File: 10
+[2025-06-23 08:07:25] [INFO] Using existing Odyssey quarantine: odyssey_antivirus_quarantine
+[2025-06-23 08:07:25] [INFO] Starting comprehensive Odyssey virus scan...
+[2025-06-23 08:07:25] [INFO] Document format support:
+[2025-06-23 08:07:25] [INFO]    Word (.docx): YES
+[2025-06-23 08:07:25] [INFO]    PDF (.pdf): YES
+[2025-06-23 08:07:25] [INFO]    Excel (.xlsx): YES
+[2025-06-23 08:07:25] [INFO]    PowerPoint (.pptx): YES
+[2025-06-23 08:07:25] [INFO] Scanning directory: .
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: odyssey_activity.log
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: .odyssey_infection_marker
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: cybersecurity_report_ODYSSEY_ENCRYPTED.docx
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: odyssey_encrypted_payload.dat
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: odyssey_encryption_manifest.json
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:25] [DETECT] Suspicious filename pattern: student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:25] [DETECT] Infected document detected: antivirus.py (Python Script)
+[2025-06-23 08:07:25] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: National Teachers College... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: Odyssey Virus... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: ROT13 Cryptographic Implementa... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: === ENCRYPTED .DOCX CONTENT ==... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: === ENCRYPTED .PDF CONTENT ===... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: === ENCRYPTED .XLSX CONTENT ==... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: === ENCRYPTED .PPTX CONTENT ==... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: Odyssey Virus... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content signature detected: Multi-Document Support... in antivirus.py
+[2025-06-23 08:07:25] [DETECT] Content infection indicators: 19 found in antivirus.py
+[2025-06-23 08:07:26] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: National Teachers College... in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: === ENCRYPTED .PDF CONTENT ===... in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Multi-Document Support... in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Content infection indicators: 9 found in antivirus_activity.log
+[2025-06-23 08:07:26] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: National Teachers College... in odyssey_activity.log
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Multi-Document Support... in odyssey_activity.log
+[2025-06-23 08:07:26] [DETECT] Content infection indicators: 3 found in odyssey_activity.log
+[2025-06-23 08:07:26] [DETECT] Infected document detected: README.md (Markdown File)
+[2025-06-23 08:07:26] [DETECT] Content signature detected: National Teachers College... in README.md
+[2025-06-23 08:07:26] [DETECT] Content infection indicators: 1 found in README.md
+[2025-06-23 08:07:26] [DETECT] Infected document detected: virus.py (Python Script)
+[2025-06-23 08:07:26] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in virus.py
+[2025-06-23 08:07:26] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in virus.py
+[2025-06-23 08:07:26] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in virus.py
+[2025-06-23 08:07:26] [DETECT] Content signature detected: National Teachers College... in virus.py
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in virus.py
+[2025-06-23 08:07:26] [DETECT] Content signature detected: ROT13 Cryptographic Implementa... in virus.py
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in virus.py
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Multi-Document Support... in virus.py
+[2025-06-23 08:07:26] [DETECT] Content infection indicators: 14 found in virus.py
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in COMMIT_EDITMSG
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in COMMIT_EDITMSG
+[2025-06-23 08:07:26] [DETECT] Content infection indicators: 2 found in COMMIT_EDITMSG
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in HEAD
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in HEAD
+[2025-06-23 08:07:26] [DETECT] Content infection indicators: 2 found in HEAD
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in main
+[2025-06-23 08:07:26] [DETECT] Content signature detected: Odyssey Virus... in main
+[2025-06-23 08:07:26] [DETECT] Content infection indicators: 2 found in main
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in 7c45f06e6fe93c9f0f4dc1ef7646c5431294fb
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in 33d43b212e6cb874362f27571d563135aa4549
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in 6de1f1348388fa948805bd3e77d55d78165998
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in e88feb0cd7b4a364f610fb7c102380629a1625
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in 444f31f6f4902386bd7928187e0c4ccc97eb4c
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in 8eae97936f628cb9227d84fb0ee9742a935ea6
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in 56893a4636a08621de42ef623d0d5452e0f556
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in 9f5bd17c0daeaf764a8a6cf215eeada6cbf4f1
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in a7fe92ebbdbbd5138791a6b9f4838111421082
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in b7aba0732576c4aca7a971ce54f5c19e1e2eaa
+[2025-06-23 08:07:26] [CRYPTO] ROT13 encryption detected in f5d8125db68c86e7ed2e9ce237ab00bc7b5777
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in 8f909923bc69e3a2d5f88fc61645597f943120
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in d418cf46149c6cffd3def205b77a85f1e05dab
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in 40d05e98cdeea2603d1f28e9c72054edfc5015
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in oxml.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in shape.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in simpletypes.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in xmlchemy.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in latent.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in shared.cpython-312.pyc
+[2025-06-23 08:07:27] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in builder.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in defs.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in diff.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in formfill.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in soupparser.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in doctestcompare.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in _elementpath.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in cell.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in reader.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in numbers.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in base.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in effect.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in fill.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in geometry.cpython-312.pyc
+[2025-06-23 08:07:28] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in custom.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in manifest.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in cache.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in excel.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in builtins.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in numbers.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in cell.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in dataframe.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in workbook.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in filters.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in worksheet.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in _reader.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:07:29] [CRYPTO] ROT13 encryption detected in functions.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in AvifImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in BlpImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in BmpImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in DdsImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in EpsImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in GifImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in IcnsImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in IcoImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in Image.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImageCms.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImageColor.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImageFile.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImageFilter.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImageFont.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImageOps.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImageQt.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImageShow.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in ImImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in JpegImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in PcxImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in PdfParser.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in PngImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in PpmImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in SgiImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in SpiderImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in TiffImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in TiffTags.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in WebPImagePlugin.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in _typing.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in cmdoptions.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in progress_bars.cpython-312.pyc
+[2025-06-23 08:07:30] [CRYPTO] ROT13 encryption detected in req_command.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in cache.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in debug.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in install.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in list.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in search.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in collector.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in package_finder.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in sources.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in _distutils.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in _sysconfig.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in base.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in direct_url.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in link.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in pylock.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in download.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in session.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in wheel.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in check.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in prepare.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in constructors.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in req_file.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in req_install.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in req_uninstall.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in resolver.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in candidates.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in factory.cpython-312.pyc
+[2025-06-23 08:07:31] [CRYPTO] ROT13 encryption detected in resolver.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in compatibility_tags.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in logging.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in misc.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in subprocess.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in unpacking.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in git.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in versioncontrol.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in configuration.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in self_outdated_check.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in wheel_builder.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in compat.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in database.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in locators.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in metadata.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in resources.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in scripts.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in util.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in version.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in wheel.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in distro.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in core.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in idnadata.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in uts46data.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in fallback.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in _spdx.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in markers.cpython-312.pyc
+[2025-06-23 08:07:32] [CRYPTO] ROT13 encryption detected in metadata.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in tags.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in utils.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in version.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in _musllinux.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in _tokenizer.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in _mapping.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in lexer.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in token.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in unistring.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in util.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in _impl.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in adapters.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in models.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in packages.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in sessions.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in utils.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in structs.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in align.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in ansi.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in box.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in cells.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in color.cpython-312.pyc
+[2025-06-23 08:07:33] [CRYPTO] ROT13 encryption detected in columns.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in console.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in control.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in default_styles.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in emoji.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in highlighter.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in json.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in layout.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in live.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in logging.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in markup.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in palette.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in pretty.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in progress.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in progress_bar.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in prompt.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in repr.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in segment.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in status.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in syntax.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in table.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in theme.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in traceback.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in tree.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _cell_widths.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _emoji_codes.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _palettes.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _spinners.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _win32_console.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in __main__.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _parser.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _writer.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _api.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _macos.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _openssl.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in _windows.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in bindings.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in appengine.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in pyopenssl.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in securetransport.cpython-312.pyc
+[2025-06-23 08:07:34] [CRYPTO] ROT13 encryption detected in six.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in ssl_.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in url.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in connection.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in connectionpool.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in exceptions.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in poolmanager.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in response.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in typing_extensions.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in xmlwriter.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in oxml.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in package.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in autoshape.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in simpletypes.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in slide.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in text.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in xmlchemy.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in placeholder.cpython-312.pyc
+[2025-06-23 08:07:35] [CRYPTO] ROT13 encryption detected in shapetree.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in pptx-icon.emf
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in slide.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in spec.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _base.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _data_structures.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _fit.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in __init__.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in std.py
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in adobe_glyphs.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in pdfdoc.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in symbol.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in zapfding.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in constants.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in filters.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in xmp.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _cmap.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _encryption.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _page.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _reader.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _utils.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in _writer.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in format.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in styles.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in utility.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in workbook.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in worksheet.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in xmlwriter.cpython-312.pyc
+[2025-06-23 08:07:36] [CRYPTO] ROT13 encryption detected in typing_extensions.cpython-312.pyc
+[2025-06-23 08:07:37] [CRYPTO] ROT13 encryption detected in vba_extract.cpython-312.pyc
+[2025-06-23 08:07:37] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in .odyssey_infection_marker
+[2025-06-23 08:07:37] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in .odyssey_infection_marker
+[2025-06-23 08:07:37] [DETECT] Content signature detected: National Teachers College... in .odyssey_infection_marker
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 2 found in .odyssey_infection_marker
+[2025-06-23 08:07:37] [DETECT] Content signature detected: National Teachers College... in assignment_instructions.md
+[2025-06-23 08:07:37] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:07:37] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 3 found in assignment_instructions.md
+[2025-06-23 08:07:37] [DETECT] Infected document detected: assignment_instructions_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:07:37] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 7 found in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Infected document detected: cybersecurity_report_ODYSSEY_ENCRYPTED.docx (Word Document)
+[2025-06-23 08:07:37] [DETECT] Content signature detected: National Teachers College... in lab_report.py
+[2025-06-23 08:07:37] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:07:37] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 3 found in lab_report.py
+[2025-06-23 08:07:37] [DETECT] Infected document detected: lab_report_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:07:37] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 7 found in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:37] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:37] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:37] [DETECT] Content signature detected: Multi-Document Support... in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 3 found in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:37] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encryption_manifest.json
+[2025-06-23 08:07:37] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encryption_manifest.json
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 1 found in odyssey_encryption_manifest.json
+[2025-06-23 08:07:37] [DETECT] Content signature detected: National Teachers College... in research_data.csv
+[2025-06-23 08:07:37] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:07:37] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 3 found in research_data.csv
+[2025-06-23 08:07:37] [DETECT] Infected document detected: research_data_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:07:37] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content infection indicators: 7 found in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: National Teachers College... in student_notes.txt
+[2025-06-23 08:07:37] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 3 found in student_notes.txt
+[2025-06-23 08:07:38] [DETECT] Infected document detected: student_notes_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:07:38] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 7 found in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [INFO] Scanning directory: odyssey_test_environment
+[2025-06-23 08:07:38] [DETECT] Suspicious filename pattern: .odyssey_infection_marker
+[2025-06-23 08:07:38] [DETECT] Suspicious filename pattern: assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Suspicious filename pattern: cybersecurity_report_ODYSSEY_ENCRYPTED.docx
+[2025-06-23 08:07:38] [DETECT] Suspicious filename pattern: lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Suspicious filename pattern: odyssey_encrypted_payload.dat
+[2025-06-23 08:07:38] [DETECT] Suspicious filename pattern: odyssey_encryption_manifest.json
+[2025-06-23 08:07:38] [DETECT] Suspicious filename pattern: research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Suspicious filename pattern: student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in .odyssey_infection_marker
+[2025-06-23 08:07:38] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in .odyssey_infection_marker
+[2025-06-23 08:07:38] [DETECT] Content signature detected: National Teachers College... in .odyssey_infection_marker
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 2 found in .odyssey_infection_marker
+[2025-06-23 08:07:38] [DETECT] Content signature detected: National Teachers College... in assignment_instructions.md
+[2025-06-23 08:07:38] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:07:38] [DETECT] Content signature detected: Odyssey Virus... in assignment_instructions.md
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 3 found in assignment_instructions.md
+[2025-06-23 08:07:38] [DETECT] Infected document detected: assignment_instructions_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:07:38] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 7 found in assignment_instructions_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Infected document detected: cybersecurity_report_ODYSSEY_ENCRYPTED.docx (Word Document)
+[2025-06-23 08:07:38] [DETECT] Content signature detected: National Teachers College... in lab_report.py
+[2025-06-23 08:07:38] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:07:38] [DETECT] Content signature detected: Odyssey Virus... in lab_report.py
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 3 found in lab_report.py
+[2025-06-23 08:07:38] [DETECT] Infected document detected: lab_report_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:07:38] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 7 found in lab_report_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:38] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:38] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:38] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:38] [DETECT] Content signature detected: Multi-Document Support... in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 3 found in odyssey_encrypted_payload.dat
+[2025-06-23 08:07:38] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in odyssey_encryption_manifest.json
+[2025-06-23 08:07:38] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in odyssey_encryption_manifest.json
+[2025-06-23 08:07:38] [DETECT] Content infection indicators: 1 found in odyssey_encryption_manifest.json
+[2025-06-23 08:07:38] [DETECT] Content signature detected: National Teachers College... in research_data.csv
+[2025-06-23 08:07:39] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:07:39] [DETECT] Content signature detected: Odyssey Virus... in research_data.csv
+[2025-06-23 08:07:39] [DETECT] Content infection indicators: 3 found in research_data.csv
+[2025-06-23 08:07:39] [DETECT] Infected document detected: research_data_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:07:39] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content infection indicators: 7 found in research_data_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: National Teachers College... in student_notes.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: Odyssey Virus... in student_notes.txt
+[2025-06-23 08:07:39] [DETECT] Content infection indicators: 3 found in student_notes.txt
+[2025-06-23 08:07:39] [DETECT] Infected document detected: student_notes_ODYSSEY_ENCRYPTED.txt (Text File)
+[2025-06-23 08:07:39] [DETECT] Virus signature detected: ODYSSEY_VIRUS_2025_NTC in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: ODYSSEY_VIRUS_2025_NTC... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: <!-- ODYSSEY_VIRUS_2025_NTC --... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content signature detected: <!-- Encryption: ROT13 -->... in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Content infection indicators: 7 found in student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 08:07:39] [DETECT] Odyssey infection marker found - analyzing...
+[2025-06-23 08:07:39] [INFO]    Virus Signature: ODYSSEY_VIRUS_2025_NTC
+[2025-06-23 08:07:39] [INFO]    Virus Version: 2.0_EDUCATIONAL_MULTIDOC
+[2025-06-23 08:07:39] [INFO]    Infection Time: 2025-06-23T07:36:19.563933
+[2025-06-23 08:07:39] [INFO]    Execution Duration: 49.493971s
+[2025-06-23 08:07:39] [INFO]    Document Support Status:
+[2025-06-23 08:07:39] [INFO]      Word (.docx): YES
+[2025-06-23 08:07:39] [INFO]      PDF (.pdf): YES
+[2025-06-23 08:07:39] [INFO]      Excel (.xlsx): YES
+[2025-06-23 08:07:39] [INFO]      PowerPoint (.pptx): YES
+[2025-06-23 08:07:39] [INFO]    Files Processed: 5
+[2025-06-23 08:07:39] [INFO]    Encryption Operations: 5
+[2025-06-23 08:07:39] [INFO]    Document Types Infected: ['.md', '.docx', '.py', '.csv', '.txt']
+[2025-06-23 08:07:39] [CRYPTO] Analyzing Odyssey encrypted payload...
+[2025-06-23 08:07:39] [SUCCESS] Successfully decrypted Odyssey virus payload:
+[2025-06-23 08:07:39] [INFO]    Virus Name: Odyssey Virus
+[2025-06-23 08:07:39] [INFO]    Version: 2.0_EDUCATIONAL_MULTIDOC
+[2025-06-23 08:07:39] [INFO]    Institution: National Teachers College
+[2025-06-23 08:07:39] [INFO]    Document Processing Capabilities:
+[2025-06-23 08:07:39] [INFO]      Supported Formats: ['.txt', '.md', '.csv', '.py', '.js', '.html', '.css', '.docx', '.pdf', '.xlsx', '.pptx']
+[2025-06-23 08:07:39] [INFO]      Word Support: True
+[2025-06-23 08:07:39] [INFO]      PDF Support: True
+[2025-06-23 08:07:39] [INFO]      Excel Support: True
+[2025-06-23 08:07:39] [INFO]      PowerPoint Support: True
+[2025-06-23 08:07:39] [INFO]    Encryption: ROT13
+[2025-06-23 08:07:39] [SUCCESS] Scan completed in 14.44 seconds
+[2025-06-23 08:07:39] [INFO] Scan Statistics:
+[2025-06-23 08:07:39] [INFO]    Files scanned: 2432
+[2025-06-23 08:07:39] [INFO]    Documents analyzed: 1045
+[2025-06-23 08:07:39] [INFO]    Threats detected: 444
+[2025-06-23 08:07:39] [INFO] Document types processed:
+[2025-06-23 08:07:39] [INFO]    Python Script: 1003
+[2025-06-23 08:07:39] [INFO]    Markdown File: 3
+[2025-06-23 08:07:39] [INFO]    Word Document: 5
+[2025-06-23 08:07:39] [INFO]    Text File: 29
+[2025-06-23 08:07:39] [INFO]    PowerPoint Presentation: 1
+[2025-06-23 08:07:39] [INFO]    CSV File: 4
