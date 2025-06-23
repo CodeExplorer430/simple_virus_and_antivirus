@@ -5,49 +5,58 @@ ODYSSEY VIRUS - ACTIVITY LOG
 Virus Signature: ODYSSEY_VIRUS_2025_NTC
 Version: 2.1_EDUCATIONAL
 Institution: National Teachers College
-Execution Started: 2025-06-23 11:19:37
+Execution Started: 2025-06-23 20:35:02
 Encryption Algorithm: ROT13
 Target Environment: odyssey_test_environment
 Supported Documents: .txt, .md, .csv, .py, .js, .html, .css, .docx, .pdf, .xlsx, .pptx
 Behavior: Original files will be deleted after encryption
 ═══════════════════════════════════════════════════════════════════
 
-[2025-06-23 11:19:37] [INFO] Odyssey virus logging system initialized
-[2025-06-23 11:19:40] [INFO] Safety verification completed successfully
-[2025-06-23 11:19:40] [INFO] Setting up target environment directory
-[2025-06-23 11:19:40] [INFO] Target directory already exists: odyssey_test_environment
-[2025-06-23 11:19:40] [INFO] Found 1 user files ready for processing
-[2025-06-23 11:19:40] [INFO]   - sample.txt
-[2025-06-23 11:19:40] [INFO] Target environment setup completed
-[2025-06-23 11:19:40] [CRYPTO] Initiating file infection process
-[2025-06-23 11:19:40] [CRYPTO] INFECTED file: sample.txt
-[2025-06-23 11:19:40] [CRYPTO] Successfully infected: sample.txt
-[2025-06-23 11:19:40] [CRYPTO] Infection manifest saved: 1 files infected
-[2025-06-23 11:19:40] [INFO] File infection completed: 1 files infected
-[2025-06-23 11:19:40] [CRYPTO] Initiating multi-format file encryption with file replacement
-[2025-06-23 11:19:40] [WARNING] Skipping unsupported file type: odyssey_infection_manifest.json
-[2025-06-23 11:19:40] [DOCUMENT] Processing .txt file: sample.txt
-[2025-06-23 11:19:40] [DELETE] DELETED original file: sample.txt
-[2025-06-23 11:19:40] [CRYPTO] REPLACED sample.txt with sample_ODYSSEY_ENCRYPTED.txt
-[2025-06-23 11:19:40] [WARNING] Skipping unsupported file type: sample.txt.backup
-[2025-06-23 11:19:40] [CRYPTO] Encryption manifest saved: 1 entries
-[2025-06-23 11:19:40] [INFO] File replacement completed: 1 files processed
-[2025-06-23 11:19:40] [INFO] Original files deleted: 1
-[2025-06-23 11:19:40] [INFO] Document type processing statistics:
-[2025-06-23 11:19:40] [INFO]   .txt: 1 files
-[2025-06-23 11:19:40] [INFO] Displaying educational popup messages
-[2025-06-23 11:19:44] [INFO] Displayed educational message 1: Modified Odyssex Educational Viruus - File Replacement Simulation
-[2025-06-23 11:19:47] [INFO] Displayed educational message 2: ROT13 Encrxption with Original File Deletion
-[2025-06-23 11:19:49] [INFO] Displayed educational message 3: Angtional Teachers College - Realistic Malware Behawior Study
-[2025-06-23 11:19:50] [CRYPTO] Generating encrypted virus payload
-[2025-06-23 11:19:50] [CRYPTO] Encrypted payload generated: odyssey_encrypted_payload.dat
-[2025-06-23 11:19:50] [INFO] Simulating file manipulation behaviors on encrypted files
-[2025-06-23 11:19:50] [INFO] Temporarily locked encrypted file: sample_ODYSSEY_ENCRYPTED.txt
-[2025-06-23 11:19:50] [INFO] Simulating encrypted document processing (3 seconds)...
-[2025-06-23 11:19:53] [INFO] Restored encrypted file: sample_ODYSSEY_ENCRYPTED.txt
-[2025-06-23 11:19:53] [INFO] File manipulation simulation completed
-[2025-06-23 11:19:53] [INFO] Creating infection marker
-[2025-06-23 11:19:53] [INFO] Infection marker created successfully
-[2025-06-23 11:19:53] [INFO] Creating infection marker
-[2025-06-23 11:19:53] [INFO] Infection marker created successfully
-[2025-06-23 11:19:53] [INFO] Odyssey virus simulation completed successfully
+[2025-06-23 20:35:02] [INFO] Odyssey virus logging system initialized
+[2025-06-23 20:35:05] [INFO] Safety verification completed successfully
+[2025-06-23 20:35:05] [INFO] Setting up target environment directory
+[2025-06-23 20:35:05] [INFO] Target directory already exists: odyssey_test_environment
+[2025-06-23 20:35:05] [INFO] Found 2 user files ready for processing
+[2025-06-23 20:35:05] [INFO]   - sample.txt
+[2025-06-23 20:35:05] [INFO]   - student_notes.txt
+[2025-06-23 20:35:05] [INFO] Target environment setup completed
+[2025-06-23 20:35:05] [CRYPTO] Initiating file infection process
+[2025-06-23 20:35:05] [CRYPTO] INFECTED file: sample.txt
+[2025-06-23 20:35:05] [CRYPTO] Successfully infected: sample.txt
+[2025-06-23 20:35:05] [CRYPTO] INFECTED file: student_notes.txt
+[2025-06-23 20:35:05] [CRYPTO] Successfully infected: student_notes.txt
+[2025-06-23 20:35:05] [CRYPTO] Infection manifest saved: 2 files infected
+[2025-06-23 20:35:05] [INFO] File infection completed: 2 files infected
+[2025-06-23 20:35:05] [CRYPTO] Initiating multi-format file encryption with file replacement
+[2025-06-23 20:35:05] [WARNING] Skipping unsupported file type: odyssey_infection_manifest.json
+[2025-06-23 20:35:05] [DOCUMENT] Processing .txt file: sample.txt
+[2025-06-23 20:35:05] [DELETE] DELETED original file: sample.txt
+[2025-06-23 20:35:05] [CRYPTO] REPLACED sample.txt with sample_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 20:35:05] [WARNING] Skipping unsupported file type: sample.txt.backup
+[2025-06-23 20:35:05] [DOCUMENT] Processing .txt file: student_notes.txt
+[2025-06-23 20:35:05] [DELETE] DELETED original file: student_notes.txt
+[2025-06-23 20:35:05] [CRYPTO] REPLACED student_notes.txt with student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 20:35:05] [WARNING] Skipping unsupported file type: student_notes.txt.backup
+[2025-06-23 20:35:05] [CRYPTO] Encryption manifest saved: 2 entries
+[2025-06-23 20:35:05] [INFO] File replacement completed: 2 files processed
+[2025-06-23 20:35:05] [INFO] Original files deleted: 2
+[2025-06-23 20:35:05] [INFO] Document type processing statistics:
+[2025-06-23 20:35:05] [INFO]   .txt: 2 files
+[2025-06-23 20:35:05] [INFO] Displaying educational popup messages
+[2025-06-23 20:35:07] [INFO] Displayed educational message 1: Modified Odyssex Educational Viruus - File Replacement Simulation
+[2025-06-23 20:35:09] [INFO] Displayed educational message 2: ROT13 Encrxption with Original File Deletion
+[2025-06-23 20:35:11] [INFO] Displayed educational message 3: Angtional Teachers College - Realistic Malware Behawior Study
+[2025-06-23 20:35:12] [CRYPTO] Generating encrypted virus payload
+[2025-06-23 20:35:12] [CRYPTO] Encrypted payload generated: odyssey_encrypted_payload.dat
+[2025-06-23 20:35:12] [INFO] Simulating file manipulation behaviors on encrypted files
+[2025-06-23 20:35:12] [INFO] Temporarily locked encrypted file: sample_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 20:35:12] [INFO] Temporarily locked encrypted file: student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 20:35:12] [INFO] Simulating encrypted document processing (3 seconds)...
+[2025-06-23 20:35:15] [INFO] Restored encrypted file: sample_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 20:35:15] [INFO] Restored encrypted file: student_notes_ODYSSEY_ENCRYPTED.txt
+[2025-06-23 20:35:15] [INFO] File manipulation simulation completed
+[2025-06-23 20:35:15] [INFO] Creating infection marker
+[2025-06-23 20:35:15] [INFO] Infection marker created successfully
+[2025-06-23 20:35:15] [INFO] Creating infection marker
+[2025-06-23 20:35:15] [INFO] Infection marker created successfully
+[2025-06-23 20:35:15] [INFO] Odyssey virus simulation completed successfully

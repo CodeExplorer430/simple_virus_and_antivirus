@@ -1,0 +1,20 @@
+{
+  "sample.txt": {
+    "original_filename": "sample.txt",
+    "file_type": ".txt",
+    "infection_timestamp": "2025-06-23T20:35:05.412553",
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC",
+    "infection_type": "content_injection",
+    "backup_created": true,
+    "backup_filename": "sample.txt.backup"
+  },
+  "student_notes.txt": {
+    "original_filename": "student_notes.txt",
+    "file_type": ".txt",
+    "infection_timestamp": "2025-06-23T20:35:05.425122",
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC",
+    "infection_type": "content_injection",
+    "backup_created": true,
+    "backup_filename": "student_notes.txt.backup"
+  }
+}

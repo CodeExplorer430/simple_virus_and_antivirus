@@ -1,0 +1,28 @@
+{
+  "sample_ODYSSEY_ENCRYPTED.txt": {
+    "original_filename": "sample.txt",
+    "original_type": ".txt",
+    "encryption_algorithm": "ROT13",
+    "encryption_timestamp": "2025-06-23T20:35:05.471861",
+    "file_size_original": 313,
+    "file_size_encrypted": 656,
+    "original_file_hash": "bdfd517b43c0b332f32c41a079328c223911ac2522fac9e2b0b5ea483a38fd33",
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC",
+    "text_length": 304,
+    "encrypted_length": 304,
+    "original_file_deleted": true
+  },
+  "student_notes_ODYSSEY_ENCRYPTED.txt": {
+    "original_filename": "student_notes.txt",
+    "original_type": ".txt",
+    "encryption_algorithm": "ROT13",
+    "encryption_timestamp": "2025-06-23T20:35:05.501617",
+    "file_size_original": 546,
+    "file_size_encrypted": 903,
+    "original_file_hash": "cae08b310819bfb4f97413924c7842745258b418efee6984bdb5ed5485a70b78",
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC",
+    "text_length": 531,
+    "encrypted_length": 531,
+    "original_file_deleted": true
+  }
+}

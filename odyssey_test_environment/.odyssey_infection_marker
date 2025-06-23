@@ -1,0 +1,65 @@
+{
+  "infection_metadata": {
+    "virus_signature": "ODYSSEY_VIRUS_2025_NTC",
+    "virus_version": "2.1_EDUCATIONAL",
+    "infection_timestamp": "2025-06-23T20:35:02.937345",
+    "execution_duration_seconds": 12.577112,
+    "behavioral_modification": "File replacement simulation"
+  },
+  "system_information": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python_version": "3.12.10",
+    "target_directory": "odyssey_test_environment"
+  },
+  "execution_statistics": {
+    "files_processed": 2,
+    "files_infected": 2,
+    "files_replaced": 2,
+    "encryption_operations": 2,
+    "infection_operations": 2,
+    "messages_displayed": 3,
+    "document_types_processed": {
+      ".txt": 2
+    }
+  },
+  "document_support_status": {
+    "docx_support": true,
+    "pdf_support": true,
+    "xlsx_support": true,
+    "pptx_support": true,
+    "supported_extensions": [
+      ".txt",
+      ".md",
+      ".csv",
+      ".py",
+      ".js",
+      ".html",
+      ".css",
+      ".docx",
+      ".pdf",
+      ".xlsx",
+      ".pptx"
+    ]
+  },
+  "behavioral_characteristics": {
+    "original_file_deletion": true,
+    "file_replacement": true,
+    "file_infection": true,
+    "sample_file_creation": false,
+    "realistic_malware_simulation": true
+  },
+  "educational_context": {
+    "institution": "National Teachers College",
+    "project_type": "ROT13 Multi-Document Demonstration with File Replacement",
+    "safety_verified": true
+  },
+  "antivirus_guidance": {
+    "detection_signature": "ODYSSEY_VIRUS_2025_NTC",
+    "encryption_algorithm": "ROT13",
+    "encrypted_files_pattern": "*ODYSSEY_ENCRYPTED*",
+    "payload_location": "odyssey_encrypted_payload.dat",
+    "manifest_location": "odyssey_encryption_manifest.json",
+    "document_processing_required": true,
+    "recovery_limitation": "Original files deleted - can only create recovered versions"
+  }
+}
